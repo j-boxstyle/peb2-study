@@ -1,0 +1,10 @@
+# Do NOT publish copyrighted Canvas materials (lecture slides, articles, mock exam)
+materials/
+*.pdf
+*.docx
+*.pptx
+
+# Dev / build artifacts
+study_site/
+.DS_Store
+.claude/

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>PEB2 学習サイト — Principles of Economics and Business 2</title>
+<style>
+:root{
+  --bg:#0f1419; --panel:#1a2128; --panel2:#222b34; --line:#2e3a45;
+  --tx:#e7edf3; --mut:#9fb0bf; --acc:#4aa3ff; --acc2:#2d7fd6;
+  --ok:#3fb950; --okbg:#10231a; --ng:#f85149; --ngbg:#2a1416;
+  --warn:#d29922; --dk:#8b949e; --rev:#a371f7;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--tx);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+  font-size:16px;line-height:1.6}
+a{color:var(--acc)}
+.wrap{max-width:820px;margin:0 auto;padding:0 12px 90px}
+header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0f1419,#0f1419f0);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.hd{max-width:820px;margin:0 auto;padding:10px 12px 0}
+.title{font-size:1.05rem;font-weight:700;letter-spacing:.2px}
+.subtitle{font-size:.72rem;color:var(--mut);margin-top:2px}
+.tabs{display:flex;gap:2px;margin-top:8px;overflow-x:auto}
+.tab{flex:1;min-width:70px;text-align:center;padding:9px 4px;font-size:.82rem;font-weight:600;
+  color:var(--mut);background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap}
+.tab.active{color:var(--acc);border-bottom-color:var(--acc)}
+.panel{display:none;padding-top:14px}
+.panel.active{display:block;animation:fade .2s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2{font-size:1.15rem;margin:18px 0 8px;border-left:4px solid var(--acc);padding-left:8px}
+h3{font-size:1rem;margin:16px 0 6px;color:var(--acc)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+.muted{color:var(--mut)}
+.pill{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:20px;background:var(--panel2);color:var(--mut);margin:2px 3px 2px 0;border:1px solid var(--line)}
+ul{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+.kw{color:var(--acc);font-weight:600}
+/* filters */
+.filters{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:12px}
+.frow{margin:6px 0}
+.flabel{font-size:.72rem;color:var(--mut);margin-bottom:4px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.78rem;padding:6px 11px;border-radius:18px;background:var(--panel2);color:var(--mut);
+  border:1px solid var(--line);cursor:pointer;user-select:none}
+.chip.on{background:var(--acc2);color:#fff;border-color:var(--acc)}
+.chip.mode.on{background:var(--rev);border-color:var(--rev)}
+/* quiz */
+.qmeta{display:flex;justify-content:space-between;align-items:center;font-size:.74rem;color:var(--mut);margin-bottom:6px}
+.src{font-size:.68rem;padding:2px 7px;border-radius:5px;background:var(--panel2);border:1px solid var(--line)}
+.src.exam{color:#ffd479;border-color:#5a4a1a}
+.qtext{font-size:1.02rem;font-weight:600;margin:8px 0 12px;line-height:1.55}
+.fig{margin:8px 0;overflow-x:auto}
+.opt{display:block;width:100%;text-align:left;background:var(--panel2);border:1px solid var(--line);
+  border-radius:10px;padding:11px 13px;margin:7px 0;color:var(--tx);font-size:.95rem;cursor:pointer;transition:.12s}
+.opt:hover{border-color:var(--acc)}
+.opt.correct{background:var(--okbg);border-color:var(--ok);color:#b5f5c0}
+.opt.wrong{background:var(--ngbg);border-color:var(--ng);color:#ffb3ad}
+.opt.disabled{cursor:default}
+.opt .lt{font-weight:700;margin-right:6px;color:var(--mut)}
+.exp{background:var(--okbg);border:1px solid #1f4a2e;border-radius:10px;padding:11px 13px;margin-top:10px;font-size:.9rem;display:none}
+.exp.show{display:block}
+.exp .h{font-weight:700;color:var(--ok);font-size:.8rem;margin-bottom:4px}
+.we{margin-top:8px;font-size:.85rem;color:var(--mut)}
+.we div{margin:3px 0}
+.aibtns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.aibtn{flex:1;min-width:130px;font-size:.82rem;font-weight:600;padding:10px;border-radius:9px;border:1px solid var(--acc);
+  background:var(--panel2);color:var(--acc);cursor:pointer}
+.aibtn.alt{border-color:var(--rev);color:var(--rev)}
+.aibtn:active{transform:scale(.98)}
+/* footer nav */
+.nav{position:fixed;left:0;right:0;bottom:0;background:#11171 df;background:#11171d;border-top:1px solid var(--line);
+  padding:9px 12px;display:flex;gap:10px;max-width:820px;margin:0 auto;z-index:40}
+.nav button{flex:1;padding:13px;border-radius:10px;border:1px solid var(--line);font-size:.95rem;font-weight:700;cursor:pointer}
+.nav .prev{background:var(--panel2);color:var(--tx)}
+.nav .prev:disabled{opacity:.4;cursor:default}
+.nav .next{background:var(--acc2);color:#fff;border-color:var(--acc)}
+.progress{height:5px;background:var(--panel2);border-radius:3px;overflow:hidden;margin:4px 0 12px}
+.progress>i{display:block;height:100%;background:var(--acc);width:0;transition:.2s}
+.stat{display:flex;gap:8px;flex-wrap:wrap;font-size:.74rem;margin-bottom:8px}
+.stat span{padding:3px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--line)}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--ok);color:#06210f;
+  padding:10px 18px;border-radius:24px;font-weight:700;font-size:.85rem;opacity:0;transition:.25s;z-index:99;pointer-events:none}
+.toast.show{opacity:1}
+.empty{text-align:center;color:var(--mut);padding:40px 10px}
+table{font-size:.85rem}
+details{margin:8px 0;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--panel)}
+summary{cursor:pointer;font-weight:600;color:var(--acc)}
+.gloss{display:grid;grid-template-columns:1fr;gap:0}
+.gitem{border-bottom:1px solid var(--line);padding:9px 2px}
+.gen{font-weight:600}
+.gja{color:var(--mut);font-size:.88rem}
+.note{font-size:.78rem;color:var(--mut);background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:10px;margin:10px 0}
+kbd{background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:.8em}
+</style>
+</head>
+<body>
+<header>
+  <div class="hd">
+    <div class="title">PEB2 学習サイト <span class="muted" style="font-weight:400;font-size:.72rem">Principles of Economics &amp; Business 2 · resit対策</span></div>
+    <div class="subtitle">出典: UvA Canvas 教材のみ（講義スライドL1-8・チュートリアル・Mock Exam）／AI連携: Opus 4.8</div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-t="textbook">📖 教科書</button>
+      <button class="tab" data-t="summary">📋 まとめ</button>
+      <button class="tab" data-t="quiz">❓ クイズ</button>
+      <button class="tab" data-t="glossary">📚 用語集</button>
+      <button class="tab" data-t="menu">☰ メニュー</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ========== TEXTBOOK ========== -->
+  <section class="panel active" id="p-textbook"></section>
+
+  <!-- ========== SUMMARY ========== -->
+  <section class="panel" id="p-summary"></section>
+
+  <!-- ========== QUIZ ========== -->
+  <section class="panel" id="p-quiz">
+    <div class="filters">
+      <div class="frow"><div class="flabel">週 (Week)</div><div class="chips" id="f-week"></div></div>
+      <div class="frow"><div class="flabel">トラック (Track)</div><div class="chips" id="f-ch"></div></div>
+      <div class="frow"><div class="flabel">出題範囲 (Source)</div><div class="chips" id="f-pass"></div></div>
+      <div class="frow"><div class="flabel">モード（複数選択OR）</div><div class="chips" id="f-mode"></div></div>
+    </div>
+    <div class="stat" id="q-stat"></div>
+    <div class="progress"><i id="q-prog"></i></div>
+    <div id="q-area"></div>
+  </section>
+
+  <!-- ========== GLOSSARY ========== -->
+  <section class="panel" id="p-glossary"></section>
+
+  <!-- ========== MENU ========== -->
+  <section class="panel" id="p-menu"></section>
+
+</div>
+
+<div class="nav" id="q-nav" style="display:none">
+  <button class="prev" id="btn-prev">◀ 前の問題</button>
+  <button class="next" id="btn-next">次へ ▶</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+window.QUESTIONS = [{"id":1,"conceptId":"cMLM_rawls_difference","ch":"MLM","type":"C","source":"PEB2 Mock Exam Q1","q":"[Mock Exam Q1] According to Rawls’ theory of justice, which country best adheres to the difference principle based on their income distribution?","opts":["A) A country with the least disparity between the highest and lowest income quartiles.","B) A country where the lowest income quartile has the highest income relative to other countries.","C) A country where the middle-income quartiles have the most balanced distribution.","D) A country where all income quartiles are approximately equal.","E) わからない"],"ans":1,"exp":"Rawlsの格差原理(difference principle)とマキシミン原理は、社会で最も恵まれない層(最下位層)の状況を最大化することを正義とする。よって最下位所得層の所得が他国より最も高い国が、格差原理に最もよく従っている。平等そのものではなく「最下層の底上げ」が基準である点が核心。","we":{"0":"最高層と最低層の格差が最小、というだけでは最下層の絶対水準を最大化しているとは限らない。格差原理は格差の小ささではなく最下層の水準を見る。","2":"中間層の均衡はRawlsの基準ではない。格差原理が見るのは最も恵まれない層。","3":"全層がほぼ等しい(完全平等)は平等主義の基準であって、Rawlsの格差原理は不平等でも最下層が最大化されていれば許容する。"}},{"id":2,"conceptId":"cMLM_info_symmetry","ch":"MLM","type":"A","source":"PEB2 Mock Exam Q2","q":"[Mock Exam Q2] When traders know exactly what is being traded:","opts":["A) adverse selection exists.","B) moral hazard exists.","C) trades that occur will be mutually beneficial.","D) trades will not be mutually beneficial.","E) わからない"],"ans":2,"exp":"取引対象が双方に完全に分かっている(情報の非対称性がない)とき、自発的な取引は買い手・売り手双方の利益になる(相互に有益)。情報が完全であれば、両者は自分が損する取引を選ばないため。","we":{"0":"逆選択(adverse selection)は情報の非対称性があるときに生じる。完全情報下では生じない。","1":"モラルハザードも情報の非対称性・隠れた行動から生じる問題で、完全情報の前提と矛盾する。","3":"完全情報下では自発的取引は相互に有益になるので、これは逆。"}},{"id":3,"conceptId":"cMLM_ratings_moralhazard","ch":"MLM","type":"C","source":"PEB2 Mock Exam Q3","q":"[Mock Exam Q3] Ratings and reviews can fail at mitigating moral hazard if:","opts":["A) ratings fully inform consumers of the quality of the product.","B) reviewers always review honestly.","C) not all products are reviewed.","D) ratings are faked or exaggerated.","E) わからない"],"ans":3,"exp":"評価・レビュー制度は情報を提供することでモラルハザードを緩和するが、評価が捏造・誇張されると正しい品質情報が伝わらず、緩和機能が失われる。信頼できる情報源であることが前提条件。","we":{"0":"評価が品質を完全に伝えるなら、それはモラルハザードを緩和する成功例であり失敗ではない。","1":"レビュアーが常に正直なら制度は機能する。失敗の原因にならない。","2":"一部の製品が未評価でも、評価される製品については情報が機能する。捏造ほど直接的に制度を無効化しない(最も明確な失敗要因はD)。"}},{"id":4,"conceptId":"cMLM_mbs_ratings","ch":"MLM","type":"E","source":"PEB2 Mock Exam Q4","q":"[Mock Exam Q4] The overrating of mortgage-backed securities prior to the financial crash of 2007–2009 was generally attributed to:","opts":["A) the fact that the sellers of the securities paid for the ratings.","B) the fact that customers desiring the ratings paid for them.","C) overzealousness in the securities market.","D) the wave of foreclosures prior to and during the financial crash.","E) わからない"],"ans":0,"exp":"証券の「売り手」が格付け会社に報酬を払う構造(issuer-pays)が利益相反を生み、格付けが甘くなった。格付けを欲する側ではなく、格付けされる証券を売る側が支払うことで、格付け会社が顧客(売り手)に有利な高評価を付ける誘因が働いた。","we":{"1":"格付けを欲しがる顧客が払ったのではなく、証券の発行者・売り手が払った点が利益相反の核心。","2":"市場の過熱は背景要因にすぎず、過大評価の「直接の原因」として一般に挙げられるのは支払構造。","3":"差し押さえの波は危機の結果・進行であり、事前の過大評価の原因ではない。"}},{"id":5,"conceptId":"cMLM_positive_normative","ch":"MLM","type":"A","source":"PEB2 Mock Exam Q5","q":"[Mock Exam Q5] Which is an example of a positive economic statement?","opts":["A) Higher education should receive less funding.","B) Weaker higher education is associated with less innovation.","C) Higher education was under-funded for years.","D) All three are an example of positive economic statements.","E) わからない"],"ans":1,"exp":"実証的(positive)言明は「事実として何がそうであるか」を述べ、検証可能。「高等教育の弱体化はイノベーション低下と相関する」は事実関係の主張で検証可能なので実証的。価値判断を含まない。","we":{"0":"\"should\"(〜すべき)は規範的(normative)言明で、価値判断を含むため実証的ではない。","2":"\"under-funded\"(資金不足だった)は十分性の評価=規範的判断を含むため実証的とは言い切れない(基準依存)。","3":"3つ全てが実証的なのではない。AとBは規範的要素を含むので誤り。"}},{"id":6,"conceptId":"cMLM_falkszech_mouse","ch":"MLM","type":"E","source":"PEB2 Mock Exam Q6","q":"[Mock Exam Q6] Based on the study by Falk and Szech on market interactions and moral values, what effect does trading in a multilateral market have on the decision-making regarding the life of a mouse compared to individual decision-making?","opts":["A) The willingness to trade the life of a mouse for money remains unchanged due to the inherent moral values of the traders.","B) Traders in a multilateral market are less likely to trade the life of a mouse for money than in individual decision-making, due to increased moral scrutiny.","C) There is a higher willingness among traders in a multilateral market to accept lower prices for the life of a mouse compared to individual decision-making, indicating a degradation of moral values.","D) The multilateral market enhances moral responsibility, resulting in higher prices required to trade the life of a mouse.","E) わからない"],"ans":2,"exp":"Falk & Szech (2013)では、個人判断(45.9%)→双方向市場(72.2%)→多者間市場(75.9%)とマウスを殺す意思が高まり、より低い価格でも命を取引する。市場が道徳価値を侵食する(market erodes morality)ことを示す。原因は責任の分散・社会規範の形成・物質主義的フレーミング。","we":{"0":"市場参加で意思は「不変」ではなく上昇した。固有の道徳価値が市場で保持されるという結論ではない。","1":"多者間市場では道徳的吟味が増えて取引が減る、ではなく、逆に取引意思が増えた。","3":"市場が道徳的責任を高め高価格を要するのではなく、市場は価値を侵食し低価格でも取引させた。"}},{"id":7,"conceptId":"cMLM_moralmachine","ch":"MLM","type":"E","source":"PEB2 Mock Exam Q7","q":"[Mock Exam Q7] Based on the “Moral Machine” experiment, how did the inclusion of additional character details in accident scenarios affect the decisions made by participants regarding autonomous vehicle behavior?","opts":["A) Additional details had no significant impact, with participants showing consistent choices across scenarios.","B) Participants made quicker decisions in scenarios with more character details due to increased clarity.","C) The complexity of scenarios with additional details reduced the overall number of decisions made.","D) The inclusion of additional character details led to a greater differentiation in choices, highlighting a stronger preference for sparing certain types of characters.","E) わからない"],"ans":3,"exp":"Awad et al. (2018)のMoral Machine実験では、登場人物の詳細(年齢・社会的地位など)を加えると選択の差別化が大きくなり、特定の人物類型を助ける選好が強まった。人々は中立ではなく、属性に応じた道徳的選好を示した。","we":{"0":"詳細の追加は選択に有意な影響を与えた(差別化が増えた)ので「影響なし」は誤り。","1":"判断速度が論点ではない。実験の知見は選好の差別化。","2":"詳細追加で決定数が減ったわけではない。"}},{"id":8,"conceptId":"cMLM_forprofit_nursing","ch":"MLM","type":"E","source":"PEB2 Mock Exam Q8","q":"[Mock Exam Q8] How might the issues surrounding public and private prisons be similar to those of nonprofit and for-profit nursing homes?","opts":["A) For-profit nursing homes might have lower costs than nonprofit ones, but the lower costs might result in poor quality patient care.","B) For-profit nursing homes might have higher costs than nonprofit ones, but the higher costs are from better patient care.","C) For-profit nursing homes might have higher costs than nonprofit ones, but the higher costs might result in superior patient care.","D) Compared with nonprofit ones, for-profit nursing homes are less likely to adapt to changing market conditions.","E) わからない"],"ans":0,"exp":"営利施設はコスト削減の誘因が強く、コストは下がるが、その削減が患者ケアの質の低下を招きうる。営利刑務所と同様、利潤動機がサービス質を犠牲にしうるという「価値の腐敗」の論点。","we":{"1":"営利施設の特徴はコスト「削減」であり、高コスト+良質ケアという組合せは営利の典型的懸念とずれる。","2":"同上。営利の懸念は低コスト化による質低下であり、高コストで優れたケアではない。","3":"営利施設はむしろ市場条件に敏感に適応する。適応しにくいという主張は逆。"}},{"id":9,"conceptId":"cMLM_maximin_table","ch":"MLM","type":"D","source":"PEB2 Mock Exam Q9","q":"[Mock Exam Q9] Refer to the table of group incomes. According to the maximin (Rawls) principle, which society does the principle judge to be the best (ranked highest)?","opts":["A) Society A","B) Society D","C) Society B","D) Society C","E) わからない"],"ans":1,"exp":"マキシミン原理は各社会の「最下位グループの所得(最小値)」を比較し、それが最大の社会を最善と判断する。各社会の最小値: A=100, B=50, C=99, D=101。最大の最小値はD(101)なので、Rawlsの原理はDを最善(最高位)と判定する。平均所得ではなく最下層の水準で評価する点が核心。","we":{"0":"Aの最小値は100でDの101より低い。マキシミンでは最下層が最も高いDが上位。","2":"Bの最小値は50で最も低く、マキシミンでは最下位に評価される(最善ではない)。","3":"Cの最小値は99でDより低い。平均は同じ433だが、マキシミンは平均でなく最小値で評価する。"},"fig":"<table style=\"border-collapse:collapse;margin:6px 0;font-size:.92em\"><tr><th style=\"border:1px solid #999;padding:3px 8px\">Society</th><th style=\"border:1px solid #999;padding:3px 8px\">Red</th><th style=\"border:1px solid #999;padding:3px 8px\">Blue</th><th style=\"border:1px solid #999;padding:3px 8px\">Green</th><th style=\"border:1px solid #999;padding:3px 8px\">Average</th></tr><tr><td style=\"border:1px solid #999;padding:3px 8px\">A</td><td style=\"border:1px solid #999;padding:3px 8px\">100</td><td style=\"border:1px solid #999;padding:3px 8px\">100</td><td style=\"border:1px solid #999;padding:3px 8px\">100</td><td style=\"border:1px solid #999;padding:3px 8px\">100</td></tr><tr><td style=\"border:1px solid #999;padding:3px 8px\">B</td><td style=\"border:1px solid #999;padding:3px 8px\">150</td><td style=\"border:1px solid #999;padding:3px 8px\">100</td><td style=\"border:1px solid #999;padding:3px 8px\">50</td><td style=\"border:1px solid #999;padding:3px 8px\">100</td></tr><tr><td style=\"border:1px solid #999;padding:3px 8px\">C</td><td style=\"border:1px solid #999;padding:3px 8px\">600</td><td style=\"border:1px solid #999;padding:3px 8px\">600</td><td style=\"border:1px solid #999;padding:3px 8px\">99</td><td style=\"border:1px solid #999;padding:3px 8px\">433</td></tr><tr><td style=\"border:1px solid #999;padding:3px 8px\">D</td><td style=\"border:1px solid #999;padding:3px 8px\">1096</td><td style=\"border:1px solid #999;padding:3px 8px\">102</td><td style=\"border:1px solid #999;padding:3px 8px\">101</td><td style=\"border:1px solid #999;padding:3px 8px\">433</td></tr></table>"},{"id":10,"conceptId":"cMLM_markets_work_best","ch":"MLM","type":"A","source":"PEB2 Mock Exam Q10","q":"[Mock Exam Q10] Markets work best when:","opts":["A) buyers know exactly what they are buying.","B) sellers signal exactly what they are selling.","C) both buyers and sellers know what is being exchanged.","D) both buyers and sellers have at least some information about what is being exchanged.","E) わからない"],"ans":2,"exp":"市場が最もよく機能するのは、買い手・売り手の双方が交換対象を正確に知っているとき(情報の非対称性が無い)である。双方が完全な情報を持てば、成立する取引は相互に有益となる。","we":{"0":"買い手だけが知っていても、売り手側の情報非対称が残れば最適ではない。双方の完全情報が条件。","1":"売り手のシグナリングだけでは不十分。買い手側の情報も必要で、双方が知ることが理想。","3":"「ある程度の情報」では非対称性が残りうる。最良に機能するのは双方が正確に知るとき。"}},{"id":11,"conceptId":"cTAX_source_only_CIN","ch":"TAX","type":"C","source":"PEB2 Mock Exam Q11","q":"[Mock Exam Q11] Assume that all countries in the world are source jurisdictions only, taxing a source of income generated on the soil of that country. Which of the following would then be achieved?","opts":["A) Capital export neutrality.","B) Capital import neutrality.","C) Capital import and export neutrality.","D) Double taxation.","E) わからない"],"ans":1,"exp":"全ての国が源泉地(source)課税のみを行うと、ある国に投資される資本は、投資家の居住地に関係なく同じ源泉地税率で課税される。これは資本輸入中立性(CIN: 国内・外国投資家が同一に課税)を達成する。居住地課税が無いため資本輸出中立性は得られない。","we":{"0":"資本輸出中立性(CEN)は居住地課税(世界所得への同率課税)で達成される。源泉地のみではCENは得られない。","2":"CINとCENの両立は源泉地のみの体系では生じない。両立は特定条件下のみ。","3":"各国が自国源泉のみ課税するなら、同じ所得が二重に課税されることは原則生じない。"}},{"id":12,"conceptId":"cTAX_exemption_method","ch":"TAX","type":"C","source":"PEB2 Mock Exam Q12","q":"[Mock Exam Q12] What cannot be achieved with the tax exemption method?","opts":["A) Capital import neutrality.","B) Capital import and export neutrality.","C) Capital export neutrality.","D) Stateless or white income.","E) わからない"],"ans":2,"exp":"免税方式(exemption method)は外国所得を居住地で免税し源泉地税率に委ねるため、源泉地での同一課税=資本輸入中立性(CIN)を実現するが、居住地が投資先で税率差を均さないため資本輸出中立性(CEN)は達成できない。CENには税額控除方式が必要。","we":{"0":"免税方式は源泉地での課税に委ねるため資本輸入中立性(CIN)は達成できる。これは「できない」ものではない。","1":"CINは達成できるので「両方できない」は誤り。免税方式で達成できないのはCENのみ。","3":"免税方式はむしろstateless/white income(無国籍所得=どこでも課税されない)を生み出しうる。達成「できない」ものではない。"}},{"id":13,"conceptId":"cTAX_CEN_definition","ch":"TAX","type":"A","source":"PEB2 Mock Exam Q13","q":"[Mock Exam Q13] What does the concept of Capital Export Neutrality (CEN) primarily focus on in international taxation?","opts":["A) Tax treatment of capital gains for domestic investors.","B) Tax incentives for exporting goods and services.","C) The impact of inflation on capital investments.","D) Equal taxation of domestic and foreign investments for domestic investors.","E) わからない"],"ans":3,"exp":"資本輸出中立性(CEN)は、ある国の居住者(国内投資家)が、国内に投資しても外国に投資しても同じ実効税率に直面することを重視する。投資先で課税が変わらないため、投資判断が税で歪まず効率的な資本配分が保たれる。方法は世界所得を同率で課税。","we":{"0":"CENはキャピタルゲインの扱いそのものではなく、国内外投資の課税の同等性に焦点を当てる。","1":"CENは財・サービスの輸出促進策(輸出インセンティブ)とは無関係。名称の\"export\"は資本の輸出を指す。","2":"インフレの影響はCENの論点ではない。"}},{"id":14,"conceptId":"cTAX_benefit_arbitrage","ch":"TAX","type":"A","source":"PEB2 Mock Exam Q14","q":"[Mock Exam Q14] Consider: (1) The “benefits principle” is a justification for taxation in a domestic setting, linking public expenditure provided by the state to citizens’ obligation to pay tax. (2) International tax arbitrage can be referred to as the exploitation of regulatory differences between the involved jurisdictions.","opts":["A) Both statements are correct.","B) Only statement 1 is correct.","C) Only statement 2 is correct.","D) None of the statements are correct.","E) わからない"],"ans":0,"exp":"両方正しい。受益者原則(benefit principle)は、市民が国家提供の公共支出から受ける便益に応じて納税義務を負うとし、源泉地課税を正当化する。国際的タックスアービトラージは、関係する法域間の規制(税制)の差を利用する行為を指す。どちらも講義の定義通り。","we":{"1":"文1だけでなく文2(国際的タックスアービトラージの定義)も正しい。","2":"文2だけでなく文1(受益者原則の説明)も正しい。","3":"両文とも正しいので「どちらも誤り」は不適切。"}},{"id":15,"conceptId":"cTAX_BEPS_residence","ch":"TAX","type":"A","source":"PEB2 Mock Exam Q15","q":"[Mock Exam Q15] Consider: (1) Limiting taxation at source and strengthening residence taxation may generally weaken strong economies and benefit developing countries. (2) Preventing that stateless income is not taxed is in line with the objectives of the OECD-G20 BEPS project.","opts":["A) Both statements are correct.","B) Only statement 2 is correct.","C) Only statement 1 is correct.","D) None of the statements are correct.","E) わからない"],"ans":1,"exp":"文2のみ正しい。BEPS(税源浸食・利益移転)プロジェクトは、どこでも課税されない無国籍所得(stateless income)の発生防止を目的の一つとするため文2は正しい。文1は逆で、源泉地課税を弱め居住地課税を強めると、資本輸出国(先進国)が有利になり途上国(源泉地)に不利になるのが一般的見解。","we":{"0":"文1が誤り。源泉地課税の制限+居住地課税強化は先進国に有利・途上国に不利になりやすく、記述は逆。","2":"文1は逆の効果を述べており誤り。正しいのは文2のみ。","3":"文2は正しいので「どちらも誤り」は不適切。"}},{"id":16,"conceptId":"cTAX_transfer_pricing","ch":"TAX","type":"A","source":"PEB2 Mock Exam Q16","q":"[Mock Exam Q16] What is true in relation to transfer pricing?","opts":["A) Unrelated companies pay the fair market value in case of a transaction.","B) If a related company pays 100 for a product with a fair market value of 1,000, it can be considered at arm’s length.","C) Related companies must act on an at arm’s length basis.","D) None of the above.","E) わからない"],"ans":2,"exp":"移転価格税制では、関連会社(グループ内)間の取引は独立企業間原則(at arm’s length)に従い、無関係な独立企業同士なら付けるであろう公正市場価格で取引しなければならない。これにより低税国への人為的な利益移転を防ぐ。","we":{"0":"無関係な企業が市場価格で取引するのは事実だが、移転価格税制が「関連会社」に課す規律(独立企業間原則)を述べたBの方が問いの核心。Aは前提説明にとどまる。","1":"公正市場価値1,000の製品を100で取引するのは独立企業間価格から大きく乖離しており、arm’s lengthとは見なせない。","3":"Bが正しいので「いずれも該当せず」は誤り。"}},{"id":17,"conceptId":"cTAX_CEN_resident_rate","ch":"TAX","type":"A","source":"PEB2 Mock Exam Q17","q":"[Mock Exam Q17] Which statement is true for capital export neutrality?","opts":["A) All investors in a country face the same effective tax rate on income sourced in that country.","B) Capital export neutrality means that countries introduce low corporate tax rates to discourage foreign investment.","C) A country treats the difference between the fair market value of the entity at the beginning and end of the taxable year as income.","D) Investors that are resident in a country are always subject to the same effective domestic tax rate irrespective of whether they invest at home or abroad.","E) わからない"],"ans":3,"exp":"CENは、ある国の居住投資家が国内・国外いずれに投資しても同じ実効国内税率を負担することを意味する。これにより投資地選択が税で歪まない。世界所得を同率課税することで達成される。","we":{"0":"これは資本輸入中立性(CIN)の説明(源泉地での全投資家同一税率)であり、CENではない。","1":"CENは外国投資を抑制する低法人税の導入を意味しない。これは税競争の話で定義が誤り。","2":"期首と期末の公正価値の差を所得とみなすのはmark-to-market課税の説明で、CENとは無関係。"}},{"id":18,"conceptId":"cTAX_permanent_establishment","ch":"TAX","type":"A","source":"PEB2 Mock Exam Q18","q":"[Mock Exam Q18] In international tax law, what does the term \"permanent establishment\" refer to?","opts":["A) A fixed place of business through which an enterprise carries on its business activities, either wholly or partly.","B) A long-term contractual agreement between two multinational corporations.","C) The physical location where a business is registered and conducts its daily operations.","D) The duration of time a foreign entity operates within a host country’s borders.","E) わからない"],"ans":0,"exp":"恒久的施設(permanent establishment, PE)とは、企業が事業活動の全部または一部を行う「固定的な事業の場所」を指す(支店・事務所・工場・作業場・鉱山など)。源泉地国はPEがある場合に事業所得を課税できる。デジタル企業は物理的存在を要さないためPE概念が時代遅れとされる。","we":{"1":"PEは多国籍企業間の長期契約ではなく、固定的な事業の場所を指す。","2":"登記地(本店所在地)はPEの定義ではない。PEは事業を行う固定的な場所で、登記の有無とは別概念。","3":"外国企業が活動する「期間」ではなく「固定的な場所」がPEの本質。"}},{"id":19,"conceptId":"cTAX_beretta_sharing","ch":"TAX","type":"A","source":"PEB2 Mock Exam Q19","q":"[Mock Exam Q19] Which types of transactions are specifically recognized by Beretta as part of the sharing economy?","opts":["A) Credit card payments.","B) Cost-sharing arrangements.","C) Interest free loans.","D) Subsidies.","E) わからない"],"ans":1,"exp":"Beretta(2017)はシェアリングエコノミーの取引類型として、現金取引・物々交換(barter)・コストシェアリング(cost-sharing)・贈与/寄付などを挙げる。コストシェアリング(費用分担)は典型例として明示される。","we":{"0":"クレジットカード決済は単なる支払手段であり、Berettaがシェアリングエコノミーの取引類型として特に挙げたものではない。","2":"無利子融資はBerettaの列挙する代表的取引類型ではない。","3":"補助金(subsidies)はシェアリングエコノミーの取引類型ではない。"}},{"id":20,"conceptId":"cTAX_beretta_separate_laws","ch":"TAX","type":"C","source":"PEB2 Mock Exam Q20","q":"[Mock Exam Q20] Beretta argues policy makers should not create separate laws that apply only to the sharing economy. What argument does Beretta give as a disadvantage of creating such separate laws?","opts":["A) This creates a system that is too difficult to understand or apply.","B) It takes too long to create a separate law.","C) Taxpayers that provide similar services and goods could potentially be taxed differently, violating one of the principles of good taxation.","D) None of the statements are correct.","E) わからない"],"ans":2,"exp":"Berettaは、シェアリングエコノミー専用の別個の法を作ると、類似の財・サービスを提供する納税者が異なる扱いを受けうるとする。これは「良い税制の原則(公平・中立=同様の状況は同様に課税)」に反するため不利だと論じる。","we":{"0":"適用が難しいという実務的困難はBerettaの主たる論拠ではない。中心は公平性原則の侵害。","1":"立法に時間がかかることはBerettaの挙げる不利益ではない。","3":"Aが正しいので「いずれも誤り」は不適切。"}},{"id":21,"conceptId":"cSUST_ecological_econ","ch":"SUST","type":"A","source":"PEB2 Mock Exam Q21","q":"[Mock Exam Q21] Ecological economics can be characterized by the central role of (i) ____ scarcity and (ii) ____ substitution possibilities of natural capital. Which words should be substituted at (i) and (ii)?","opts":["A) (i) absolute; (ii) unlimited.","B) (i) absolute; (ii) limited.","C) (i) relative; (ii) limited.","D) (i) relative; (ii) unlimited.","E) わからない"],"ans":1,"exp":"生態経済学(ecological economics, 強い持続可能性の立場)は、自然資本の(i)絶対的(absolute)希少性と、(ii)限定的(limited)な代替可能性を中心に据える。自然資本は人工資本で容易に代替できないと考える。対照的に環境経済学(弱い持続可能性)は相対的希少性と無限の代替を前提とする(Solowの議論)。","we":{"0":"代替可能性は「無限」ではなく「限定的」とするのが生態経済学。自然資本は容易に代替できない。","2":"希少性は「相対的」ではなく「絶対的」とするのが生態経済学の立場。相対的希少性は環境経済学側。","3":"絶対的希少性かつ限定的代替が生態経済学。相対的+無限は環境経済学(弱い持続可能性)。"}},{"id":22,"conceptId":"cSUST_weak_sustainability","ch":"SUST","type":"A","source":"PEB2 Mock Exam Q22","q":"[Mock Exam Q22] How do economists define developments that satisfy a weak sustainability criterion?","opts":["A) Developments that increase human-made capital at the expense of a larger loss of natural capital.","B) Developments that increase natural capital at the expense of a larger loss of human-made capital.","C) Developments that maintain a non-decreasing sum of human-made and natural capital.","D) Developments that maintain a non-decreasing human-made and natural capital separately.","E) わからない"],"ans":2,"exp":"弱い持続可能性(weak sustainability)は、人工資本と自然資本の「合計」が非減少であれば持続可能とみなす(Costanza & Daly 1992)。自然資本の減少を人工資本の増加で補える=両者は代替可能と前提する。","we":{"0":"自然資本のより大きな損失を伴う人工資本の増加は、合計が減るので弱い持続可能性すら満たさない。","1":"人工資本のより大きな損失を伴う自然資本増加も合計が減り、弱い持続可能性の定義に合わない。","3":"人工資本と自然資本を「別々に」非減少に保つのは強い持続可能性(strong sustainability)の定義。弱い持続可能性は合計で見る。"}},{"id":23,"conceptId":"cSUST_busch_criticism","ch":"SUST","type":"C","source":"PEB2 Mock Exam Q23","q":"[Mock Exam Q23] Which of the following is NOT listed by Busch et al. (2024) as a key criticism of “the” business case for corporate sustainability?","opts":["A) The business case is built on a techno-optimistic rather than a holistic approach.","B) The business case optimizes rather than prioritizes environmental problems.","C) The business case promotes consumerism, which is a root cause of environmental unsustainability.","D) The business case prioritizes social goals over environmental problems.","E) わからない"],"ans":3,"exp":"Busch et al.(2024)が挙げるビジネスケース批判は、(1)最適化の準最適性(optimizeするだけでprioritizeしない)、(2)技術楽観主義(Jevonsのパラドックス)、(3)消費主義の助長、の3つ。「社会的目標を環境問題より優先する」はリストに無いのでこれがNOT。","we":{"0":"技術楽観主義(holisticでない)はBuschの挙げる批判の一つなので、NOTではない。","1":"環境問題を優先せず最適化するだけ(suboptimality of optimization)は挙げられた批判。NOTではない。","2":"消費主義の助長(Patagonia例)は挙げられた批判の一つ。NOTではない。"}},{"id":24,"conceptId":"cSUST_west_additionality","ch":"SUST","type":"C","source":"PEB2 Mock Exam Q24","q":"[Mock Exam Q24] Which statement best captures the relation between \"additionality\" and \"counterfactual\" in West et al. (2023)’s analysis of carbon offsets?","opts":["A) There is additionality when a project’s actual deforestation is lower than its counterfactual scenario derived from observable control areas.","B) There is additionality when a project’s predicted deforestation is lower than observed deforestation in the project areas.","C) The additionality of a project is determined based on the project developers’ initial ex ante baseline, since counterfactual analysis is impossible.","D) The additionality of a project is impossible to verify if counterfactuals can be strategically inflated.","E) わからない"],"ans":0,"exp":"West et al.(2023)は、観測可能な対照地域から作った「合成コントロール(counterfactual=もし保全しなかったら)」と比べ、プロジェクトの実際の森林減少がそれより低いときに追加性(additionality)があるとする。事前ベースラインではなく事後の合成対照で評価する点が貢献。結果は約6%しか約束された削減を生まなかった。","we":{"1":"予測値と観測値の比較ではなく、実際の減少と反事実シナリオの比較で追加性を判断する。","2":"West et al.はまさに反事実分析(合成コントロール)が可能だと示した。事前ベースライン依存はむしろ批判対象。","3":"反事実が戦略的に水増しされる懸念はあるが、本論文の追加性の定義はAの反事実比較。"}},{"id":25,"conceptId":"cSUST_wright_nyberg_normalizing","ch":"SUST","type":"C","source":"PEB2 Mock Exam Q25","q":"[Mock Exam Q25] What typically occurs during the \"normalizing\" stage of a corporation’s response to climate change, according to Wright and Nyberg (2017)?","opts":["A) Initial strong commitments to climate action are solidified into long-term strategy by investing heavily in a decarbonization culture.","B) Corporate practices are realigned with the dominant discourse of maximizing shareholder value, often diluting earlier climate initiatives.","C) Corporations push for decarbonization of the entire industry by advocating strong government regulation.","D) The company pre-empts greenwashing criticism by committing to decarbonization and using offsets only for unabatable emissions.","E) わからない"],"ans":1,"exp":"Wright & Nyberg(2017)は、企業の気候対応がframing→localizing→normalizingと進み、最終のnormalizing段階で当初の気候への取組が支配的言説(株主価値最大化)に再整合され、希釈(dilution)・純化(purification)される=「通常業務(business as usual)」に戻ると論じる。","we":{"0":"当初のコミットメントが長期戦略として「固定化」されるのではなく、むしろ希釈される。これは逆の結論。","2":"業界全体の脱炭素を政府規制で推進する、はWright & Nybergのnormalizingの説明ではない。","3":"グリーンウォッシング批判の先回りは本モデルのnormalizing段階の記述ではない。"}},{"id":26,"conceptId":"cSUST_nonrival_goods","ch":"SUST","type":"A","source":"PEB2 Mock Exam Q26","q":"[Mock Exam Q26] Which one of the following goods has non-rival consumption?","opts":["A) Public transport.","B) Timber.","C) Fireworks.","D) Vaccines.","E) わからない"],"ans":2,"exp":"非競合的(non-rival)消費とは、ある人の消費が他者の消費可能量を減らさない財。花火(fireworks)は一人が見ても他者が見られる量は減らないため非競合的。","we":{"0":"公共交通は座席・容量に限りがあり、混雑時は一人の利用が他者の利用可能性を下げる(競合的)。","1":"木材(timber)は使えば無くなる私的財で競合的。","3":"ワクチンは1本接種すれば他者は使えない競合的な財。"}},{"id":27,"conceptId":"cSUST_decoupling","ch":"SUST","type":"A","source":"PEB2 Mock Exam Q27","q":"[Mock Exam Q27] Complete: Only _(I)_ decoupling can be described as green growth. Achieving green growth through innovation is _(II)_ by Jevons paradox type of rebound effects.","opts":["A) (I) = absolute, (II) = facilitated.","B) (I) = relative, (II) = complicated.","C) (I) = relative, (II) = facilitated.","D) (I) = absolute, (II) = complicated.","E) わからない"],"ans":3,"exp":"グリーン成長と呼べるのは(I)絶対的(absolute)デカップリング(GDP増加かつ環境影響減少)のみ。そして革新によるグリーン成長は、Jevonsのパラドックス型のリバウンド効果(効率改善が消費増を招く)によって(II)困難になる(complicated)。相対的デカップリングは影響がGDPより緩やかに増えるだけで成長中も影響は増える。","we":{"0":"(II)はリバウンド効果で「促進(facilitated)」ではなく「困難化(complicated)」される。Jevonsは効率化が消費を増やす逆効果。","1":"(I)は相対的ではなく絶対的デカップリングのみがグリーン成長。相対的では影響が増え続ける。","2":"(I)が相対的、(II)が促進、どちらも誤り。正しくは絶対的+困難化。"}},{"id":28,"conceptId":"cSUST_kallis_doubleresources","ch":"SUST","type":"C","source":"PEB2 Mock Exam Q28","q":"[Mock Exam Q28] According to Kallis et al. (2025), recent assessments of The Limits to Growth show historical data since 1970 most closely follows the \"Double Resources\" scenario, where collapse is driven by:","opts":["A) Persistent pollution and sink limits to ecosystem stability.","B) A lack of technological innovation to offset resource depletion.","C) Financial shocks caused by stranded assets.","D) Population decline due to lower birth rates.","E) わからない"],"ans":0,"exp":"Kallis et al.(2025)によれば、現実はLimits to Growthの「Double Resources(資源2倍)」シナリオに最も近く、崩壊は資源(source)枯渇ではなく、持続的な汚染とその生態系安定性への影響=シンク(sink)限界/再生能力の限界によって駆動される。標準シナリオより崩壊が遅れて起きる点が特徴。","we":{"1":"Double Resourcesシナリオでは資源枯渇(source limit)が原因ではない。標準シナリオの話で混同。","2":"座礁資産による金融ショックはLimits to Growthモデルの崩壊要因ではない。","3":"出生率低下による人口減少は崩壊の駆動要因として挙げられていない。崩壊は汚染(sink限界)による。"}},{"id":29,"conceptId":"cSUST_costanza_intrinsic","ch":"SUST","type":"C","source":"PEB2 Mock Exam Q29","q":"[Mock Exam Q29] Which values of nature are least suitable to express as (relative) monetary value according to Costanza (2024)?","opts":["A) Cultural values.","B) Intrinsic values.","C) Instrumental values.","D) Regulating values.","E) わからない"],"ans":1,"exp":"Costanza(2024)は、内在的価値(intrinsic values=自然の権利。例: ニュージーランドのWhanganui川の法人格)は貨幣価値に翻訳できず、金銭評価に最も適さないとする。生態系サービス評価は権利ベースのアプローチと補完的であり、内在的価値は金銭化の対象外。","we":{"0":"文化的価値は評価が難しい面はあるが、Costanzaが金銭化に最も不適とするのは内在的価値。","2":"手段的価値(instrumental)はまさに生態系サービスとして金銭評価しやすい類型。","3":"調整サービス(regulating values)も生態系サービスとして金銭評価の対象になりうる。"}},{"id":30,"conceptId":"cSUST_doughnut_ozone","ch":"SUST","type":"C","source":"PEB2 Mock Exam Q30","q":"[Mock Exam Q30] According to the recent doughnut by Fanning and Raworth (2025), which Earth system is thought to be within safe planetary boundaries?","opts":["A) Climate change.","B) Biodiversity loss.","C) Ozone depletion.","D) Disturbance to the nitrogen cycle.","E) わからない"],"ans":2,"exp":"Fanning & Raworth(2025)の更新版ドーナツでは、オゾン層破壊(ozone depletion)は安全な惑星限界の「内側」にあるとされる(モントリオール議定書の成功例)。気候変動・生物多様性損失・窒素循環の撹乱はいずれも限界を超過している。","we":{"0":"気候変動は安全限界を超過しており、内側ではない。","1":"生物多様性損失は深刻に限界を超えており、内側ではない。","3":"窒素循環の撹乱も限界を超過している。安全圏内なのはオゾン層。"}},{"id":31,"conceptId":"cDF_birkinshaw_policy","ch":"DF","type":"E","source":"PEB2 Mock Exam Q31","q":"[Mock Exam Q31] According to Birkinshaw, what is a central policy challenge introduced by the digital revolution?","opts":["A) Financing physical infrastructure.","B) Valuing data and intangible assets.","C) Pricing consumer goods fairly.","D) Preventing international trade.","E) わからない"],"ans":1,"exp":"Birkinshaw(2018)は、デジタル革命が突きつける中心的な政策課題として、データや無形資産(intangible assets)の価値評価を挙げる。従来の有形資産中心の枠組み(知財・競争政策など)が、データや無形物の価値づけに対応できていない。","we":{"0":"物理インフラの資金調達は産業時代の課題で、デジタル革命の中心的な新課題ではない。","2":"消費財の公正な価格設定はBirkinshawの中心論点ではない。","3":"国際貿易の阻止は論点ではない。"}},{"id":32,"conceptId":"cDF_pipeline_value","ch":"DF","type":"A","source":"PEB2 Mock Exam Q32","q":"[Mock Exam Q32] How do pipeline businesses primarily create value?","opts":["A) By facilitating interactions between users.","B) By subsidizing one side of a market.","C) By optimizing a linear value chain.","D) By leveraging user-generated data.","E) わからない"],"ans":2,"exp":"パイプライン型ビジネスは、線形のバリューチェーン(調達→製造→販売→サービス)を最適化することで価値を生む。これに対しプラットフォームは外部の生産者と消費者の相互作用を仲介して価値を生む。","we":{"0":"ユーザー間の相互作用を仲介するのはプラットフォーム型の価値創造であり、パイプラインではない。","1":"市場の片側への補助(subsidizing)はプラットフォームの立ち上げ戦略であり、パイプラインの主たる価値創造ではない。","3":"ユーザー生成データの活用はプラットフォーム/デジタル企業の特徴で、伝統的パイプラインの本質ではない。"}},{"id":33,"conceptId":"cDF_platform_asset","ch":"DF","type":"A","source":"PEB2 Mock Exam Q33","q":"[Mock Exam Q33] What is the main asset of a successful platform?","opts":["A) Intellectual property patents.","B) Physical infrastructure.","C) Brand reputation.","D) The community and its interactions.","E) わからない"],"ans":3,"exp":"プラットフォームの主要資産は、コミュニティ(参加者ネットワーク)とその相互作用である。ネットワーク効果により、参加者と取引が増えるほど価値が高まる。物理資産や特許ではなくネットワークの価値が競争の核心。","we":{"0":"特許(知財)はパイプライン型企業の重要資産だが、プラットフォームの主要資産はコミュニティ。","1":"物理インフラを所有しなくてよいのがプラットフォームの新しさ。主要資産ではない。","2":"ブランド評判は補助的要素で、プラットフォームの中核資産はネットワーク/コミュニティ。"}},{"id":34,"conceptId":"cDF_hub_characteristics","ch":"DF","type":"A","source":"PEB2 Mock Exam Q34","q":"[Mock Exam Q34] What characterizes economic actors that function as hubs?","opts":["A) They control platforms that connect many users.","B) They mainly produce physical goods.","C) They operate only within national markets.","D) They rely on public ownership by the national state.","E) わからない"],"ans":0,"exp":"ハブ企業(Iansiti & Lakhani)は、多数のユーザーをつなぐプラットフォームを支配し、ボトルネックを制御して不釣り合いに大きな価値を獲得する。ネットワークベースの資産を使い別市場にも参入し、製品駆動の市場をネットワーク駆動に転換する。","we":{"1":"ハブ企業は物理財の生産が中心ではなく、ネットワーク/プラットフォームの支配が特徴。","2":"ハブ企業は国内市場に限定されず、グローバルに数十億の消費者へアクセスする。","3":"ハブ企業は国家による公的所有に依存しない。民間のプラットフォーム支配が特徴。"}},{"id":35,"conceptId":"cDF_hub_growth","ch":"DF","type":"C","source":"PEB2 Mock Exam Q35","q":"[Mock Exam Q35] What mechanism causes successful hubs to grow faster over time?","opts":["A) State protection and national funding.","B) Positive feedback loops from usage.","C) Economies of scale in manufacturing.","D) Exclusive licensing agreements competitors do not have.","E) わからない"],"ans":1,"exp":"成功したハブは、利用が利用を呼ぶ正のフィードバックループ(ネットワーク効果)で自己強化的に加速する。参加者が増えるほど価値が増し、さらに参加者を引き寄せる。これが「勝者総取り」を生む。","we":{"0":"国家の保護や資金はハブ成長の機構ではない。むしろ自己強化的ネットワーク効果による。","2":"製造業の規模の経済(供給側)ではなく、需要側のネットワーク効果(正のフィードバック)が加速の機構。","3":"独占的ライセンスではなく、利用からの正のフィードバックがハブの加速要因。"}},{"id":36,"conceptId":"cDF_thirdparty_dev","ch":"DF","type":"A","source":"PEB2 Mock Exam Q36","q":"[Mock Exam Q36] What is a primary characteristic of third-party development?","opts":["A) Developers work as employees of the platform owner.","B) Applications are developed for internal use.","C) Independent actors develop applications for end users.","D) Development occurs only through open-source licenses.","E) わからない"],"ans":2,"exp":"サードパーティ開発(Ghazawneh & Henfridsson)では、独立した主体(プラットフォーム所有者の従業員ではない)が、エンドユーザーのためにアプリを開発する。所有者は境界資源(boundary resources: SDK・API等)を提供して外部開発を支援する。","we":{"0":"サードパーティ開発者は所有者の「従業員ではない」独立主体である点が核心。","1":"内部利用のための開発ではなく、エンドユーザー向けのアプリ開発。","3":"オープンソースのみに限定されない。所有者の提供する境界資源を通じ多様な形態で行われる。"}},{"id":37,"conceptId":"cDF_thirdparty_motive","ch":"DF","type":"A","source":"PEB2 Mock Exam Q37","q":"[Mock Exam Q37] What primarily motivates platform owners to involve third-party developers?","opts":["A) Reducing legal responsibility.","B) Lowering hardware costs.","C) Avoiding platform updates.","D) Increasing application variety.","E) わからない"],"ans":3,"exp":"プラットフォーム所有者がサードパーティ開発者を巻き込む主因は、アプリの多様性を増やすこと(resourcing)。外部開発でエコシステムの範囲と多様性が拡大し、ユーザーにとっての価値とネットワーク効果が高まる。","we":{"0":"法的責任の軽減が主たる動機ではない。エコシステムの多様性拡大が目的。","1":"ハードウェアコスト削減は主目的ではない。","2":"プラットフォーム更新の回避ではなく、むしろ機能拡張(多様性)が目的。"}},{"id":38,"conceptId":"cDF_transaction_platform","ch":"DF","type":"A","source":"PEB2 Mock Exam Q38","q":"[Mock Exam Q38] Which of the following best describes a \"transaction platform\"?","opts":["A) A platform that enables value-creating interactions between buyers and sellers.","B) A platform that allows users to co-innovate software applications.","C) A platform focused exclusively on social communication and content sharing.","D) A platform that provides only backend data integration without a user interface.","E) わからない"],"ans":0,"exp":"取引プラットフォーム(transaction platform; Schreieck et al.)は、買い手と売り手など複数の利用者群の間の価値創造的な相互作用・取引を仲介する(例: Uber, Amazon Marketplace, Airbnb)。マッチングと取引が中核機構。","we":{"1":"ソフトウェアの共創を可能にするのはイノベーション・プラットフォーム(iOS, Android等)であり、取引プラットフォームではない。","2":"社会的コミュニケーション・コンテンツ共有に特化するのはコミュニティ・プラットフォーム(Facebook等)。","3":"UIの無いバックエンドのデータ統合のみ、は取引プラットフォームの説明ではない。"}},{"id":39,"conceptId":"cDF_securing_resourcing","ch":"DF","type":"C","source":"PEB2 Mock Exam Q39","q":"[Mock Exam Q39] What is the main risk of focusing only on securing while neglecting resourcing for a platform owner?","opts":["A) Excessive competition.","B) Reduced third-party participation.","C) Regulatory penalties.","D) Increased hardware fragmentation.","E) わからない"],"ans":1,"exp":"Securing(統制強化)ばかりでResourcing(外部開発支援)を怠ると、開発者にとって魅力が下がり、サードパーティの参加が減る。境界資源モデルでは統制と貢献のバランスが重要で、統制過剰はエコシステムの活力を損なう。","we":{"0":"過度の競争は統制偏重の主たるリスクではない。むしろ参加の減少が問題。","2":"規制上の罰則はsecuring偏重の直接的帰結ではない。","3":"ハードウェアの断片化増大ではなく、サードパーティ参加の減少が主リスク。"}},{"id":40,"conceptId":"cDF_partial_integration","ch":"DF","type":"C","source":"PEB2 Mock Exam Q40","q":"[Mock Exam Q40] Which factor might lead a platform owner to choose a partial integration strategy (like collection or symbiosis) over a full integration strategy?","opts":["A) Desire to maximize complementarities in use for consumers.","B) Targeting a market with homogeneous user needs.","C) Operating in a highly regulated industry with data protection constraints.","D) Aiming to create a single, unified brand identity.","E) わからない"],"ans":2,"exp":"部分統合(collection/symbiosis; Schreieck et al.)は、プラットフォームを別個のまま連携させる戦略。データ保護規制が強い業界では、完全統合(UIレベルで一体化)が法的制約に触れうるため、データ・機能レベルで留める部分統合が選ばれやすい。","we":{"0":"利用上の補完性を最大化したいなら、補完性が最大の完全統合(assemblage)を選ぶ。部分統合の理由ではない。","1":"同質的なニーズの市場は単一プラットフォームで足り、部分統合を選ぶ特段の理由にならない。","3":"単一の統一ブランドを作りたいなら完全統合を選ぶ。部分統合は別個性を残す戦略。"}},{"id":101,"conceptId":"cDF_software_consequences","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L1] Which set of properties does the slide list as consequences of software businesses and markets?","opts":["A) Diminishing returns to scale and low switching costs","B) Rivalrous consumption and high marginal costs","C) Perfect competition and stable market shares","D) Network effects, great switching costs, non-rivalrous, winner-takes-all, no diminishing returns to scale","E) わからない"],"ans":3,"exp":"L1スライドはソフトウェア事業の帰結として、ネットワーク効果・大きなスイッチングコスト・非競合性(non-rivalrous)・勝者総取り(winner takes all)・規模に対する収穫逓減が無い、を挙げる。これらが伝統的市場と異なる動学を生む。","we":{"0":"収穫逓減や低スイッチングコストはむしろ伝統的財の特徴。ソフトは収穫逓減が無く高スイッチングコスト。","1":"非競合・低限界費用が特徴で、競合的消費・高限界費用は逆。","2":"勝者総取りで市場シェアは不安定。完全競争・安定シェアではない。"}},{"id":102,"conceptId":"cDF_three_transitions","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L1] Van Alstyne et al. describe three transitions in the new business logic. Which correctly states one of them?","opts":["A) From resource control to resource orchestration","B) From resource orchestration to resource control","C) From external interaction to internal optimization","D) From ecosystem value to individual customer value","E) わからない"],"ans":0,"exp":"3つの転換は (1)資源の「支配」から「オーケストレーション」へ、(2)内部最適化から外部相互作用へ、(3)顧客価値からエコシステム価値へ。パイプラインは資源支配、プラットフォームはネットワーク価値のオーケストレーションが核心。","we":{"1":"方向が逆。支配からオーケストレーションへ移る(その逆ではない)。","2":"方向が逆。内部最適化から外部相互作用へ移る。","3":"方向が逆。個別顧客価値からエコシステム価値へ移る。"}},{"id":103,"conceptId":"cDF_economies_scale_side","ch":"DF","type":"C","source":"PEB2 Textbook","q":"[L1] In the platform economy, economies of scale shift to which side compared to the traditional economy?","opts":["A) From the demand side to the supply side","B) From the supply side to the demand side","C) They disappear entirely","D) They remain purely on the supply side","E) わからない"],"ans":1,"exp":"伝統的経済では規模の経済は供給側(大きな固定費を大量生産で薄める)。プラットフォーム経済では需要側に移る=巨大なネットワーク価値で参加者を引き寄せる。限界費用はほぼゼロで、ネットワーク規模が価値を生む。","we":{"0":"方向が逆。需要側から供給側ではなく、供給側から需要側へ移る。","2":"規模の経済は消えず、需要側(ネットワーク効果)として現れる。","3":"供給側に留まるのではなく需要側へ移る。"}},{"id":104,"conceptId":"cDF_hub_firms_diff","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L1] According to Iansiti & Lakhani, how do hub firms differ from traditional firms?","opts":["A) They compete mainly on product features and cost","B) They avoid entering adjacent industries","C) They use network-based assets from one setting to enter and transform another market","D) They depend on physical bottlenecks rather than network control","E) わからない"],"ans":2,"exp":"ハブ企業は機能や費用で競争するのではなく、ある領域で築いたネットワークベースの資産を使って別市場に参入し、その市場を製品駆動からネットワーク駆動へ転換する。隣接産業を同一プラットフォームに取り込む。","we":{"0":"ハブ企業は機能・費用での競争ではなくネットワーク資産で競争する。","1":"むしろ積極的に隣接産業へ参入し取り込む。","3":"物理的ボトルネックではなくネットワーク支配(ボトルネック制御)が核心。"}},{"id":105,"conceptId":"cDF_boundary_resources","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L2] In Ghazawneh & Henfridsson’s boundary resources model, boundary resources are best described as:","opts":["A) Physical assets the platform owner sells to users","B) The internal source code kept secret from all developers","C) Government regulations imposed on the platform","D) Resources (e.g., SDKs, APIs, regulations) the owner provides to support third-party development","E) わからない"],"ans":3,"exp":"境界資源(boundary resources)は、プラットフォーム所有者が第三者開発を支援するために提供する資源(ソフトウェアツール、SDK、API、規約など)で、コアモジュールへの容易なアクセスを与える「接着剤」。統制(securing)と貢献(resourcing)のバランスを取る。","we":{"0":"境界資源は売却する物理資産ではなく、開発支援のためのツール・インターフェース群。","1":"秘匿されるソースコードではなく、開発者に公開・提供される資源。","2":"政府が課す規制ではなく、所有者が自ら提供する資源。"}},{"id":106,"conceptId":"cDF_securing_def","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L2] How is \"securing\" defined as a platform owner strategy?","opts":["A) The process by which the control of a platform and its related services is increased","B) The process by which the scope and diversity of a platform is enhanced","C) Subsidizing one side of the market to start network effects","D) Merging two platforms into a single interface","E) わからない"],"ans":0,"exp":"Securingは、プラットフォームとその関連サービスに対する所有者の「統制を高める」過程。開発者契約の変更やライセンスモデル等で、プラットフォームを侵害しうるアプリ開発を抑える。統制度は自動車(厳格)からOSSコミュニティ(緩い)まで連続的。","we":{"1":"これはresourcing(範囲と多様性の拡大)の定義であり、securingではない。","2":"片側補助はプラットフォーム立ち上げ戦略で、securingの定義ではない。","3":"2プラットフォームの統合はSchreieckの統合戦略の話で、securingとは別。"}},{"id":107,"conceptId":"cDF_platform_types","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L2] Schreieck et al. distinguish three types of digital platforms. Which trio is correct?","opts":["A) Pipeline, hub, and keystone platforms","B) Transaction, innovation, and community platforms","C) Supply, demand, and hybrid platforms","D) Public, private, and government platforms","E) わからない"],"ans":1,"exp":"Schreieck et al.は3類型を区別: 取引(transaction: Uber, Amazon)、イノベーション(innovation: iOS, Android)、コミュニティ(community: Facebook, Reddit)。各々価値創造機構とネットワーク効果の型が異なる。","we":{"0":"pipeline/hub/keystoneは別概念(Iansiti等)で、Schreieckの3類型ではない。","2":"supply/demand/hybridという分類ではない。","3":"public/private/governmentという分類でもない。"}},{"id":108,"conceptId":"cDF_innovation_platform","ch":"DF","type":"A","source":"PEB2 Predicted","q":"[L2] Which is an example of an innovation platform in Schreieck et al.’s typology?","opts":["A) Airbnb","B) Reddit","C) iOS / Android","D) Amazon Marketplace","E) わからない"],"ans":2,"exp":"イノベーション・プラットフォームは拡張可能なソフト基盤を提供し、補完者(開発者)が革新を生む。iOSやAndroidが典型例。開発者とユーザーの間に間接ネットワーク効果が働く。","we":{"0":"Airbnbは買い手と売り手をマッチングする取引プラットフォーム。","1":"Redditはコミュニティ・プラットフォーム。","3":"Amazon Marketplaceは取引プラットフォーム。"}},{"id":109,"conceptId":"cDF_four_integration","ch":"DF","type":"C","source":"PEB2 Textbook","q":"[L2] In Schreieck et al.’s multi-platform integration matrix, which strategy yields the most complementarities and brings superapps?","opts":["A) Collection (partial, same type)","B) Consolidation (full, same type)","C) Symbiosis (partial, different types)","D) Assemblage (full, different types)","E) わからない"],"ans":3,"exp":"4戦略のうちAssemblage(完全統合×異種プラットフォーム)が最大の補完性を生み、スーパーアプリ(WeChat, Grab等)をもたらす。異なる型を一体化し、プラットフォーム内・間でネットワーク効果が働く。","we":{"0":"Collectionは同種の部分統合で、補完性は最大ではない。","1":"Consolidationは同種の完全統合(例: Amazon Prime Video統合)で、異種統合のAssemblageほどの補完性は生まない。","2":"Symbiosisは異種の部分統合(SAP Cloud等)で、完全統合のAssemblageより補完性は小さい。"}},{"id":110,"conceptId":"cDF_partial_full","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L2] What distinguishes full integration from partial integration of platforms?","opts":["A) In full integration platforms are merged at the user-interface level and are no longer distinguishable; in partial they stay distinguishable","B) In full integration platforms remain distinguishable to users; in partial they are merged at the UI level","C) Partial integration always creates superapps","D) Full integration only connects platforms at the data level","E) わからない"],"ans":0,"exp":"完全統合(full)はUIレベルで一体化し、ユーザーから区別できなくなる(例: Grab, WeChat superapp)。部分統合(partial)はデータ・機能レベルで連携するがプラットフォームは別個のまま区別できる(例: Facebook+WhatsApp)。","we":{"1":"逆。完全統合では区別できなくなり、部分統合では区別できる。","2":"スーパーアプリを生むのは完全統合(assemblage)であり、部分統合が常に生むわけではない。","3":"データレベルのみで連携するのは部分統合の特徴。完全統合はUIレベルで一体化。"}},{"id":111,"conceptId":"cDF_tirole_dma","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L2] According to Tirole, the EU’s Digital Markets Act (DMA) is best characterized as:","opts":["A) An ex post, case-by-case approach based on consumer welfare","B) Ex ante regulation to keep digital markets fair and contestable, setting do’s and don’ts for gatekeepers","C) A breakup mandate for all large tech firms","D) A tax on digital advertising revenue","E) わからない"],"ans":1,"exp":"DMAは事前(ex ante)規制で、デジタル市場を公正かつ競争可能(contestable)に保つ。中核プラットフォームサービス(CPS)を持つゲートキーパーに6つの「すべきこと/してはならないこと」を課し、執行機関を置く。従来のEUの事後・個別審査(Google Shopping事件等)の遅さへの対応。","we":{"0":"事後・個別審査(consumer welfare基準)はDMA以前の従来手法。DMAは事前規制。","2":"","3":"DMAは全大手の分割命令ではない。義務付けと禁止行為の枠組み。"}},{"id":112,"conceptId":"cDF_tirole_alternatives","ch":"DF","type":"C","source":"PEB2 Textbook","q":"[L2] Tirole notes breaking up tech firms is difficult. Which is a reason he gives?","opts":["A) There is always a stable essential facility easy to separate","B) Tech firms have no fixed costs","C) Break-ups may destroy network externalities or lose the data advantage","D) Breakups always lower consumer prices","E) わからない"],"ans":2,"exp":"Tiroleは技術企業の分割が難しい理由として、安定的なessential facilityが存在しないこと、分割がネットワーク外部性を破壊しうること、データ優位を失う/分割自体が不可能なこと等を挙げる。Bell分割やStandard Oilのようにはいかない。","we":{"0":"むしろ安定的なessential facilityが「無い」ことが分割を難しくする。記述が逆。","1":"","3":"分割が必ず消費者価格を下げるとは限らず、Tiroleの論点でもない。"}},{"id":113,"conceptId":"cDF_industrial_era","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L1] Birkinshaw lists changes in the industrial era. Which is an example of a change in \"institutional structures\"?","opts":["A) Scaling up of firms from 300 to 300,000 employees","B) Shift from informal to formalized structures and bureaucracy","C) Start of employees and careers","D) Creation of the limited liability company and intellectual property rights / patents","E) わからない"],"ans":3,"exp":"Birkinshawの産業時代の変化のうち「制度的構造(institutional structures)」は、有限責任会社の創設や知的財産権・特許の整備を指す。Aは企業規模/範囲、Bは企業構造/組織、Dは付随的変化。","we":{"0":"企業規模の拡大は\"firm size and scope\"の変化であり、制度的構造ではない。","1":"非公式から公式・官僚制化は\"firm structure and organization\"の変化。","2":"被雇用者やキャリアの登場は付随的変化で、制度的構造の主例ではない。"}},{"id":114,"conceptId":"cDF_competition_policy","ch":"DF","type":"E","source":"PEB2 Textbook","q":"[L1] Birkinshaw notes that traditional competition policy measured monopoly via increased consumer prices. Why is this problematic for big digital firms?","opts":["A) Big digital firms often offer very low (or zero) prices, so the price indicator fails to detect monopoly","B) Big digital firms always charge very high prices","C) Consumer prices are irrelevant to all markets","D) Digital firms never reach monopoly positions","E) わからない"],"ans":0,"exp":"従来は独占の指標を「消費者価格の上昇」としたが、大手デジタル企業はしばしば極めて低価格(またはゼロ価格)を提供するため、価格指標では独占を検出できない。独占の測り方の再考が必要になる。","we":{"1":"大手デジタル企業はむしろ低価格を提供するため、高価格を常に課すという前提が誤り。","2":"消費者価格が全市場で無関係なのではなく、デジタル市場で指標として機能しにくいだけ。","3":"デジタル企業は実際に独占的地位に達しうる。"}},{"id":115,"conceptId":"cDF_pipeline_vs_platform","ch":"DF","type":"A","source":"PEB2 Predicted","q":"[L1] Which statement best contrasts pipelines and platforms?","opts":["A) Pipelines facilitate interactions between external producers and consumers; platforms optimize a linear chain","B) Pipelines optimize a linear production chain; platforms create value by facilitating interactions between external producers and consumers","C) Both pipelines and platforms must own the physical infrastructure","D) Platforms focus on internal optimization while pipelines focus on ecosystem value","E) わからない"],"ans":1,"exp":"パイプラインは線形の生産チェーンを最適化して価値を生む。プラットフォームは外部の生産者と消費者の相互作用を仲介して価値を生む。プラットフォームは物理インフラを所有せずネットワーク効果を活用する点が新しい。","we":{"0":"役割が逆に記述されている。相互作用の仲介はプラットフォーム側。","2":"プラットフォームは物理インフラを所有しなくてよいのが新しさ。両者所有は誤り。","3":"内部最適化はパイプライン、エコシステム価値はプラットフォーム。逆。"}},{"id":116,"conceptId":"cDF_data_issues","ch":"DF","type":"C","source":"PEB2 Textbook","q":"[L2] Among Tirole’s alternatives for the \"data issue\", which describes data licensing?","opts":["A) Collecting no data at all, which may reduce service quality","B) Paying users via micropayments that may be stolen by bots","C) A licensing system where data owners are remunerated, like patents, but very hard to implement","D) Customer-centric data trusts with no operational issues","E) わからない"],"ans":2,"exp":"データ・ライセンシングは、特許のようにデータ所有者に報酬を払うライセンス制度。ただし実装が非常に難しいとTiroleは指摘する。他の代替: 無収集(質低下)、マイクロペイメント(ボットによる搾取リスク)、データ信託(運用課題)。","we":{"0":"これはデータ無収集の代替案であり、ライセンシングではない。","1":"これはマイクロペイメントの説明。","3":"データ信託にも運用課題があるとされ、「課題なし」は誤り。"}},{"id":117,"conceptId":"cDF_exam_scope","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L2] The DF exam scope (per the lecture) consists of:","opts":["A) 10 questions, based only on the Tirole article","B) 40 questions on the digital firm alone","C) Only the recommendations in Tirole section 2.4.2 and 4.2","D) 10 questions, based on 6 articles and 2 slide decks","E) わからない"],"ans":3,"exp":"デジタル経済(DF)の試験範囲は、6本の論文+2つのスライドデック(L1, L2)に基づく10問。なお、Tiroleの本質インフラに関する2.4.2と国際貿易の4.2は試験範囲外と明示される。","we":{"0":"Tirole論文のみではなく6論文+2スライド。","1":"40問全体ではなくDFは10問。40問は4分野合計。","2":"2.4.2と4.2はむしろ試験範囲「外」。"}},{"id":118,"conceptId":"cDF_network_effects","ch":"DF","type":"A","source":"PEB2 Predicted","q":"[L1] Why are ecosystems more important in digital markets than standalone products?","opts":["A) Because of network effects and switching costs that make the surrounding ecosystem decisive","B) Because physical assets always dominate value creation","C) Because governments mandate ecosystem participation","D) Because marginal costs rise sharply with scale","E) わからない"],"ans":0,"exp":"デジタル市場ではネットワーク効果とスイッチングコストにより、単体製品ではなく周囲のエコシステム(第三者の補完)が決定的になる。モバイル・エコシステムが第三者効果を示す例。","we":{"1":"デジタル市場では物理資産ではなくネットワーク/エコシステムが価値の中心。","2":"政府の義務付けではなく、ネットワーク効果という経済的機構が理由。","3":"デジタル財はむしろ限界費用がほぼゼロで収穫逓減が無い。"}},{"id":119,"conceptId":"cDF_resourcing_def","ch":"DF","type":"A","source":"PEB2 Textbook","q":"[L2] \"Resourcing\" as a platform-owner strategy is defined as the process by which:","opts":["A) the control of a platform is increased","B) the scope and diversity of a platform is enhanced through third-party applications","C) two different platforms are fully merged","D) a platform sets a fixed regulated price","E) わからない"],"ans":1,"exp":"Resourcingは、第三者によるアプリ追加を通じてプラットフォームの範囲と多様性を高める過程。エコシステムのアクターを広げ、新たな資源・知識・能力を取り込む。Securing(統制強化)と対をなす。","we":{"0":"これはsecuring(統制強化)の定義。","2":"2プラットフォームの完全統合はSchreieckの統合戦略で、resourcingではない。","3":"規制価格の設定はTiroleのpublic utility regulationの話。"}},{"id":120,"conceptId":"cDF_gatekeeper_cps","ch":"DF","type":"A","source":"PEB2 Predicted","q":"[L2] Under the DMA, \"gatekeepers\" are firms that possess:","opts":["A) Only physical retail stores","B) Government licenses to operate utilities","C) Core Platform Services (CPS) such as social media, search engines, messaging services","D) No significant market position","E) わからない"],"ans":2,"exp":"DMAのゲートキーパーは、中核プラットフォームサービス(CPS: SNS、検索エンジン、メッセージングサービス等)を保有する企業。DMAは彼らに6つの義務と6つの禁止、相互運用性(Article 7)等を課す。","we":{"0":"物理小売店のみを指すのではなく、デジタルのCPSを持つ大手。","1":"公益事業の政府ライセンスではない。","3":"むしろ重要な市場地位を持つ企業がゲートキーパー指定される。"}},{"id":201,"conceptId":"cTAX_definition","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] Which best matches the lecture’s definition of taxation?","opts":["A) A voluntary donation to a charity chosen by the taxpayer","B) A market price paid for a private good","C) A fee paid only by companies for using public roads","D) A compulsory financial charge imposed on a taxpayer by a governmental organization to fund public expenditures","E) わからない"],"ans":3,"exp":"課税(taxation)は、公共支出を賄うために、政府組織が納税者に課す強制的な金銭的負担と定義される。任意の寄付や市場価格とは異なる。","we":{"0":"課税は任意の寄付ではなく強制的な負担。","1":"私的財への市場価格ではない。政府が課す強制負担。","2":"企業のみの道路使用料ではなく、広く納税者に課される。"}},{"id":202,"conceptId":"cTAX_purposes","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] Which is a \"policy purpose\" of taxation (as opposed to a budgetary purpose)?","opts":["A) Influencing behavior and redistributing income","B) Financing law and order, healthcare, and infrastructure","C) Paying civil servants’ salaries directly","D) Recording the national accounts","E) わからない"],"ans":0,"exp":"課税の目的は予算目的(公共支出の財源確保)と政策目的に分かれる。政策目的は行動への影響(誘導)や所得再分配、総厚生の増大など。法と秩序・医療・インフラの財源確保は予算目的。","we":{"1":"公共支出の財源確保は予算目的(budgetary purpose)であり政策目的ではない。","2":"","3":"国民経済計算の記録は課税の目的ではない。"}},{"id":203,"conceptId":"cTAX_residence_source","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] What is the difference between residence and source jurisdiction?","opts":["A) Residence taxes non-residents on local activity; source taxes residents on worldwide income","B) Residence taxes a resident’s (often worldwide) income; source taxes a non-resident’s activity within the country","C) Both tax only foreign companies","D) Both refer to the place where a company is listed on a stock exchange","E) わからない"],"ans":1,"exp":"居住地管轄(residence jurisdiction)は、A国の居住者がどこで活動しても課税(例: 世界所得課税)。源泉地管轄(source jurisdiction)は、非居住者がA国内で行う活動に課税(例: 非居住者の不動産取得への不動産取得税)。","we":{"0":"説明が逆。居住地は居住者の世界所得、源泉地は非居住者の国内活動。","2":"両方とも外国企業のみを課税するわけではない。","3":"上場場所ではなく、居住/活動の場所に基づく課税概念。"}},{"id":204,"conceptId":"cTAX_CIN_def","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] Capital Import Neutrality (CIN) means:","opts":["A) A resident is taxed equally whether investing at home or abroad","B) Capital is always exported to low-tax countries","C) Domestic and foreign investors are taxed equally for inbound investments in a country","D) Investors pay no tax on foreign income","E) わからない"],"ans":2,"exp":"資本輸入中立性(CIN)は、ある国への対内投資について国内投資家と外国投資家が同等に課税されること。方法は両者に同率を適用。CINが欠けると資本が国外へ移転される。","we":{"0":"これは資本輸出中立性(CEN)の説明。居住者が国内外で同等課税。","1":"低税国への資本輸出はCINの定義ではない。","3":"外国所得が非課税というのはCINの定義ではない。"}},{"id":205,"conceptId":"cTAX_relief_methods","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] Which is listed as a method of relief from double taxation?","opts":["A) Profit-shifting method","B) Transfer pricing method","C) Race-to-the-bottom method","D) Tax credit method and exemption method","E) わからない"],"ans":3,"exp":"二重課税の救済方法として、税額控除方式(tax credit)、免税方式(exemption)、比例課税方式(proportional)、割当方式(allocation)が挙げられる。税額控除はCEN寄り、免税はCIN寄り。","we":{"0":"利益移転(profit shifting)は租税回避の手法であり、二重課税の救済方法ではない。","1":"","2":"race to the bottomは税競争の話で、救済方法ではない。"}},{"id":206,"conceptId":"cTAX_evasion_avoidance","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] What is the key difference between tax evasion and tax avoidance?","opts":["A) Evasion is illegal; avoidance is within the law (though it can be seen as aggressive)","B) Evasion is within the law; avoidance is illegal","C) Both are always illegal","D) Both are always fully legal and never criticized","E) わからない"],"ans":0,"exp":"脱税(tax evasion)は違法。租税回避(tax avoidance)は法の枠内(合法)だが、「攻撃的(aggressive)」と受け取られ評判リスクを伴いうる。法の文言は満たすが精神を回避するグレーゾーン。","we":{"1":"逆。脱税が違法、回避が合法。","2":"回避は合法なので「両方常に違法」は誤り。","3":"回避は合法だが攻撃的と批判されうるため「決して批判されない」は誤り。"}},{"id":207,"conceptId":"cTAX_profit_shifting","ch":"TAX","type":"C","source":"PEB2 Textbook","q":"[L3] How does profit shifting reduce a multinational’s tax?","opts":["A) By increasing profits booked in high-tax jurisdictions","B) By increasing profits booked in low-tax jurisdictions and reducing payments in high-tax ones, via intercompany transactions","C) By paying all tax in the country of the parent company","D) By raising the arm’s length price above fair market value","E) わからない"],"ans":1,"exp":"利益移転は、グループ内取引を通じて低税国に計上する利益を増やし、高税国での納税を減らす。移転価格の濫用(債務移転、IP移転、ロイヤルティ等)で行われる。","we":{"0":"逆。高税国の利益を増やすのではなく低税国に移す。","2":"親会社国で全額納税するのは利益移転の目的に反する。","3":"独立企業間価格を市場価値超に上げることは利益移転の機構ではない(むしろ歪曲して低税国に利益を寄せる)。"}},{"id":208,"conceptId":"cTAX_arms_length","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] The arm’s length principle in transfer pricing requires that:","opts":["A) related companies always transact at zero price","B) unrelated companies must use intercompany prices","C) related companies transact as if they were unrelated, at fair market value","D) intangibles are never priced","E) わからない"],"ans":2,"exp":"独立企業間原則(arm’s length)は、関連会社間の取引を、無関係な独立企業同士であるかのように公正市場価格で行うことを求める。理想は比較可能独立価格。無形資産は比較が難しく濫用の温床。","we":{"0":"ゼロ価格での取引ではなく、公正市場価格での取引を求める。","1":"無関係な企業はそもそも市場価格で取引する。原則が規律するのは関連会社。","3":"無形資産も評価が必要(困難だが)。価格付けしないわけではない。"}},{"id":209,"conceptId":"cTAX_dst","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L4] In 2019, which country announced a Digital Services Tax (DST) of 3%, prompting the US to threaten 25% tariffs on its wine?","opts":["A) Germany","B) The Netherlands","C) Japan","D) France","E) わからない"],"ans":3,"exp":"2019年、フランスが3%のデジタルサービス税(DST: 広告サービス、デジタルインターフェース、ユーザーデータ販売に課税)を発表し、米国はフランス産ワインへ25%の輸入関税を予告した。国際協調の欠如を示す例。","we":{"0":"DSTを2019年に発表しワイン関税問題を招いたのはドイツではない。","1":"オランダではない。","2":"日本ではない。フランス。"}},{"id":210,"conceptId":"cTAX_benefit_ability","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L4] Which pairing of taxation principles and their justification is correct?","opts":["A) Benefit principle justifies source taxation; ability-to-pay justifies residence taxation","B) Benefit principle justifies residence taxation; ability-to-pay justifies source taxation","C) Both principles justify only source taxation","D) Neither principle relates to international taxation","E) わからない"],"ans":0,"exp":"受益者原則(benefit principle: 納税者は政府サービスから便益を得る)は源泉地課税を正当化する。応能原則(ability-to-pay: 所得に応じて納税、垂直的公平)は居住地課税を正当化する。価値創造は受益者原則と整合的。","we":{"1":"対応が逆。受益者原則は源泉地、応能原則は居住地を正当化する。","2":"両原則が源泉地のみを正当化するのではない。","3":"両原則とも国際課税の正当化に関わる。"}},{"id":211,"conceptId":"cTAX_pe_outdated","ch":"TAX","type":"C","source":"PEB2 Textbook","q":"[L4] Why is the concept of permanent establishment (PE) considered outdated for the digital economy?","opts":["A) Because digital firms always have large physical offices","B) Because PE taxes only when there is physical presence, but digital firms can operate without physical presence","C) Because PE applies only to the sharing economy","D) Because digital firms never earn profits","E) わからない"],"ans":1,"exp":"PEは物理的存在(固定的な事業の場所)がある場合にのみ課税する仕組みだが、デジタル企業は物理的存在なしに事業を行えるため、源泉地国が課税できず、PE概念が時代遅れとされる。課税権の配分が課題。","we":{"0":"デジタル企業はむしろ物理的事務所を要さないのが問題の核心。","2":"PEはシェアリングエコノミーに限らず一般に適用される概念。","3":"デジタル企業も利益を上げる。利益の有無が論点ではない。"}},{"id":212,"conceptId":"cTAX_sharing_transactions","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L4] Which is listed as a type of transaction in the sharing economy?","opts":["A) Corporate dividend distributions","B) Government bond issuance","C) Cash transactions, barter arrangements, cost-sharing, and gifts/donations","D) Stock buybacks","E) わからない"],"ans":2,"exp":"シェアリングエコノミーの取引類型として、現金取引・物々交換(barter)・コストシェアリング・贈与/寄付が挙げられる。これらは把握・課税が難しい。","we":{"0":"配当分配はシェアリングエコノミーの取引類型ではない。","1":"国債発行は無関係。","3":"自社株買いは無関係。"}},{"id":213,"conceptId":"cTAX_global_schedular","ch":"TAX","type":"A","source":"PEB2 Predicted","q":"[L4] A challenge in taxing the sharing economy is including its transactions in income tax systems. Which systems are contrasted?","opts":["A) Progressive vs. regressive systems only","B) Sales tax vs. property tax","C) Tariff system vs. excise system","D) Global tax system vs. schedular tax system (with hybrid models in between)","E) わからない"],"ans":3,"exp":"所得税制は、すべての所得を合算して課す総合課税(global)と、所得源泉ごとに分けて課す分類課税(schedular)、その中間のハイブリッド型に分かれる。シェアリング取引をどう取り込むかが難しく、解決策はプラットフォーム報告(platform reporting)。","we":{"0":"累進対逆進という対比ではなく、総合対分類の対比。","1":"売上税対財産税ではない。","2":"関税対物品税ではない。"}},{"id":214,"conceptId":"cTAX_double_tax_treaties","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] What is the purpose of double tax treaties?","opts":["A) To remove double taxation and prevent tax avoidance/evasion (often based on the OECD model)","B) To increase double taxation between two countries","C) To set a single global tax rate enforced by the UN","D) To eliminate all corporate income tax","E) わからない"],"ans":0,"exp":"二重課税条約(double tax treaty)は二国間の協定で、(1)二重課税の除去、(2)租税回避・脱税の防止を目的とする。OECDモデル条約が広く用いられる。","we":{"1":"目的は二重課税の「除去」であり増加ではない。","2":"国連が強制する単一世界税率を設けるものではない。","3":"法人税を全廃するものではない。"}},{"id":215,"conceptId":"cTAX_uber_structure","ch":"TAX","type":"E","source":"PEB2 Textbook","q":"[L3] In the Uber tax case discussed, which mechanism illustrates intra-group profit shifting?","opts":["A) A public utility price cap set by the Dutch government","B) An intercompany loan (€16bn at 8% interest) and royalty/IP arrangements across jurisdictions","C) A direct donation of profits to charity","D) A breakup of Uber into national companies","E) わからない"],"ans":1,"exp":"Uberの法的構造では、グループ内貸付(€16bn・8%利息)やロイヤルティ/IPの配置を法域横断で用い、利益移転(高税国の利益を圧縮)を図る例として示される。シンガポール、オランダ、バミューダ等を経由。","we":{"0":"オランダ政府の公益価格上限は無関係(Tiroleのpublic utility regulationの一般論)。","2":"","3":"国別会社への分割はUberの構造の説明ではない。"}},{"id":216,"conceptId":"cTAX_intangibles","ch":"TAX","type":"C","source":"PEB2 Textbook","q":"[L4] Why do intangible assets pose a special challenge for taxing the digital economy?","opts":["A) They are easy to value and locate physically","B) They are always taxed at source automatically","C) Valuation and transfer pricing of IP, data, and algorithms are difficult, enabling profit shifting","D) They cannot be owned by companies","E) わからない"],"ans":2,"exp":"知的財産・データ・アルゴリズム等の無形資産は、評価と移転価格の算定が難しく、低税国への移転(利益移転)を容易にする。比較可能価格が得にくいため濫用されやすい。","we":{"0":"無形資産はむしろ評価も所在特定も困難。","1":"自動的に源泉地課税されるわけではない。所在が曖昧。","3":"無形資産も企業が所有できる。"}},{"id":217,"conceptId":"cTAX_race_bottom","ch":"TAX","type":"C","source":"PEB2 Predicted","q":"[L3] What does the \"race to the bottom\" refer to in international taxation?","opts":["A) Countries raising tax rates together to maximize revenue","B) A treaty that fixes a minimum global wage","C) The decline of consumer prices on digital platforms","D) Tax competition where countries reduce tax rates to attract companies and investment","E) わからない"],"ans":3,"exp":"「底辺への競争(race to the bottom)」は、企業と投資を誘致するため各国が法人税率を引き下げ合う税競争。各国の税率が下がり続け、その有効性が問われる。","we":{"0":"税率を協調して引き上げるのではなく、引き下げ合う競争。","1":"最低賃金を固定する条約ではない。","2":"プラットフォーム上の消費者価格低下とは無関係。"}},{"id":218,"conceptId":"cTAX_corporate_income_tax","ch":"TAX","type":"A","source":"PEB2 Textbook","q":"[L3] For corporate income tax, what is the \"tax object\" (what is being taxed)?","opts":["A) Profits (earnings minus costs)","B) The companies themselves (the taxable subject)","C) The number of shareholders","D) The market value of listed shares","E) わからない"],"ans":0,"exp":"法人税では、課税主体(taxable subject)は企業、課税対象(tax object)は利益(profit=収益−費用)。利益を減らす(収益を減らす/費用を増やす)ことで税を圧縮しようとする誘因が生じる。","we":{"1":"企業は課税「主体」であって課税「対象」ではない。対象は利益。","2":"株主数は課税対象ではない。","3":"上場株式の時価は課税対象ではない。"}},{"id":219,"conceptId":"cTAX_sharing_approaches","ch":"TAX","type":"A","source":"PEB2 Predicted","q":"[L4] Which correctly matches a country to its approach to taxing the sharing economy (per the slides)?","opts":["A) Australia exempts all sharing transactions from tax","B) Australia treats all sharing transactions as taxable","C) The UK taxes the first GBP 2,000–7,500 at the highest rate","D) Belgium prohibits any platform reporting","E) わからない"],"ans":1,"exp":"各国アプローチ: オーストラリアは全シェアリング取引を課税対象とする。英国は最初のGBP 2,000〜7,500を免税。ベルギーはプラットフォームに報告を求める。","we":{"0":"オーストラリアは免税ではなく全取引を課税対象とする。","2":"","3":"英国は当初分を免税にするのであって最高税率課税ではない。"}},{"id":220,"conceptId":"cTAX_intl_objectives","ch":"TAX","type":"A","source":"PEB2 Predicted","q":"[L3] Which is one of the objectives of international tax rules listed in the lecture?","opts":["A) Maximizing double taxation","B) Eliminating all cross-border investment","C) Economic efficiency (alongside fairness, national wealth maximization, administrative efficiency, international compatibility)","D) Guaranteeing equal tax rates worldwide","E) わからない"],"ans":2,"exp":"国際課税ルールの目的は、(1)国家の富の最大化、(2)税の公平、(3)経済的効率、(4)行政的効率、(5)国際的整合性。課税は投資判断を歪めるため、効率性の確保が重要。","we":{"0":"二重課税の最大化は目的ではなく、むしろ除去が目的。","1":"","3":"越境投資の排除は目的ではない。"}},{"id":301,"conceptId":"cMLM_market_society","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L5] The lecture frames a shift from a \"market economy\" to a \"market society\". What does this distinction highlight?","opts":["A) That markets only ever allocate ordinary goods efficiently","B) That societies should abolish all markets","C) That market economies always reduce inequality","D) That market values increasingly govern domains of life where they may corrupt essential values","E) わからない"],"ans":3,"exp":"「市場経済」から「市場社会」への移行とは、市場の論理が生活の様々な領域(命・身体・公共財など)にまで広がり、そこで本質的価値を腐敗させうるという問題提起。市場が適切な領域と不適切な領域があるという論点。","we":{"0":"論点は通常財の効率配分ではなく、市場が不適切な領域に広がる懸念。","1":"全市場の廃止を主張するものではない。","2":"市場社会化が不平等を必ず減らすという主張ではない。"}},{"id":302,"conceptId":"cMLM_arguments_for","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L5] Which pair correctly states the two \"arguments for\" allowing markets?","opts":["A) Libertarian (freedom to buy/sell without violating rights) and Utilitarian (exchange benefits both, raising social utility)","B) Fairness and value corruption","C) Paternalism and meddlesome preferences","D) Diffusion of responsibility and social norm formation","E) わからない"],"ans":0,"exp":"市場を認める論拠は、(1)リバタリアン: 他者の権利を侵さない限り売買は自由、(2)功利主義: 市場交換は買い手・売り手双方を益し社会的効用(集合的厚生)を高める。対する反論は公平性と価値の腐敗。","we":{"1":"公平性と価値腐敗は市場に「反対」する論拠。","2":"パターナリズムや干渉的選好はCowen&Tabarrokの反論側の論点。","3":"責任分散・社会規範形成はFalk&Szechの市場が道徳を侵食する機構の説明。"}},{"id":303,"conceptId":"cMLM_arguments_against","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L5] The \"value corruption\" argument against markets claims that:","opts":["A) Markets always raise prices unfairly","B) Employing a free market in some cases corrupts essential values (e.g., equal quality of security)","C) Markets benefit buyers and sellers alike","D) People are free to buy and sell as long as no rights are violated","E) わからない"],"ans":1,"exp":"価値の腐敗(value corruption)論は、ある領域に自由市場を導入すると、本質的な価値(例: 安全の平等な質)が腐敗しうると主張する。市場が不適切な領域では、金銭化がその財の意味を損なう。","we":{"0":"価値腐敗論は価格上昇そのものの主張ではない。","2":"双方に益するは功利主義の「賛成」論。","3":"権利不侵害なら自由はリバタリアンの「賛成」論。"}},{"id":304,"conceptId":"cMLM_falkszech_mechanisms","ch":"MLM","type":"C","source":"PEB2 Textbook","q":"[L5] Falk & Szech conclude markets eroded the value of (a mouse’s) life. Which is one mechanism they give?","opts":["A) Increased individual accountability","B) Stronger intrinsic moral values under trade","C) Diffusion of responsibility (multiple people responsible when trading)","D) Reduced materialistic framing","E) わからない"],"ans":2,"exp":"Falk & Szechが挙げる市場が道徳を侵食する機構は、(1)責任の分散(取引では複数人が結果に責任を負う)、(2)社会規範の形成(市場で規範ができる)、(3)物質主義的フレーミング(最良の取引を求める)。","we":{"0":"市場では個人の責任が「分散」する。説明責任が増すのは逆。","1":"","3":"市場はむしろ物質主義的フレーミングを「強める」。減らすのではない。"}},{"id":305,"conceptId":"cMLM_falkszech_numbers","ch":"MLM","type":"D","source":"PEB2 Textbook","q":"[L5] In Falk & Szech, the share willing to kill the mouse for ≤€10 rose across treatments. Which ordering matches the study?","opts":["A) Multilateral > Individual > Bilateral","B) Individual > Bilateral > Multilateral","C) All three treatments were equal","D) Individual (≈46%) < Bilateral (≈72%) < Multilateral (≈76%)","E) わからない"],"ans":3,"exp":"Falk & Szechの結果は、個人判断 約45.9% < 双方向市場 約72.2% < 多者間市場 約75.9% と、市場的相互作用が増すほどマウスを殺す意思が高まった。市場が道徳価値を侵食する証拠。","we":{"0":"順序が誤り。個人が最低で多者間が最高。","1":"","2":"順序が逆。個人が最も低い。"}},{"id":306,"conceptId":"cMLM_crowding_out","ch":"MLM","type":"E","source":"PEB2 Textbook","q":"[L5] In Gneezy & Rustichini’s daycare study, what happened after a fine for late pick-ups was introduced?","opts":["A) The number of late parents increased (the fine crowded out moral motivation)","B) The number of late parents decreased sharply","C) Parents stopped using daycare entirely","D) The fine had no measurable effect","E) わからない"],"ans":0,"exp":"Gneezy & Rustichini(2000)では、遅刻への罰金導入後、遅刻する親が「増えた」。罰金が道徳的動機を締め出し(crowding out)、遅刻を金で買える行為に変えてしまったため。価格設定が動機を変質させる例。","we":{"1":"遅刻は減らず、むしろ増えた。","2":"保育所利用をやめたわけではない。","3":"罰金は遅刻増という明確な効果を持った。"}},{"id":307,"conceptId":"cMLM_willful_ignorance","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L6] \"Willful ignorance\" in the moral-markets context refers to:","opts":["A) Forgetting information by accident","B) Avoiding information about the negative externalities of self-serving decisions","C) Sharing all information transparently","D) Always acting altruistically regardless of cost","E) わからない"],"ans":1,"exp":"意図的無知(willful ignorance)は、自己利益的な決定の負の外部性に関する情報を「意図的に避ける」こと。メタ分析(Vu et al. 2023)では40%が情報を避け、利他性が16%低下した。","we":{"0":"偶発的な忘却ではなく、意図的に情報を避ける行為。","2":"情報を透明に共有するのは逆。","3":"常に利他的に行動するのとは逆の概念。"}},{"id":308,"conceptId":"cMLM_six_objections","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L6] Cowen & Tabarrok list six objections to standard economic reasoning in moral domains. Which is one of them?","opts":["A) The benefit principle of taxation","B) The boundary resources model","C) The problem of exploitation","D) Capital export neutrality","E) わからない"],"ans":2,"exp":"Cowen & Tabarrokの6つの反論は、(1)搾取の問題、(2)干渉的選好、(3)公平・平等な扱い、(4)文化財とパターナリズム、(5)貧困・不平等・所得分配、(6)誰を数えるか。搾取の問題はその一つ。","we":{"0":"受益者原則は課税(TAX)の概念で、MLMの6反論ではない。","1":"境界資源モデルはDF(プラットフォーム)の概念。","3":"資本輸出中立性はTAXの概念。"}},{"id":309,"conceptId":"cMLM_utilitarianism","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L6] According to the utilitarian view of just distribution, the best society:","opts":["A) maximizes the income of the worst-off group","B) requires income to be exactly equal for all","C) is just if property is justly acquired and voluntarily exchanged","D) maximizes the sum of utility (taking incentives into account)","E) わからない"],"ans":3,"exp":"功利主義は、効用の総和を最大化する社会を最善とする(必ずしも弱者を優先しない)。インセンティブも考慮し、富者から取りすぎると稼ぐ意欲が下がり、貧者へ払いすぎると貧困に留まる動機を生むとする。","we":{"0":"最下層の所得最大化はRawlsのマキシミン原理。","1":"","2":"所得の完全平等は功利主義の主張ではない。"}},{"id":310,"conceptId":"cMLM_nozick","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L6] Nozick’s entitlement theory holds that a distribution of income is just if:","opts":["A) property is justly acquired and voluntarily exchanged (even if the result is inequality)","B) it maximizes the sum of social utility","C) the worst-off group is made as well-off as possible","D) everyone ends with an equal share","E) わからない"],"ans":0,"exp":"Nozickの権原理論(entitlement theory)は、財産が正当に取得され、自発的に交換されたなら、その結果としての分配は(不平等でも)正義であるとする。人々が望んで取引する限り、他者の権利を侵さなければ自由。","we":{"1":"効用総和の最大化は功利主義。","2":"","3":"最下層の最大化はRawlsのマキシミン。"}},{"id":311,"conceptId":"cMLM_moral_machine_concept","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L6] The Moral Machine experiment (Awad et al.) primarily studies:","opts":["A) How to price carbon offsets fairly","B) How people decide whom an autonomous vehicle should spare in unavoidable accidents","C) How platforms tax third-party developers","D) How fines change daycare behavior","E) わからない"],"ans":1,"exp":"Moral Machine実験(Awad et al. 2018)は、自動運転車が不可避な事故で「誰を助けるべきか」を人々がどう判断するかを大規模に調べた研究。アルゴリズムが中立かという問いに関わる。","we":{"0":"炭素オフセットの価格付けはSustのWest et al.の話。","2":"","3":"第三者開発者への課税はDF/TAXの話。"}},{"id":312,"conceptId":"cMLM_survivorship","ch":"MLM","type":"C","source":"PEB2 Textbook","q":"[L6] \"Steve Jobs, Bill Gates, and Mark Zuckerberg dropped out and became billionaires, so will I.\" This reasoning illustrates:","opts":["A) Statistical significance","B) The decoy effect","C) Survivorship bias (and confusing correlation with causation)","D) Hedonic adaptation","E) わからない"],"ans":2,"exp":"成功者だけを見て一般化するのは生存者バイアス(survivorship bias)。中退者全体ではなく成功した少数だけを見ており、相関と因果も混同している。講義の「科学的主張の評価」の例。","we":{"0":"統計的有意性の話ではない。サンプル選択の偏りの問題。","1":"おとり効果(decoy effect)は選択肢設計の話で別概念。","3":"快楽適応はEasterlinパラドックスの説明概念。"}},{"id":313,"conceptId":"cMLM_pay_for_performance","ch":"MLM","type":"C","source":"PEB2 Textbook","q":"[L6] \"Pay teachers by student performance.\" What problem does the lecture flag (managing incentives, ch.22)?","opts":["A) It guarantees better learning with no downside","B) It eliminates all teacher motivation","C) It is identical to a nudge","D) What you pay for may not equal what you want — it can introduce cheating","E) わからない"],"ans":3,"exp":"インセンティブ管理(ch.22)の「You get what you pay for」: 成果連動報酬は、支払う対象(測定指標)が本当に望むもの(真の学習)と一致せず、カンニング等の歪みを招きうる。","we":{"0":"下振れ無しで学習が改善するとは限らない。歪みを生む。","1":"動機を完全に消すのではなく、誤った行動を誘発しうる。","2":"ナッジ(経済的誘因を変えずに行動を変える)とは別概念。"}},{"id":314,"conceptId":"cMLM_nudge","ch":"MLM","type":"A","source":"PEB2 Textbook","q":"[L6] A \"nudge\" is best defined as:","opts":["A) Altering people’s behavior predictably without significantly changing their economic incentives","B) A large financial penalty for non-compliance","C) A legal ban on a product","D) A market price set by supply and demand","E) わからない"],"ans":0,"exp":"ナッジ(nudge)は、経済的インセンティブを大きく変えずに、人々の行動を予測可能な形で変えること(選択アーキテクチャの変更)。例: 臓器提供のデフォルト設定(Johnson & Goldstein)。","we":{"1":"多額の罰金は経済的誘因を変える手段で、ナッジではない。","2":"","3":"製品の法的禁止は強制であり、ナッジ(選択は残す)ではない。"}},{"id":315,"conceptId":"cMLM_default_donation","ch":"MLM","type":"C","source":"PEB2 Predicted","q":"[L6] Johnson & Goldstein’s organ-donation study shows that high donation rates are best explained by:","opts":["A) Higher financial payments to donors","B) The default option (opt-in vs. opt-out) in the choice architecture","C) Stronger criminal penalties for non-donors","D) Differences in national income","E) わからない"],"ans":1,"exp":"Johnson & Goldstein(2003)は、臓器提供率の大きな差が、デフォルト設定(オプトイン対オプトアウト)という選択アーキテクチャで説明されることを示した。ナッジの代表例で、経済的誘因を変えずに行動を変える。","we":{"0":"提供者への金銭支払いの差ではなく、デフォルト設定の差。","2":"","3":"非提供者への刑事罰ではない。"}},{"id":316,"conceptId":"cMLM_motivated_reasoning","ch":"MLM","type":"C","source":"PEB2 Textbook","q":"[L6] In Pittarello et al. (report the number nearest the X), the finding was:","opts":["A) People always report the exact correct number","B) People report lower numbers when high numbers pay","C) When reporting high numbers pays, self-serving \"mistakes\" become common; when accuracy pays, mistakes are rare","D) Incentives had no effect on reported numbers","E) わからない"],"ans":2,"exp":"Pittarello et al.(2015)では、高い数字の報告が得になるとき、自己利益的な「間違い」が多くなり、正確さが報われるときは間違いが稀になる。意図的無知・動機づけられた推論の例。","we":{"0":"常に正確に報告するわけではなく、誘因で歪む。","1":"","3":"高い数字が得なら高い方向へ間違える。低い方向ではない。"}},{"id":317,"conceptId":"cMLM_adverse_selection","ch":"MLM","type":"A","source":"PEB2 Predicted","q":"[L5] Adverse selection arises when:","opts":["A) both parties have full information about what is traded","B) prices are set by a regulator","C) all products are reviewed honestly","D) there is asymmetric information about what is being traded (e.g., hidden quality)","E) わからない"],"ans":3,"exp":"逆選択(adverse selection)は、取引対象の質などについて情報の非対称性があるときに生じる(隠れた情報)。完全情報下では生じない。レビュー・評価は情報非対称を緩和しモラルハザード/逆選択を抑える。","we":{"0":"完全情報下では逆選択は生じない。","1":"","2":"規制価格の有無は逆選択の発生条件ではない。"}},{"id":318,"conceptId":"cMLM_fair_treatment","ch":"MLM","type":"E","source":"PEB2 Textbook","q":"[L6] NYC buses for all vs. cheaper taxi coupons: which captures the tension (Cowen & Tabarrok, \"fair and equal treatment\")?","opts":["A) Economic argument: taxi coupons are cheaper; Moral argument: equal treatment is important","B) Economic argument: equal treatment matters; Moral argument: taxi coupons are cheaper","C) Both arguments conclude buses should never be accessible","D) There is no tension between the two arguments","E) わからない"],"ans":0,"exp":"「公平・平等な扱い」の論点: 経済的議論はタクシークーポンの方が安い(効率)、道徳的議論は平等な扱いが重要、と対立する。標準的経済推論が道徳領域で物足りなくなる例。","we":{"1":"論拠が逆。経済=安い方、道徳=平等。","2":"バスを決して利用可能にすべきでないという結論ではない。","3":"まさに経済と道徳の間に緊張がある。"}},{"id":319,"conceptId":"cMLM_paternalism","ch":"MLM","type":"E","source":"PEB2 Textbook","q":"[L6] Subsidizing local culture even when the public will pay for the product reflects which objection (cultural goods / paternalism)?","opts":["A) Economic argument: local heritage is valuable for identity; Moral argument: market should rule","B) Economic argument: subsidy is wasteful and the market should rule; Moral argument: local heritage is valuable for people’s identity","C) Both arguments say the government should never subsidize culture","D) It illustrates capital export neutrality","E) わからない"],"ans":1,"exp":"文化財/パターナリズムの論点: 経済的議論は補助は無駄で市場に委ねるべき、道徳的議論は地域の遺産が人々のアイデンティティに価値を持つ、と対立する。市場万能論への反論例。","we":{"0":"論拠が逆。経済=市場に委ねる、道徳=遺産に価値。","2":"政府が決して補助すべきでないという一方的結論ではない。","3":"資本輸出中立性はTAXの概念で無関係。"}},{"id":320,"conceptId":"cMLM_scarcity_mani","ch":"MLM","type":"C","source":"PEB2 Textbook","q":"[L6] Mani et al. (2013): the less well-off use less preventive care, keep fewer appointments, etc. What is the correct conclusion the slide warns about?","opts":["A) Being less productive simply causes people to be poor","B) Poverty has no relationship with productivity","C) One must be careful: the data do not straightforwardly prove \"being less well-off causes being less productive\" (correlation vs. causation)","D) Preventive care always increases income","E) わからない"],"ans":2,"exp":"Mani et al.(2013)のスライドは、相関を因果と短絡しない注意を促す。貧しさと低生産性の相関から「貧しさが低生産性を生む」と単純に結論づけるのは、因果方向や交絡の問題で慎重を要する。科学的主張の評価の例。","we":{"0":"低生産性が貧困を生むと断定するのは因果の早合点。慎重さが論点。","1":"","3":"貧困と生産性に関係が無いという主張ではない。"}},{"id":401,"conceptId":"cSUST_brundtland","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L7] The most popular definition of sustainable development (Brundtland 1987) is development that:","opts":["A) maximizes present consumption regardless of the future","B) keeps GDP growth constant forever","C) replaces all natural capital with human-made capital","D) meets the needs of the present without compromising the ability of future generations to meet their own needs","E) わからない"],"ans":3,"exp":"Brundtland(1987)の定義: 持続可能な開発とは、将来世代が自らのニーズを満たす能力を損なわずに現在のニーズを満たす開発。300超の定義の中で最も広く引用される。","we":{"0":"将来を顧みず現在の消費を最大化するのは持続可能性の定義に反する。","1":"GDP成長の一定維持を求める定義ではない。","2":"自然資本を人工資本で全置換するのは強い持続可能性に反し、定義そのものでもない。"}},{"id":402,"conceptId":"cSUST_strong_weak","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L7] Costanza & Daly distinguish strong vs. weak sustainability. Strong sustainability requires:","opts":["A) maintaining natural capital and human-made capital intact separately","B) maintaining the sum of human-made and natural capital intact","C) maximizing human-made capital only","D) ignoring natural capital entirely","E) わからない"],"ans":0,"exp":"強い持続可能性(strong sustainability)は、自然資本と人工資本を「別々に」非減少に保つことを求める(自然資本は代替不可)。弱い持続可能性は両者の「合計」を保てばよい(代替可能)とする。","we":{"1":"合計を保つのは弱い持続可能性(weak)の定義。","2":"","3":"人工資本のみ最大化は持続可能性の定義ではない。"}},{"id":403,"conceptId":"cSUST_5cs","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L7] Lange & Pfarrer say a good article formulates 5 Cs. Which is one of them?","opts":["A) Commodification","B) Common ground (what is established in the literature)","C) Counterfactual","D) Capital neutrality","E) わからない"],"ans":1,"exp":"Lange & Pfarrer(2017)の5C: Common ground(共通基盤)、Complication(問題化)、Concern(関連性)、Course of action(対処)、Contribution(貢献)。論文の構造を読み書きする枠組みで、講義の各論文分析に用いられる。","we":{"0":"Commodification(商品化)は5Cではない(Costanzaの議論で別出)。","2":"Counterfactual(反事実)はWest et al.の概念で5Cではない。","3":"Capital neutrality(資本中立性)はTAXの概念で無関係。"}},{"id":404,"conceptId":"cSUST_ehrenfeld","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L7] Ehrenfeld’s complication is summarized as:","opts":["A) \"Eco-efficiency solves sustainability completely\"","B) \"Business should maximize shareholder value only\"","C) \"Reducing unsustainability is not the same as creating sustainability\"","D) \"Natural and human-made capital are perfectly substitutable\"","E) わからない"],"ans":2,"exp":"Ehrenfeld(2005)の問題化(complication): 「持続不可能性を減らすことは、持続可能性を作ることと同じではない」。現状の企業の取組はBand-Aid(対症療法)にすぎないと批判。貢献は幸福(eudaimonia)に根ざした持続可能性の定義。","we":{"0":"エコ効率が完全解決という主張はEhrenfeldの批判対象(common ground)。","1":"株主価値最大化はFriedmanドクトリンの説明で、Ehrenfeldの問題化そのものではない。","3":"資本の完全代替は弱い持続可能性の前提で、Ehrenfeldの問題化ではない。"}},{"id":405,"conceptId":"cSUST_friedman","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L7] The Friedman doctrine states that:","opts":["A) The social responsibility of business is to reduce its profits for social causes","B) Business should be owned by the state","C) Profits must always be donated to charity","D) The social responsibility of business is to increase its profits (CEOs’ sole responsibility is to maximize shareholder profit, within the law)","E) わからない"],"ans":3,"exp":"Friedmanドクトリン(1970): 企業の社会的責任は利益を増やすこと。CEOの唯一の責任は(法の枠内で)株主の利益を最大化すること。Smithの「見えざる手」のように、利益と効率の追求が社会に最も貢献するとする。反論: 弱い政府/政府の失敗、telecoupling(遠隔影響)。","we":{"0":"社会的目的のため利益を減らすのはFriedmanの主張と逆。","1":"","2":"企業の国有化を説くものではない。"}},{"id":406,"conceptId":"cSUST_jevons","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L7] Jevons’ paradox states that efficiency improvements can:","opts":["A) raise total resource consumption (through increased profitability, new uses, and consumer behavior)","B) always reduce total resource consumption to zero","C) have no effect on consumption","D) only apply to renewable energy","E) わからない"],"ans":0,"exp":"Jevonsのパラドックス: 資源利用の効率化は、(1)収益性向上、(2)新用途の発明、(3)消費者行動を通じて、総資源消費を「増やしうる」(リバウンド効果)。Alcottは実測リバウンドが1%未満〜数百%で、ゼロ以下にはならないとした。","we":{"1":"効率化が消費をゼロにするのではなく、逆に増やしうるのがパラドックス。","2":"消費に影響しないのではなく、増加させうる。","3":"再生可能エネルギーに限った話ではない。"}},{"id":407,"conceptId":"cSUST_busch_course","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L7] Busch et al.’s \"course of action\" (how to make business cases work) includes:","opts":["A) abandoning all government intervention","B) sustainable entrepreneurship, business-model transformation, and sensitivity to market failures (need for government intervention)","C) maximizing consumerism","D) ignoring market failures entirely","E) わからない"],"ans":1,"exp":"Busch et al.(2024)の対処(course of action): 持続可能な起業(社会的使命が中核; B Corp等)、ビジネスモデル変革(循環型・シェアリング)、市場の失敗への感応(政府介入の必要性を認める)。貢献はシステム視点(影響・協働・抑制)への再定位。","we":{"0":"むしろ政府介入の必要性を認める(完全撤廃ではない)。","2":"消費主義の最大化はBuschの批判対象。","3":"市場の失敗を無視するのではなく、それに感応すべきとする。"}},{"id":408,"conceptId":"cSUST_west_finding","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L7] What was West et al.’s key empirical finding on forest-conservation carbon offsets?","opts":["A) All offset projects delivered their promised reductions","B) Offsets reduced more emissions than promised","C) Only about 6% of promised offsets gave actual emission reductions (most overcredited vs. synthetic controls)","D) Counterfactual analysis was impossible","E) わからない"],"ans":2,"exp":"West et al.(2023)は、合成コントロール(事後の反事実)で26件のプロジェクトを評価し、約束された削減のうち実際に削減を生んだのは約6%にすぎないと結論。多くが過大クレジット。事前ベースライン依存の追加性評価の問題を示す。","we":{"0":"すべてが約束を達成したのではなく、ごく一部のみ。","1":"約束以上に削減したのではなく、ほとんどが過大クレジット。","3":"合成コントロールで反事実分析は可能だった(本研究の手法)。"}},{"id":409,"conceptId":"cSUST_counterfactual","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L7] What is a counterfactual in West et al.’s analysis?","opts":["A) The actual observed deforestation in the project area","B) The project developer’s marketing claim","C) The carbon price on the market","D) A hypothetical outcome of what would have happened under a different treatment (e.g., no conservation)","E) わからない"],"ans":3,"exp":"反事実(counterfactual)とは、別の処置(例: 保全しなかった場合)の下で起きたであろう仮想的な結果(「もし〜だったら」)。ランダム化や、観察特性が似た合成コントロール(matching)で作る。追加性の判定に不可欠。","we":{"0":"実際に観測された森林減少は事実であって反事実ではない。","1":"","2":"開発者のマーケティング主張は反事実ではない。"}},{"id":410,"conceptId":"cSUST_boulding","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L8] Boulding (1966) contrasts which two metaphors of the economy?","opts":["A) Cowboy economy vs. spaceman economy","B) Pipeline economy vs. platform economy","C) Cowboy economy vs. pipeline economy","D) Hub economy vs. keystone economy","E) わからない"],"ans":0,"exp":"Boulding(1966)は、無限の資源と消費を前提とする「カウボーイ経済(cowboy economy)」と、閉じた限られた地球で循環を要する「宇宙船経済(spaceman economy)」を対比した。生態経済学の思想的基盤。","we":{"1":"pipeline/platformはDF(デジタル企業)の対比で、Bouldingの対比ではない。","2":"cowboy対pipelineではなく、cowboy対spaceman。","3":"hub/keystoneはIansitiのプラットフォーム概念。"}},{"id":411,"conceptId":"cSUST_malthus","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L8] Malthus argued that population grows geometrically while subsistence grows arithmetically. He was criticized because:","opts":["A) population always grows faster than food in every era","B) fertility rates decrease with income and food production increased faster than population","C) food production cannot increase at all","D) population growth is unrelated to resources","E) わからない"],"ans":1,"exp":"Malthus(1798)は人口が幾何級数的、食料が算術級数的に増えると論じた。批判: 所得上昇で出生率が低下し、食料生産が人口より速く増加した(実証的に外れた)。Limits to Growthはこのロジックを継承(人口→経済、食料→資源)。","we":{"0":"実際には食料が人口より速く増えた時期もあり、常に人口が上回るわけではない。","2":"","3":"食料生産は実際には増加した。"}},{"id":412,"conceptId":"cSUST_solow","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L8] Solow (1973) argues that rising prices of exhaustible resources lead to:","opts":["A) immediate collapse of the economy","B) a permanent end to economic growth","C) substitution toward more plentiful materials, raising the productivity of natural resources","D) the impossibility of any substitution","E) わからない"],"ans":2,"exp":"Solow(1973)は、枯渇性資源の価格上昇が、より豊富で安価な材料への代替を促し、資源生産性(GDP当たり資源必要量の低下)を高めると論じた(相対的希少性・代替可能性=弱い持続可能性)。留保: 価格付けされない外部性、持続可能性の十分条件ではない。","we":{"0":"即時の経済崩壊を予測したのではなく、価格による代替を論じた。","1":"経済成長の恒久的終焉ではなく、代替で成長は続きうるとする。","3":"代替が不可能とするのは生態経済学側(強い持続可能性)。Solowは代替可能とする。"}},{"id":413,"conceptId":"cSUST_decoupling_def","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L8] What is the difference between absolute and relative decoupling (Hickel & Kallis)?","opts":["A) Absolute: impact rises slower than GDP; Relative: GDP rises while impact falls","B) Both mean impact and GDP rise at the same rate","C) Both mean GDP falls while impact rises","D) Absolute: GDP increases while impact decreases; Relative: impact increases but slower than GDP","E) わからない"],"ans":3,"exp":"絶対的デカップリング(absolute): GDPが増加しつつ環境影響が「減少」する。相対的デカップリング(relative): 影響は増えるがGDPより緩やかに増える。グリーン成長と呼べるのは絶対的のみ。","we":{"0":"定義が逆。絶対=影響減少、相対=影響はGDPより遅く増加。","1":"両者とも同率上昇ではない。","2":"両者ともGDP減少・影響増加を意味しない。"}},{"id":414,"conceptId":"cSUST_green_growth_evidence","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L8] What do Hickel & Kallis (2020) conclude about evidence for green growth (absolute decoupling)?","opts":["A) There is no evidence of absolute decoupling of resource use at the global scale; recent decades show \"recoupling\"","B) There is strong global evidence of absolute decoupling of resource use","C) Global GHG emissions fell steadily every year","D) Decoupling to net-zero will happen within 10 years","E) わからない"],"ans":0,"exp":"Hickel & Kallis(2020): 世界規模での資源利用の絶対的デカップリングの証拠は無く、近年はむしろ「再結合(recoupling/rematerialization)」が見られる。世界のGHGは世界的不況時のみ減少。Global Northの絶対的デカップリングはパリ目標には遅すぎる(Vogel & Hickel: ネットゼロまで200年超)。","we":{"1":"絶対的デカップリングの強い証拠は「無い」とするのが結論。","2":"","3":"GHGは世界的不況時のみ減少し、毎年安定的に減ったわけではない。"}},{"id":415,"conceptId":"cSUST_easterlin","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L8] Which statement reflects Easterlin’s paradox?","opts":["A) Income is unrelated to happiness within countries at a point in time","B) Income is positively correlated with happiness within countries at a moment, but is unrelated to happiness across countries and over time","C) Income always raises happiness over time","D) Happiness cannot be measured at all","E) わからない"],"ans":1,"exp":"Easterlinのパラドックス: ある時点・一国内では所得と幸福は正の相関を持つが、国家間および時系列では所得は幸福と無相関。説明候補: 相対所得(地位)、快楽適応、非経済的成長(uneconomic growth)。","we":{"0":"一国内・一時点では所得と幸福は正の相関がある(無相関ではない)。","2":"","3":"時系列では所得は幸福と無相関で、常に幸福を高めるわけではない。"}},{"id":416,"conceptId":"cSUST_doughnut_concept","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L8] What does the doughnut framework (Raworth) add to the planetary boundaries concept?","opts":["A) A maximum GDP ceiling for each country","B) A global carbon tax schedule","C) A social foundation (inner ring) below which human deprivation occurs, alongside the ecological ceiling","D) A ranking of platforms by network effects","E) わからない"],"ans":2,"exp":"ドーナツ枠組み(Raworth)は、惑星限界(生態的天井=外輪)に加え、社会的基盤(内輪: 下回ると人間の困窮が生じる)を加える。Fanning & Raworth(2025)は21の社会指標と13の生態指標で「均衡を欠いた世界」を示した。","we":{"0":"各国のGDP上限を設けるものではない。","1":"","3":"世界炭素税の料率表ではない。"}},{"id":417,"conceptId":"cSUST_world_out_of_balance","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L8] Fanning & Raworth’s \"a world out of balance\" observes that typically:","opts":["A) countries that meet more social foundations also stay within ecological ceilings","B) all countries are within both social and ecological limits","C) income has no relation to ecological footprint","D) countries that meet more social foundations tend to exceed more ecological ceilings, while those within planetary boundaries fail to provide social conditions","E) わからない"],"ans":3,"exp":"Fanning & Raworth(2025)/O’Neill et al.(2018): 典型的に、社会的基盤をより多く満たす国ほど生態的天井をより多く超過し、逆に惑星限界内に収まる国は社会的条件を提供できていない。両立の難しさ=「均衡を欠いた世界」。","we":{"0":"むしろ社会的基盤を満たす国ほど生態的天井を超えがち(両立できていない)。","1":"","2":"全ての国が両限界内にあるのではなく、均衡を欠く。"}},{"id":418,"conceptId":"cSUST_valuation_methods","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L8] Which is a revealed preference method for valuing ecosystem services?","opts":["A) Hotelling’s travel cost method and hedonic regression (e.g., house prices)","B) Contingent valuation (asking hypothetical willingness to pay)","C) The arm’s length principle","D) The maximin principle","E) わからない"],"ans":0,"exp":"顕示選好法(revealed preference)は実際の行動から価値を推定: Hotellingの旅行費用法(公園までの移動費用)やヘドニック回帰(住宅価格差で緑地近接・大気質・騒音の価値を推定)。一方、表明選好法(contingent valuation)は仮想的WTPを尋ねる。","we":{"1":"仮想的WTPを尋ねる仮想評価法(contingent valuation)は表明選好法であり、顕示選好法ではない。","2":"","3":"独立企業間原則はTAXの移転価格の概念。"}},{"id":419,"conceptId":"cSUST_vsl","ch":"SUST","type":"C","source":"PEB2 Predicted","q":"[L8] The Value of a Statistical Life (VSL) is used to:","opts":["A) set corporate tax rates on multinationals","B) express the \"benefits of saving a life\" in cost-benefit analyses of safety and pollution standards","C) measure network effects on platforms","D) define strong sustainability","E) わからない"],"ans":1,"exp":"統計的生命価値(VSL)は、安全・汚染基準の費用便益分析で「生命を救う便益」を金銭表現するのに用いる(米EU等で約1000万US$)。仮想的賭けや割引後の将来稼得、政府支出から推定。欠点: 所得に依存する。","we":{"0":"多国籍企業の法人税率設定とは無関係。","2":"","3":"ネットワーク効果の測定はDFの概念。"}},{"id":420,"conceptId":"cSUST_nonexcludable","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L8] Many ecosystem services are public goods. \"Non-excludable\" means:","opts":["A) consumption by one person decreases the amount available to others","B) the good can be sold at a market price easily","C) it is impossible to exclude someone from consumption","D) only the government may consume it","E) わからない"],"ans":2,"exp":"非排除性(non-excludable)は、誰かを消費から排除することが不可能であること。非競合性(non-rival)は、一人の消費が他者の消費可能量を減らさないこと。多くの生態系サービスは両性質を持つ公共財(Costanza 2024)。","we":{"0":"これは競合性(rival)の説明で、非排除性ではない。","1":"","3":"公共財はむしろ市場で容易に売れない(非排除性ゆえタダ乗り)。"}},{"id":421,"conceptId":"cSUST_uber_planet","ch":"SUST","type":"E","source":"PEB2 Textbook","q":"[L7] \"Uber Planet\" lets customers pay ~+5% to offset emissions. Which is a \"con\" raised in the lecture?","opts":["A) Any mitigation of climate change helps","B) It fully decarbonizes Uber’s fleet","C) It eliminates deadheading entirely","D) It shifts responsibility to consumers, the symbolic amount is not enough to offset emissions, and offsets may not deliver promised reductions","E) わからない"],"ans":3,"exp":"Uber Planetの「con(短所)」: 責任を消費者に転嫁する、象徴的な金額では排出を相殺するのに不十分、オフセットは約束された削減を生まないことがある(West et al.の知見)。Proは「どんな緩和も助けになる」。","we":{"0":"これはpro(長所)の側の主張。","1":"","2":"+5%課金は車両を完全脱炭素化しない。"}},{"id":422,"conceptId":"cSUST_wright_framing","ch":"SUST","type":"C","source":"PEB2 Predicted","q":"[L7] In Wright & Nyberg’s model, the three stages by which firms translate climate change into business-as-usual are:","opts":["A) Framing, localizing, and normalizing","B) Resourcing, securing, and integrating","C) Common ground, complication, and contribution","D) Cowboy, spaceman, and steady-state","E) わからない"],"ans":0,"exp":"Wright & Nyberg(2017)の3段階: Framing(連想/非連想)、Localizing(取り込み・指標化・布教)、Normalizing(純化・希釈)。最終的に当初の気候への取組が支配的言説に再整合され通常業務に戻る。","we":{"1":"resourcing/securingはDF(境界資源モデル)の概念。","2":"","3":"common ground等はLange & Pfarrerの5Cの一部。"}},{"id":423,"conceptId":"cSUST_intrinsic_rights","ch":"SUST","type":"C","source":"PEB2 Textbook","q":"[L8] Why does Costanza (2024) hold that intrinsic values cannot be translated to monetary estimates?","opts":["A) Because they are the same as instrumental values","B) Because they concern the rights of nature (e.g., legal personhood like the Whanganui River)","C) Because they are easy to price via travel cost","D) Because they only apply to private goods","E) わからない"],"ans":1,"exp":"Costanza(2024)は、内在的価値が「自然の権利(rights of nature)」に関わるため金銭推定に翻訳できないとする(例: NZのWhanganui川の法人格、エクアドルのPachamama)。生態系サービス評価は権利ベースのアプローチと補完的。","we":{"0":"内在的価値は手段的価値とは別で、金銭化しやすい手段的価値とは異なる。","2":"","3":"旅行費用法で容易に価格付けできるのは手段的(利用)価値。内在的価値は不可。"}},{"id":424,"conceptId":"cSUST_contingent_valuation","ch":"SUST","type":"C","source":"PEB2 Predicted","q":"[L8] Diamond & Hausman (1994) criticize contingent valuation (CV) because of issues such as:","opts":["A) it perfectly measures willingness to pay with no bias","B) it relies only on revealed market behavior","C) embedding/scope effects (WTP_total ≈ WTP_part) and order effects, suggesting policy is better informed by expert opinion","D) it is identical to hedonic regression","E) わからない"],"ans":2,"exp":"Diamond & Hausman(1994)はCV(仮想評価法)を批判: 埋め込み/スコープ効果(全体WTP≒部分WTP)、順序効果、支払手段で異なるWTP、WTP≠WTA(保有効果)。政策は専門家意見でより良く判断されるとする。賛成側はKling et al.(ベストプラクティス遵守で妥当)。","we":{"0":"CVが偏りなく完全に測定できるとは批判者は考えない(むしろ偏りを指摘)。","1":"","3":"CVは表明選好法で、顕示された市場行動に依拠するのは顕示選好法。"}},{"id":425,"conceptId":"cSUST_biodiversity_importance","ch":"SUST","type":"A","source":"PEB2 Textbook","q":"[L8] Which is a reason given for why biodiversity conservation is important?","opts":["A) Biodiversity loss improves ecosystem efficiency","B) Biodiversity loss has no effect on disease transmission","C) Biodiversity loss raises GDP automatically","D) Biodiversity loss harms ecosystem efficiency and stability and increases risks of infectious diseases","E) わからない"],"ans":3,"exp":"生物多様性損失は、(1)生態系効率を損ない(Cardinale et al.)、(2)生態系安定性を損ない(Rockström et al.)、(3)感染症リスクを高める(Keesing et al.)。単一種依存の生態系は撹乱に脆弱。","we":{"0":"損失は効率を「改善」するのではなく損なう。","1":"","2":"損失はむしろ病原体伝播・疾病発生を「増やす」。"}},{"id":426,"conceptId":"cSUST_postgrowth","ch":"SUST","type":"C","source":"PEB2 Predicted","q":"[L8] Kallis et al. (2025) on post-growth argues that:","opts":["A) continued growth is unlikely to be environmentally sustainable or socially beneficial (especially in high-income countries), questioning growth’s feasibility and desirability","B) economic growth in high-income countries is the surest path to sustainability","C) absolute decoupling has already been achieved globally","D) the Easterlin paradox proves income always raises wellbeing","E) わからない"],"ans":0,"exp":"Kallis et al.(2025)のポストグロース: 特に高所得国では継続的成長が環境的に持続可能でも社会的に有益でもなさそうとし、成長の実現可能性と望ましさを問う。Limits to Growthのレビュー、絶対的デカップリングの否定、Easterlinパラドックスのレビューを行い、ポストグロース政策を提示。","we":{"1":"高所得国の成長を持続可能性への確実な道とはせず、むしろ疑問視する。","2":"","3":"絶対的デカップリングは世界規模で達成されていないとする(Hickel & Kallis)。"}}];
+
+</script>
+<script>
+/* =========================================================
+   PEB2 Quiz Engine — vanilla JS, Canvas-derived content only
+   ========================================================= */
+"use strict";
+var QUESTIONS = window.QUESTIONS || [];
+var DK_LABEL = "E) わからない";
+
+/* ---- source -> passMode mapping ----
+   0=全範囲, 2=教科書(Textbook), 3=過去問(Mock Exam), 4=Exercise, 5=Problem, 6=予想問題(Predicted) */
+function passModeOf(src){
+  if(/Mock Exam|Sample Exam|Past Exam/i.test(src)) return 3;
+  if(/Textbook/i.test(src)) return 2;
+  if(/Exercise/i.test(src)) return 4;
+  if(/Problem/i.test(src)) return 5;
+  if(/Predicted/i.test(src)) return 6;
+  return 2;
+}
+var WEEK_OF = {DF:1,TAX:1,MLM:2,SUST:2};
+var CH_LABEL = {DF:"DF デジタル企業",TAX:"EoT 課税",MLM:"MLM 市場の道徳",SUST:"Sust 持続可能性"};
+
+/* ---- persistent state ---- */
+var LS="peb2_v1";
+function loadLS(){try{return JSON.parse(localStorage.getItem(LS))||{}}catch(e){return{}}}
+function saveLS(o){try{localStorage.setItem(LS,JSON.stringify(o))}catch(e){}}
+var store = loadLS();
+store.cat = store.cat||{};          // id -> category
+store.prompted = store.prompted||{}; // id -> true if prompt copied
+store.filters = store.filters||{};
+
+var quizState = {
+  block:[], blockResults:[], index:0, answered:false, chosen:-1,
+  modes: store.filters.modes || ['all'],
+  selectedWeeks: store.filters.selectedWeeks || [],
+  selectedChs: store.filters.selectedChs || [],
+  passModes: store.filters.passModes || [0]
+};
+var batchLog = []; // questions answered since last copy (for batch prompt)
+
+/* ---- option shuffling (stratified) ---- */
+function shuffleQuestionOptionsAt(q, targetSlot){
+  // real options = indices 0..(n-2); last = わからない (fixed)
+  var n = q.opts.length;
+  var dk = q.opts[n-1];
+  var real = q.opts.slice(0,n-1).map(function(s){return s.replace(/^[A-E]\)\s*/,'');});
+  var correctText = real[q.ans];
+  // wrong reasons mapped by original index
+  var weByText = {};
+  if(q.we) Object.keys(q.we).forEach(function(k){ weByText[real[+k]] = q.we[k]; });
+  // fisher-yates on distractors
+  var distract = real.filter(function(_,i){return i!==q.ans;});
+  for(var i=distract.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=distract[i];distract[i]=distract[j];distract[j]=t;}
+  var slots = new Array(real.length).fill(null);
+  var ts = Math.max(0,Math.min(real.length-1,targetSlot));
+  slots[ts]=correctText;
+  var di=0; for(var p=0;p<slots.length;p++){if(slots[p]===null)slots[p]=distract[di++];}
+  var letters=["A","B","C","D","E","F"];
+  var newOpts = slots.map(function(txt,idx){return letters[idx]+") "+txt;});
+  newOpts.push(dk);
+  var newWe={};
+  slots.forEach(function(txt,idx){ if(txt!==correctText && weByText[txt]!==undefined) newWe[idx]=weByText[txt]; });
+  return {opts:newOpts, ans:ts, we:newWe};
+}
+function shuffleBlockOptions(block){
+  var nReal = 4;
+  // stratified targets: cycle 0..3, then anti-streak (no 3 same in a row)
+  var targets=[]; for(var i=0;i<block.length;i++) targets.push(i%nReal);
+  for(var s=targets.length-1;s>0;s--){var j=Math.floor(Math.random()*(s+1));var t=targets[s];targets[s]=targets[j];targets[j]=t;}
+  // anti-streak
+  for(var i=2;i<targets.length;i++){
+    if(targets[i]===targets[i-1] && targets[i-1]===targets[i-2]){
+      for(var k=i+1;k<targets.length;k++){ if(targets[k]!==targets[i]){var tmp=targets[i];targets[i]=targets[k];targets[k]=tmp;break;} }
+    }
+  }
+  block.forEach(function(q,idx){
+    var r=shuffleQuestionOptionsAt(q, targets[idx]%((q.opts.length-1)||4));
+    q._opts=r.opts; q._ans=r.ans; q._we=r.we;
+  });
+}
+
+/* ---- filtering: week×ch×passModes (AND) × modes (OR) ---- */
+function categoryOf(id){ return store.cat[id]||null; }
+function getFilteredQuestions(){
+  var sw=quizState.selectedWeeks, sc=quizState.selectedChs, pm=quizState.passModes, modes=quizState.modes;
+  return QUESTIONS.filter(function(q){
+    if(sw.length && sw.indexOf(WEEK_OF[q.ch])<0) return false;
+    if(sc.length && sc.indexOf(q.ch)<0) return false;
+    if(!(pm.length===0 || pm.indexOf(0)>=0)){
+      if(pm.indexOf(passModeOf(q.source))<0) return false;
+    }
+    if(modes.indexOf('all')>=0) return true;
+    // OR union across selected modes
+    var cat=categoryOf(q.id);
+    var ok=false;
+    if(modes.indexOf('wrong')>=0 && (cat==='wrong'||cat==='wrong_studied')) ok=true;
+    if(modes.indexOf('dk')>=0 && cat==='dk') ok=true;
+    if(modes.indexOf('unanswered')>=0 && !cat) ok=true;
+    return ok;
+  });
+}
+
+/* ---- build / render ---- */
+function buildBlock(){
+  var list=getFilteredQuestions().slice();
+  // shuffle order
+  for(var i=list.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=list[i];list[i]=list[j];list[j]=t;}
+  quizState.block=list; quizState.blockResults=new Array(list.length); quizState.index=0;
+  shuffleBlockOptions(list);
+  batchLog=[];
+}
+function curQ(){return quizState.block[quizState.index];}
+
+function renderQuestion(){
+  var area=document.getElementById('q-area');
+  var nav=document.getElementById('q-nav');
+  if(!quizState.block.length){
+    area.innerHTML='<div class="empty">該当する問題がありません。<br>フィルターを変更してください。</div>';
+    nav.style.display='none';
+    document.getElementById('q-stat').innerHTML='';
+    document.getElementById('q-prog').style.width='0%';
+    return;
+  }
+  nav.style.display='flex';
+  var q=curQ();
+  var prev=quizState.blockResults[quizState.index];
+  var answered=!!prev;
+  var isExam=passModeOf(q.source)===3;
+  var srcCls='src'+(isExam?' exam':'');
+  var html='';
+  html+='<div class="card">';
+  html+='<div class="qmeta"><span class="'+srcCls+'">'+esc(q.source)+'</span>'+
+        '<span>'+CH_LABEL[q.ch]+' · Week '+WEEK_OF[q.ch]+' · '+(quizState.index+1)+'/'+quizState.block.length+'</span></div>';
+  html+='<div class="qtext">'+esc(q.q)+'</div>';
+  if(q.fig) html+='<div class="fig">'+q.fig+'</div>';
+  var chosen = answered? prev.chosen : -1;
+  for(var i=0;i<q._opts.length;i++){
+    var cls='opt';
+    var isDkOpt=(i===q._opts.length-1);
+    if(answered){
+      cls+=' disabled';
+      if(i===q._ans) cls+=' correct';
+      else if(i===chosen) cls+=' wrong';
+    }
+    var lt=q._opts[i].slice(0,2);
+    var body=q._opts[i].slice(2).trim();
+    html+='<button class="'+cls+'" data-i="'+i+'"'+(answered?' disabled':'')+'>'+
+          '<span class="lt">'+esc(lt)+'</span>'+esc(body)+'</button>';
+  }
+  // explanation (restore if answered)
+  html+='<div class="exp'+(answered?' show':'')+'" id="exp">';
+  html+='<div class="h">解説</div>'+esc(q.exp);
+  if(q._we && Object.keys(q._we).length){
+    html+='<div class="we"><b>誤答の理由:</b>';
+    var lets=["A","B","C","D","E"];
+    Object.keys(q._we).sort().forEach(function(k){ html+='<div>'+lets[k]+') '+esc(q._we[k])+'</div>'; });
+    html+='</div>';
+  }
+  html+='</div>';
+  // AI buttons
+  html+='<div class="aibtns">'+
+        '<button class="aibtn" id="ai-analyze">📋 分析プロンプト</button>'+
+        '<button class="aibtn alt" id="ai-test">🎯 確認テスト</button></div>';
+  if(answeredCount()>=10){
+    html+='<div class="aibtns"><button class="aibtn" id="ai-batch" style="flex:1">📦 バッチ一括分析（'+answeredCount()+'問）</button></div>';
+  }
+  html+='</div>';
+  area.innerHTML=html;
+
+  // bind options
+  if(!answered){
+    Array.prototype.forEach.call(area.querySelectorAll('.opt'),function(b){
+      b.onclick=function(){selectOption(+b.getAttribute('data-i'));};
+    });
+  }
+  document.getElementById('ai-analyze').onclick=function(){copyAnalyze(q);};
+  document.getElementById('ai-test').onclick=function(){copyTest(q);};
+  var bb=document.getElementById('ai-batch'); if(bb) bb.onclick=copyBatch;
+
+  // nav buttons
+  document.getElementById('btn-prev').disabled=(quizState.index===0);
+  document.getElementById('btn-next').textContent=(quizState.index===quizState.block.length-1)?'最初へ ▶':'次へ ▶';
+  updateStat();
+}
+
+function selectOption(idx){
+  var q=curQ();
+  if(quizState.blockResults[quizState.index]) return;
+  var isDk=(idx===q._opts.length-1);
+  var correct=(idx===q._ans);
+  var usedPrompt=!!store.prompted[q.id];
+  var category = isDk?'dk':(correct?(usedPrompt?'review':'correct'):(usedPrompt?'wrong_studied':'wrong'));
+  store.cat[q.id]=category; saveLS(store);
+  var res={q:q,chosen:idx,correct:correct,isDk:isDk,usedAnalysis:usedPrompt,usedVerify:false,category:category};
+  quizState.blockResults[quizState.index]=res;
+  batchLog.push(res);
+  renderQuestion();
+}
+
+function nextQuestion(){
+  if(quizState.index<quizState.block.length-1) quizState.index++;
+  else { buildBlock(); }
+  renderQuestion();
+  document.getElementById('p-quiz').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function prevQuestion(){
+  if(quizState.index>0){quizState.index--;renderQuestion();
+    document.getElementById('p-quiz').scrollIntoView({behavior:'smooth',block:'start'});}
+}
+
+function answeredCount(){return batchLog.length;}
+function updateStat(){
+  var done=quizState.blockResults.filter(Boolean).length;
+  var corr=quizState.blockResults.filter(function(r){return r&&r.correct;}).length;
+  var wr=quizState.blockResults.filter(function(r){return r&&!r.correct&&!r.isDk;}).length;
+  var dk=quizState.blockResults.filter(function(r){return r&&r.isDk;}).length;
+  document.getElementById('q-stat').innerHTML=
+    '<span>📚 '+quizState.block.length+'問</span>'+
+    '<span style="color:#3fb950">✅ '+corr+'</span>'+
+    '<span style="color:#f85149">❌ '+wr+'</span>'+
+    '<span style="color:#8b949e">❓ '+dk+'</span>'+
+    '<span>進捗 '+done+'/'+quizState.block.length+'</span>';
+  document.getElementById('q-prog').style.width=(quizState.block.length?Math.round(done/quizState.block.length*100):0)+'%';
+}
+
+/* ---- filter chips ---- */
+function buildFilters(){
+  // week
+  var fw=document.getElementById('f-week'); fw.innerHTML='';
+  [[1,'Week 1（DF・EoT課税）'],[2,'Week 2（MLM・Sust）']].forEach(function(p){
+    fw.appendChild(chip(p[1], quizState.selectedWeeks.indexOf(p[0])>=0, function(el){
+      toggle(quizState.selectedWeeks,p[0]); el.classList.toggle('on'); persist(); refreshQuiz();}));
+  });
+  // ch
+  var fc=document.getElementById('f-ch'); fc.innerHTML='';
+  ['DF','TAX','MLM','SUST'].forEach(function(c){
+    fc.appendChild(chip(CH_LABEL[c], quizState.selectedChs.indexOf(c)>=0, function(el){
+      toggle(quizState.selectedChs,c); el.classList.toggle('on'); persist(); refreshQuiz();}));
+  });
+  // pass/source
+  var fp=document.getElementById('f-pass'); fp.innerHTML='';
+  [[0,'全範囲'],[3,'過去問 (Mock)'],[2,'教科書/講義'],[6,'予想問題']].forEach(function(p){
+    fp.appendChild(chip(p[1], quizState.passModes.indexOf(p[0])>=0, function(el){
+      passToggle(p[0]); buildFilters(); persist(); refreshQuiz();}));
+  });
+  // mode
+  var fm=document.getElementById('f-mode'); fm.innerHTML='';
+  [['all','すべて'],['wrong','復習(誤答)'],['dk','わからない'],['unanswered','未回答']].forEach(function(p){
+    var c=chip(p[1], quizState.modes.indexOf(p[0])>=0, function(el){ modeToggle(p[0]); buildFilters(); persist(); refreshQuiz();});
+    c.classList.add('mode'); fm.appendChild(c);
+  });
+}
+function chip(label,on,fn){var b=document.createElement('button');b.className='chip'+(on?' on':'');b.textContent=label;b.onclick=function(){fn(b);};return b;}
+function toggle(arr,v){var i=arr.indexOf(v);if(i>=0)arr.splice(i,1);else arr.push(v);}
+function passToggle(v){
+  if(v===0){quizState.passModes=[0];return;}
+  var i=quizState.passModes.indexOf(v);
+  if(i>=0)quizState.passModes.splice(i,1); else quizState.passModes.push(v);
+  var z=quizState.passModes.indexOf(0); if(z>=0)quizState.passModes.splice(z,1);
+  if(!quizState.passModes.length)quizState.passModes=[0];
+}
+function modeToggle(v){
+  if(v==='all'){quizState.modes=['all'];return;}
+  var i=quizState.modes.indexOf(v);
+  if(i>=0)quizState.modes.splice(i,1); else quizState.modes.push(v);
+  var a=quizState.modes.indexOf('all'); if(a>=0)quizState.modes.splice(a,1);
+  if(!quizState.modes.length)quizState.modes=['all'];
+}
+function persist(){
+  store.filters={modes:quizState.modes,selectedWeeks:quizState.selectedWeeks,selectedChs:quizState.selectedChs,passModes:quizState.passModes};
+  saveLS(store);
+}
+function refreshQuiz(){ buildBlock(); renderQuestion(); }
+
+/* ---- AI prompts (Opus 4.8) ---- */
+var RULES =
+"【作問ルール（厳守）】\n"+
+"1. 同じ概念を、新しいシナリオ・数値で問う（問題文のコピペ禁止）。\n"+
+"2. 形式は5択（A〜E）。E)は必ず「わからない」。\n"+
+"3. 正解位置を完全ランダムに。まず [D,A,E,C,B] のように正解配列を決めてから本文を書く。B偏り禁止。\n"+
+"3b. 正解は必ず1つだけ。複数正解・等価判定（A and B both correct / Either A or B 等）は禁止。誤答は明確に誤りと分かる選択肢にする。\n"+
+"4. 計算問題は substitution（代入）形式で段階的に。\n"+
+"5. 難易度は 基礎→本番レベル へ。\n"+
+"6. 出典は UvA Canvas 教材（講義スライド・Mock Exam・指定論文）のみ。Canvas外の一般知識・他大学資料・Student wiki は使用禁止。\n"+
+"7. 言語: 問題文と選択肢は英語、解説は日本語。数式はLaTeX、グラフは言葉で記述。\n";
+
+function qBlock(q){
+  var lets=["A","B","C","D","E"];
+  var s="- 出典: "+q.source+" / トラック: "+CH_LABEL[q.ch]+"\n";
+  s+="- 問題: "+q.q+"\n";
+  for(var i=0;i<q._opts.length;i++) s+="  "+q._opts[i]+"\n";
+  s+="- 正解: "+lets[q._ans]+") "+q._opts[q._ans].slice(2).trim()+"\n";
+  var r=quizState.blockResults[quizState.index];
+  if(r){ s+="- あなたの解答: "+(r.isDk?"わからない":lets[r.chosen])+"（"+(r.correct?"正解":"不正解")+"）\n"; }
+  s+="- 解説: "+q.exp+"\n";
+  return s;
+}
+function copyAnalyze(q){
+  markPromptUsed(q);
+  var t="あなたは PEB2（Principles of Economics and Business 2）の経済学講師です。【Opus 4.8】\n"+
+    "以下の問題について、私の理解を深める詳しい解説をしてください。なぜ正解が正解で、各誤答がなぜ誤りかを、関連する講義概念・論文と結びつけて説明し、つまずきやすい点を指摘してください。最後に、同じ概念を別角度から確認する一問一答を3問（5択・E=わからない）出してください。\n\n"+
+    qBlock(q)+"\n"+RULES;
+  doCopy(t,"📋 分析プロンプトをコピーしました");
+}
+function copyTest(q){
+  markPromptUsed(q);
+  var t="あなたは PEB2 の経済学講師です。【Opus 4.8】\n"+
+    "次の問題と同じ概念を扱う確認テストを5問作ってください。シナリオと数値は変え、コピペは禁止。各問5択（A〜E、E=わからない）、正解は1つだけ。出題後に解答と日本語解説をまとめて提示してください。\n\n"+
+    "【対象概念】\n"+qBlock(q)+"\n"+RULES;
+  doCopy(t,"🎯 確認テストをコピーしました");
+}
+function copyBatch(){
+  if(!batchLog.length){doCopy("",""); return;}
+  var cats={wrong:[],wrong_studied:[],dk:[],review:[],correct:[]};
+  batchLog.forEach(function(r){ (cats[r.category]||cats.correct).push(r); });
+  var lets=["A","B","C","D","E"];
+  function dump(arr){ return arr.map(function(r){var q=r.q;
+    return "  ・["+q.source+"/"+q.ch+"] "+q.q+"\n     正解:"+lets[q._ans]+" / あなた:"+(r.isDk?"わからない":lets[r.chosen]); }).join("\n"); }
+  var t="あなたは PEB2 の経済学講師です。【Opus 4.8】\n"+
+    "以下は私が解いた"+batchLog.length+"問のバッチです。5カテゴリ（⚠️誤答+確認 / ❌単純誤答 / ❓わからない / 🔍正解+確認 / ✅完全正解）に分けて講評し、私の弱点TOP3を特定してください。最後に弱点を補強する確認テストを15問（5択・E=わからない・正解1つだけ）作り、解答と日本語解説を付けてください。\n\n";
+  t+="⚠️ 誤答＋要確認(wrong_studied):\n"+(dump(cats.wrong_studied)||"  （なし）")+"\n\n";
+  t+="❌ 単純誤答(wrong):\n"+(dump(cats.wrong)||"  （なし）")+"\n\n";
+  t+="❓ わからない(dk):\n"+(dump(cats.dk)||"  （なし）")+"\n\n";
+  t+="🔍 正解＋要確認(review):\n"+(dump(cats.review)||"  （なし）")+"\n\n";
+  t+="✅ 完全正解(correct):\n"+(dump(cats.correct)||"  （なし）")+"\n\n";
+  t+=RULES;
+  doCopy(t,"📦 バッチを封印してコピーしました");
+  batchLog=[]; renderQuestion();
+}
+function markPromptUsed(q){
+  store.prompted[q.id]=true;
+  // re-judge category if already answered
+  var c=store.cat[q.id];
+  if(c==='correct') store.cat[q.id]='review';
+  if(c==='wrong') store.cat[q.id]='wrong_studied';
+  saveLS(store);
+}
+function doCopy(text,msg){
+  if(!text){return;}
+  function ok(){toast(msg);}
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(ok,function(){fallbackCopy(text,ok);});
+  } else fallbackCopy(text,ok);
+}
+function fallbackCopy(text,cb){
+  var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand('copy');cb();}catch(e){}
+  document.body.removeChild(ta);
+}
+var toastT;
+function toast(m){var el=document.getElementById('toast');el.textContent=m;el.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove('show');},1800);}
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+/* ---- tabs ---- */
+function initTabs(){
+  Array.prototype.forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.onclick=function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      document.getElementById('p-'+t.getAttribute('data-t')).classList.add('active');
+      window.scrollTo(0,0);
+    };
+  });
+}
+
+/* ---- content tabs (textbook / summary / glossary / menu) rendered from CONTENT ---- */
+document.getElementById('btn-prev').onclick=prevQuestion;
+document.getElementById('btn-next').onclick=nextQuestion;
+
+function init(){
+  initTabs();
+  buildFilters();
+  buildBlock();
+  renderQuestion();
+  renderContent();
+}
+</script>
+<script>
+/* PEB2 content tabs — all Canvas-derived (lecture slides L1-8, tutorials, mock exam) */
+function renderContent(){
+  document.getElementById('p-textbook').innerHTML = TEXTBOOK;
+  document.getElementById('p-summary').innerHTML  = SUMMARY;
+  document.getElementById('p-glossary').innerHTML = GLOSSARY_HTML();
+  document.getElementById('p-menu').innerHTML     = MENU_HTML();
+  var rb=document.getElementById('reset-btn');
+  if(rb) rb.onclick=function(){ if(confirm('学習履歴（正誤・モード）をリセットしますか？')){ store.cat={};store.prompted={};saveLS(store); toast('履歴をリセットしました'); refreshQuiz(); } };
+}
+
+var TEXTBOOK = ''
++ '<h2>📖 教科書（章別要点）</h2>'
++ '<div class="note">本サイトの全内容は UvA Canvas の教材（講義スライド L1–L8・チュートリアル・Mock Exam・指定論文）にのみ基づきます。試験は <b>40問の多肢選択（MCQ）</b>、合格は5.5以上。各分野10問。</div>'
+
++ '<h3>DF — Digital Firm（L1-2 / 6論文+2スライド）</h3>'
++ '<div class="card"><b>L1 デジタル市場</b>'
++ '<ul>'
++ '<li><span class="kw">ソフト事業の帰結</span>: ネットワーク効果・大きなスイッチングコスト・非競合性(non-rivalrous)・勝者総取り・収穫逓減なし。</li>'
++ '<li><span class="kw">パイプライン vs プラットフォーム</span>: パイプラインは線形バリューチェーンを最適化。プラットフォームは外部の生産者と消費者の<b>相互作用を仲介</b>して価値を生む。物理インフラを所有しない。</li>'
++ '<li><span class="kw">3つの転換</span>(Van Alstyne): 資源支配→資源オーケストレーション／内部最適化→外部相互作用／顧客価値→エコシステム価値。</li>'
++ '<li><span class="kw">規模の経済</span>: 伝統＝供給側、プラットフォーム＝<b>需要側</b>（ネットワーク価値で参加者を引き寄せる、限界費用ほぼゼロ）。</li>'
++ '<li><span class="kw">ハブ企業</span>(Iansiti & Lakhani): ボトルネックを制御し不釣り合いに大きな価値を獲得、自己強化的。ネットワーク資産で別市場を製品駆動→ネットワーク駆動に転換。</li>'
++ '<li><span class="kw">Birkinshaw</span>: 産業時代の変化（企業規模/構造/制度）。デジタル革命の中心的政策課題＝<b>データ・無形資産の価値評価</b>。独占指標(消費者価格上昇)は低価格デジタル企業に効かない。</li>'
++ '</ul></div>'
++ '<div class="card"><b>L2 デジタル企業</b>'
++ '<ul>'
++ '<li><span class="kw">境界資源モデル</span>(Ghazawneh & Henfridsson): 所有者が第三者開発を支援する資源(SDK・API・規約)。<b>Resourcing</b>(範囲・多様性の拡大) と <b>Securing</b>(統制強化) のバランス。</li>'
++ '<li><span class="kw">3プラットフォーム類型</span>(Schreieck): 取引(Uber,Amazon)／イノベーション(iOS,Android)／コミュニティ(Facebook,Reddit)。</li>'
++ '<li><span class="kw">統合戦略</span>: 部分(データ・機能レベル, 区別可)／完全(UIレベル, 区別不可=superapp)。4戦略=Collection/Consolidation/Symbiosis/<b>Assemblage</b>(最大の補完性→superapp)。</li>'
++ '<li><span class="kw">Tirole</span>: DMA＝<b>事前規制</b>でゲートキーパー(CPS保有)に義務付け。独占抑制4手段(公益規制/分割/競争政策/新規制)。分割は困難(ネットワーク外部性破壊・データ優位喪失)。データ問題・産業政策・制度革新。</li>'
++ '<li class="muted">試験範囲外: Tirole 2.4.2(本質インフラ)・4.2(国際貿易)。</li>'
++ '</ul></div>'
+
++ '<h3>EoT — Economics of Taxation（L3-4 / Elliffe ch1-3・Beretta）</h3>'
++ '<div class="card"><b>L3 国際課税の枠組み</b>'
++ '<ul>'
++ '<li><span class="kw">課税の定義</span>: 公共支出を賄うため政府が納税者に課す強制的負担。目的＝予算的／政策的(行動誘導・再分配)。</li>'
++ '<li><span class="kw">居住地 vs 源泉地</span>: 居住地＝居住者の(世界)所得課税／源泉地＝非居住者の国内活動課税。</li>'
++ '<li><span class="kw">CIN</span>(資本輸入中立性): 対内投資で国内・外国投資家を同等課税。<span class="kw">CEN</span>(資本輸出中立性): 居住者が国内外いずれの投資でも同じ実効国内税率。</li>'
++ '<li><span class="kw">二重課税の救済</span>: 税額控除/免税/比例/割当方式。免税方式→CINは可・CENは不可。</li>'
++ '<li><span class="kw">PE(恒久的施設)</span>: 事業を行う固定的な場所。租税条約=OECDモデル(二重課税除去+回避防止)。</li>'
++ '<li><span class="kw">脱税(違法) vs 回避(合法だが攻撃的)</span>。利益移転＝低税国に利益計上。<b>移転価格</b>は独立企業間原則(arm\u2019s length)。Race to the bottom(税競争)。Uberの構造。</li>'
++ '</ul></div>'
++ '<div class="card"><b>L4 デジタル経済の課税</b>'
++ '<ul>'
++ '<li><span class="kw">課題</span>: 条約は1920年代の有形経済前提。PEは物理的存在を要し<b>デジタル企業に不適</b>。無形資産(IP・データ・アルゴリズム)の評価・移転価格が困難。</li>'
++ '<li><span class="kw">DST(デジタルサービス税)</span>: フランス3%(2019)→米はワインに25%関税。伊3%・西3%・英2%。</li>'
++ '<li><span class="kw">課税原則</span>: 受益者原則→源泉地課税を正当化／応能原則→居住地課税を正当化。価値創造は受益者原則と整合。</li>'
++ '<li><span class="kw">シェアリング経済</span>(Beretta): 取引類型＝現金・物々交換・コストシェアリング・贈与。総合課税 vs 分類課税、解決＝プラットフォーム報告。豪=全課税/英=当初分免税/ベルギー=報告義務。</li>'
++ '</ul></div>'
+
++ '<h3>MLM — Moral Limits of Markets（L5-6 / Falk&Szech・Awad・Cowen&Tabarrok）</h3>'
++ '<div class="card"><b>L5-6 市場と道徳</b>'
++ '<ul>'
++ '<li><span class="kw">市場経済→市場社会</span>: 市場の論理が生活の諸領域に拡大し本質的価値を腐敗させうる。賛成＝リバタリアン/功利主義、反対＝公平性/価値の腐敗。</li>'
++ '<li><span class="kw">Falk & Szech</span>: マウス実験。個人45.9%＜双方向72.2%＜多者間75.9%が殺す意思。市場が道徳を侵食。機構＝責任の分散・社会規範形成・物質主義的フレーミング。</li>'
++ '<li><span class="kw">締め出し</span>(Gneezy & Rustichini): 遅刻罰金で遅刻が<b>増加</b>。<span class="kw">意図的無知</span>(Dana/Vu): 自己利益的決定の負の外部性情報を回避(40%回避・利他16%減)。</li>'
++ '<li><span class="kw">Moral Machine</span>(Awad): 自動運転の犠牲選択。詳細追加で選択が差別化＝中立でない。</li>'
++ '<li><span class="kw">標準経済推論への6反論</span>(Cowen&Tabarrok): 搾取/干渉的選好/公平な扱い/文化財・パターナリズム/貧困・分配/誰を数えるか。</li>'
++ '<li><span class="kw">正義論</span>: Rawlsマキシミン(最下層を最大化, 無知のヴェール)／功利主義(効用総和最大, インセンティブ考慮)／Nozick権原理論(正当取得+自発交換なら不平等も正義)。</li>'
++ '<li><span class="kw">インセンティブ管理</span>(ch22): you get what you pay for(成果連動はカンニング誘発)・ナッジ(誘因を変えず行動変更, 臓器提供デフォルト)・おとり効果。生存者バイアス/相関≠因果。情報の非対称(逆選択・モラルハザード)。</li>'
++ '</ul></div>'
+
++ '<h3>Sust — Sustainability（L7-8 / Ehrenfeld・Busch・Wright&Nyberg・West・Fanning&Raworth・Kallis・Costanza・Hickel&Kallis）</h3>'
++ '<div class="card"><b>L7 ビジネスと持続可能性</b>'
++ '<ul>'
++ '<li><span class="kw">定義</span>(Brundtland): 将来世代の能力を損なわず現在のニーズを満たす。<b>弱い持続可能性</b>＝人工+自然資本の合計を維持(代替可)／<b>強い</b>＝別々に維持(代替不可)。</li>'
++ '<li><span class="kw">5C</span>(Lange&Pfarrer): Common ground/Complication/Concern/Course of action/Contribution。</li>'
++ '<li><span class="kw">Ehrenfeld</span>: 「持続不可能性を減らす≠持続可能性を作る」。Friedmanドクトリン(企業の責任＝利益増大)。</li>'
++ '<li><span class="kw">Busch et al.</span>: ビジネスケース批判＝最適化の準最適性/技術楽観(Jevons)/消費主義。対処＝持続的起業・モデル変革・市場の失敗への感応(政府介入必要)。</li>'
++ '<li><span class="kw">Jevonsのパラドックス</span>: 効率化が総消費を増やす(リバウンド)。<span class="kw">Wright&Nyberg</span>: framing→localizing→<b>normalizing</b>(株主価値へ再整合・希釈)で通常業務化。</li>'
++ '<li><span class="kw">West et al.</span>: 炭素オフセット。追加性＝実際の減少＜反事実(合成コントロール)。約束の<b>約6%</b>のみ実削減。Uber Planetの批判。</li>'
++ '</ul></div>'
++ '<div class="card"><b>L8 経済と持続可能性</b>'
++ '<ul>'
++ '<li><span class="kw">生物多様性</span>: 損失は生態系効率・安定性を損ない感染症リスク増。Boulding(カウボーイ vs 宇宙船経済)。Malthus(批判: 出生率低下・食料増)。</li>'
++ '<li><span class="kw">Limits to Growth</span>(Kallis): 現実は「Double Resources」シナリオに近く、崩壊は資源枯渇でなく<b>持続的汚染(sink限界)</b>が駆動。Solow(価格→代替, 相対的希少性)。</li>'
++ '<li><span class="kw">惑星限界/ドーナツ</span>(Fanning&Raworth): 生態的天井+社会的基盤。オゾン層は安全圏内、気候・生物多様性・窒素は超過。「均衡を欠いた世界」。</li>'
++ '<li><span class="kw">デカップリング</span>: 絶対(GDP増・影響減=グリーン成長)／相対(影響はGDPより遅く増)。Hickel&Kallis: 絶対的デカップリングの世界的証拠なし。ポストグロース(Kallis)。Easterlinパラドックス。</li>'
++ '<li><span class="kw">生態系サービス評価</span>: 顕示選好(旅行費用・ヘドニック)／表明選好(仮想評価CV: Diamond&Hausmanの批判)。VSL/QALY。<b>内在的価値</b>=自然の権利、金銭化不可(Costanza)。非競合・非排除＝公共財。</li>'
++ '</ul></div>';
+
+var SUMMARY = ''
++ '<h2>📋 まとめ（週別）</h2>'
++ '<div class="card"><h3 style="margin-top:0">Week 1 — デジタル経済（DF）＋ 課税（EoT）</h3>'
++ '<b>講義1-2 デジタル企業</b>: プラットフォームはネットワーク効果・需要側の規模の経済で価値を生み、物理インフラを持たない。境界資源モデル(resourcing/securing)、3類型(取引/イノベーション/コミュニティ)、4統合戦略(assemblageがsuperapp)、TiroleのDMA・反独占手段。'
++ '<br><br><b>講義3-4 課税</b>: 居住地/源泉地、CIN/CEN、PE、移転価格(arm\u2019s length)、利益移転、脱税vs回避。デジタル経済ではPEが不適・無形資産課税が困難→DST。受益者原則(源泉)/応能原則(居住)。シェアリング経済の課税(Beretta)。'
++ '<br><br><span class="pill">Tutorial 1: プラットフォームの定義・課題</span><span class="pill">Tutorial 2: 課税・倫理・持続可能性の論点</span></div>'
++ '<div class="card"><h3 style="margin-top:0">Week 2 — 市場の道徳（MLM）＋ 持続可能性（Sust）</h3>'
++ '<b>講義5-6 市場の道徳的限界</b>: 市場経済→市場社会。Falk&Szech(市場が道徳を侵食)、締め出し効果、意図的無知、Moral Machine。Cowen&Tabarrokの6反論、Rawls/功利主義/Nozickの正義論、インセンティブ管理・ナッジ。'
++ '<br><br><b>講義7-8 持続可能性</b>: 弱い/強い持続可能性、Friedmanドクトリン、Jevons、Wright&Nyberg(normalizing)、West(オフセット6%)、惑星限界/ドーナツ(オゾンのみ圏内)、デカップリング(絶対のみグリーン成長)、ポストグロース、生態系サービス評価・内在的価値。'
++ '<br><br><span class="pill">Tutorial 3: 結論・限界・アカデミックライティング</span><span class="pill">Mock Exam: 40問(各分野10)</span></div>'
++ '<div class="note">試験対策の核は <b>Mock Exam（過去問）40問</b>。クイズタブで「過去問 (Mock)」を選び反復しましょう。誤答は自動で復習モードに入ります。</div>';
+
+/* glossary: 日英対訳 (Canvas terms) */
+var GLOSSARY = [
+ ['DF','Network effects','ネットワーク効果：利用者が増えるほど価値が高まる'],
+ ['DF','Switching costs','スイッチングコスト：他サービスへ移る際の費用'],
+ ['DF','Non-rivalrous','非競合性：一人の消費が他者の消費可能量を減らさない'],
+ ['DF','Winner-takes-all','勝者総取り'],
+ ['DF','Pipeline','パイプライン：線形バリューチェーンを最適化する事業'],
+ ['DF','Platform','プラットフォーム：生産者と消費者の相互作用を仲介'],
+ ['DF','Multi-sided market','多面市場'],
+ ['DF','Hub firm','ハブ企業：ボトルネックを制御し価値を獲得'],
+ ['DF','Boundary resources','境界資源：SDK・API・規約など第三者開発支援資源'],
+ ['DF','Resourcing','リソーシング：範囲と多様性を高める戦略'],
+ ['DF','Securing','セキュアリング：統制を高める戦略'],
+ ['DF','Transaction platform','取引プラットフォーム(Uber, Amazon)'],
+ ['DF','Innovation platform','イノベーションPF(iOS, Android)'],
+ ['DF','Community platform','コミュニティPF(Facebook, Reddit)'],
+ ['DF','Assemblage','異種完全統合(superappを生む)'],
+ ['DF','DMA / Gatekeeper / CPS','デジタル市場法/ゲートキーパー/中核PFサービス'],
+ ['TAX','Taxation','課税：公共支出を賄う強制的負担'],
+ ['TAX','Residence jurisdiction','居住地管轄：居住者の世界所得課税'],
+ ['TAX','Source jurisdiction','源泉地管轄：非居住者の国内活動課税'],
+ ['TAX','Capital import neutrality (CIN)','資本輸入中立性'],
+ ['TAX','Capital export neutrality (CEN)','資本輸出中立性'],
+ ['TAX','Permanent establishment (PE)','恒久的施設：固定的な事業の場所'],
+ ['TAX','Arm\u2019s length principle','独立企業間原則'],
+ ['TAX','Transfer pricing','移転価格'],
+ ['TAX','Profit shifting','利益移転'],
+ ['TAX','Tax avoidance / evasion','租税回避(合法)/脱税(違法)'],
+ ['TAX','Race to the bottom','底辺への競争(税競争)'],
+ ['TAX','Digital Services Tax (DST)','デジタルサービス税'],
+ ['TAX','Benefit principle','受益者原則(源泉地課税を正当化)'],
+ ['TAX','Ability-to-pay principle','応能原則(居住地課税を正当化)'],
+ ['MLM','Market society','市場社会：市場の論理が生活全般に拡大'],
+ ['MLM','Value corruption','価値の腐敗'],
+ ['MLM','Adverse selection','逆選択(情報の非対称)'],
+ ['MLM','Moral hazard','モラルハザード'],
+ ['MLM','Crowding out','締め出し(罰金が道徳的動機を排除)'],
+ ['MLM','Willful ignorance','意図的無知'],
+ ['MLM','Maximin / difference principle','マキシミン/格差原理(Rawls)'],
+ ['MLM','Veil of ignorance','無知のヴェール'],
+ ['MLM','Utilitarianism','功利主義(効用総和の最大化)'],
+ ['MLM','Entitlement theory','権原理論(Nozick)'],
+ ['MLM','Nudge','ナッジ：誘因を変えず行動を変える'],
+ ['MLM','Survivorship bias','生存者バイアス'],
+ ['MLM','Positive vs normative','実証的 vs 規範的言明'],
+ ['SUST','Weak sustainability','弱い持続可能性(資本の合計を維持)'],
+ ['SUST','Strong sustainability','強い持続可能性(自然・人工資本を別々に維持)'],
+ ['SUST','Friedman doctrine','フリードマン・ドクトリン(企業の責任=利益増)'],
+ ['SUST','Jevons\u2019 paradox','ジェヴォンズのパラドックス(効率化が消費増)'],
+ ['SUST','Decoupling (absolute/relative)','デカップリング(絶対/相対)'],
+ ['SUST','Green growth','グリーン成長(絶対的デカップリングのみ)'],
+ ['SUST','Additionality','追加性(オフセット)'],
+ ['SUST','Counterfactual','反事実(もし〜だったら)'],
+ ['SUST','Planetary boundaries','惑星限界'],
+ ['SUST','Doughnut model','ドーナツ模型(社会的基盤+生態的天井)'],
+ ['SUST','Post-growth','ポストグロース'],
+ ['SUST','Easterlin paradox','イースタリンのパラドックス'],
+ ['SUST','Intrinsic value','内在的価値(自然の権利・金銭化不可)'],
+ ['SUST','Non-excludable','非排除性(公共財)'],
+ ['SUST','Contingent valuation (CV)','仮想評価法(表明選好)'],
+ ['SUST','Value of statistical life (VSL)','統計的生命価値']
+];
+function GLOSSARY_HTML(){
+  var h='<h2>📚 用語集（日英対訳）</h2><div class="note">講義スライド・論文に登場する用語のみ。トラック別に整理。</div>';
+  ['DF','TAX','MLM','SUST'].forEach(function(c){
+    h+='<h3>'+CH_LABEL[c]+'</h3><div class="gloss">';
+    GLOSSARY.filter(function(g){return g[0]===c;}).forEach(function(g){
+      h+='<div class="gitem"><div class="gen">'+esc(g[1])+'</div><div class="gja">'+esc(g[2])+'</div></div>';
+    });
+    h+='</div>';
+  });
+  return h;
+}
+function MENU_HTML(){
+  var total=QUESTIONS.length;
+  var byCh={DF:0,TAX:0,MLM:0,SUST:0},mock=0,pred=0,book=0;
+  QUESTIONS.forEach(function(q){byCh[q.ch]++;var p=passModeOf(q.source);if(p===3)mock++;else if(p===6)pred++;else book++;});
+  var done=Object.keys(store.cat).length;
+  return '<h2>☰ メニュー</h2>'
+  +'<div class="card"><h3 style="margin-top:0">このサイトについて</h3>'
+  +'PEB2（Principles of Economics and Business 2）の<b>resit（再試験）対策</b>用。出題形式は40問MCQ。全問題・全要点は UvA Canvas の教材のみに基づきます（Web検索・他大学資料・Student wiki不使用）。AI連携プロンプトは <b>Opus 4.8</b> 向け。</div>'
+  +'<div class="card"><h3 style="margin-top:0">問題数</h3>'
+  +'<div class="stat"><span>合計 '+total+'問</span><span>過去問(Mock) '+mock+'</span><span>講義/教科書 '+book+'</span><span>予想 '+pred+'</span></div>'
+  +'<div class="stat"><span>DF '+byCh.DF+'</span><span>EoT '+byCh.TAX+'</span><span>MLM '+byCh.MLM+'</span><span>Sust '+byCh.SUST+'</span></div>'
+  +'<div class="muted" style="font-size:.8rem;margin-top:6px">学習済み(回答済み): '+done+'問</div></div>'
+  +'<div class="card"><h3 style="margin-top:0">使い方</h3><ul>'
+  +'<li>クイズタブで <b>週・トラック・出題範囲・モード</b>を絞り込み。モードは複数選択(OR)可。</li>'
+  +'<li>選択肢の正解位置は毎回ランダム。E)は常に「わからない」。</li>'
+  +'<li>誤答は自動で「復習」、わからないは「わからない」モードに分類。</li>'
+  +'<li>各問の <b>📋分析 / 🎯確認テスト</b> でAIプロンプトをクリップボードにコピー。10問以上でバッチ一括分析も可能。</li>'
+  +'</ul></div>'
+  +'<div class="card"><h3 style="margin-top:0">履歴</h3><button class="aibtn" id="reset-btn" style="border-color:#f85149;color:#f85149">学習履歴をリセット</button></div>';
+}
+
+</script>
+<script>init();</script>
+</body>
+</html>
