@@ -102,6 +102,72 @@ summary{cursor:pointer;font-weight:600;color:var(--acc)}
 .gja{color:var(--mut);font-size:.88rem}
 .note{font-size:.78rem;color:var(--mut);background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:10px;margin:10px 0}
 kbd{background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:.8em}
+
+/* ===== Textbook tab (8-block concept cards) ===== */
+.tb-intro{margin-bottom:14px}
+.ch-pills{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 18px}
+.ch-pill{background:var(--panel2);border:2px solid var(--line);border-radius:22px;padding:7px 18px;cursor:pointer;font-size:.9rem;font-weight:700;color:var(--mut);transition:all .15s}
+.ch-pill.active{background:var(--acc);border-color:var(--acc);color:#fff}
+.ch-pill:hover{border-color:var(--acc)}
+.chapter-header{margin-bottom:16px;padding:16px;background:var(--panel2);border-radius:12px;border:1px solid var(--line)}
+.chapter-title{font-size:1.4rem;font-weight:700;color:var(--tx)}
+.chapter-sub{font-size:.78rem;color:var(--mut);margin-top:4px}
+.concept-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px}
+.concept-card.star-card{border:2px solid var(--warn);box-shadow:0 0 18px rgba(210,153,34,.12)}
+.concept-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.concept-num{font-size:.95rem;color:var(--mut);min-width:26px;font-weight:700;padding-top:4px}
+.concept-title{font-size:1.25rem;font-weight:700;flex:1;color:var(--tx)}
+.star-badge{background:var(--warn);color:#1a1200;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:14px;white-space:nowrap}
+.section-label{font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;color:var(--mut)}
+.scene-block{border-left:4px solid var(--acc);background:rgba(74,163,255,.06);padding:12px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.punch-block{border-left:4px solid var(--warn);background:rgba(210,153,34,.08);padding:12px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.punch-text{font-size:1.02rem;font-weight:700;color:var(--warn)}
+.def-block{padding:4px 0;margin:10px 0;line-height:1.8}
+.def-entry{line-height:1.8;padding:3px 0}
+.def-bullet{display:block;padding:2px 0 2px 14px;text-indent:-14px}
+.example-block{border-left:4px solid var(--ok);background:rgba(63,185,80,.06);padding:12px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.why-block{border-left:4px solid var(--rev);background:rgba(163,113,247,.06);padding:12px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.mistakes-block{border-left:4px solid var(--ng);background:rgba(248,81,73,.06);padding:12px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.memorize-block{border-left:4px solid var(--warn);background:rgba(210,153,34,.14);padding:12px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.memorize-text{font-size:.98rem;font-weight:700;color:var(--warn);font-family:ui-monospace,Menlo,monospace}
+.compare-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.84rem}
+.compare-table th{background:var(--panel2);color:var(--acc);padding:9px 10px;text-align:left;border:1px solid var(--line);font-weight:700}
+.compare-table td{padding:8px 10px;border:1px solid var(--line)}
+.compare-table td:first-child{color:var(--mut);font-weight:600}
+.compare-table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.md-table-wrap{overflow-x:auto;margin:8px 0}
+.md-table{width:100%;border-collapse:collapse;font-size:.84rem}
+.md-table th{background:var(--panel2);padding:8px 10px;text-align:left;border:1px solid var(--line);font-weight:700;color:var(--acc)}
+.md-table td{padding:7px 10px;border:1px solid var(--line)}
+.glossary-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.glossary-chip{background:rgba(210,153,34,.1);border:1px solid rgba(210,153,34,.35);color:var(--warn);font-size:.72rem;padding:3px 10px;border-radius:14px;cursor:help}
+.glossary-chip:hover{background:rgba(210,153,34,.2)}
+.inline-quiz{background:var(--panel2);border:2px solid var(--line);border-radius:12px;padding:16px;margin:18px 0}
+.inline-quiz-title{font-size:.92rem;font-weight:700;color:var(--acc);margin-bottom:10px}
+.iq-q{font-size:.92rem;font-weight:600;margin-bottom:8px}
+.iq-opt{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin:5px 0;cursor:pointer;font-size:.86rem;transition:all .12s}
+.iq-opt:hover{border-color:var(--acc)}
+.iq-opt.correct{background:rgba(63,185,80,.15);border-color:var(--ok);color:var(--ok)}
+.iq-opt.wrong{background:rgba(248,81,73,.15);border-color:var(--ng);color:var(--ng)}
+.iq-exp{font-size:.82rem;color:var(--mut);margin-top:8px;padding:9px;background:rgba(255,255,255,.03);border-radius:8px}
+.exam-section{margin:20px 0}
+.exam-section-title{font-size:.95rem;font-weight:800;color:var(--rev);padding:10px 16px;background:rgba(163,113,247,.08);border-radius:10px;margin-bottom:14px}
+.exam-card{background:rgba(163,113,247,.04);border:2px solid var(--rev);border-radius:12px;padding:18px;margin-bottom:16px}
+.exam-badge{display:inline-block;background:var(--rev);color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:14px;margin-bottom:10px}
+.exam-scenario{font-size:.86rem;background:rgba(163,113,247,.06);border-left:4px solid var(--rev);padding:12px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;line-height:1.75}
+.doit-items{margin:0 0 12px;padding:0;list-style:none}
+.doit-items li{font-size:.86rem;padding:6px 0 6px 16px;border-bottom:1px solid var(--line);position:relative}
+.doit-items li:last-child{border-bottom:none}
+.doit-items li::before{content:"\2192";position:absolute;left:0;color:var(--warn)}
+.exam-qs{margin-bottom:12px}
+.exam-qs li{font-size:.9rem;font-weight:600;padding:5px 0}
+.exam-reveal{background:rgba(163,113,247,.12);border:2px solid var(--rev);color:var(--rev);font-size:.88rem;font-weight:700;border-radius:10px;padding:11px 20px;cursor:pointer;width:100%}
+.exam-reveal:hover{background:rgba(163,113,247,.25)}
+.exam-solution{display:none;margin-top:14px}
+.exam-solution.visible{display:block}
+.exam-sol-block{background:rgba(63,185,80,.06);border:1px solid rgba(63,185,80,.3);border-radius:10px;padding:16px;font-size:.86rem;line-height:1.75}
+.exam-sol-block p{margin:6px 0 12px}
+.exam-sol-label{font-size:.82rem;font-weight:700;color:var(--ok);margin-bottom:6px}
 </style>
 </head>
 <body>
@@ -588,7 +654,7 @@ function init(){
 <script>
 /* PEB2 content tabs — all Canvas-derived (lecture slides L1-8, tutorials, mock exam) */
 function renderContent(){
-  document.getElementById('p-textbook').innerHTML = TEXTBOOK;
+  renderTextbook();
   document.getElementById('p-summary').innerHTML  = SUMMARY;
   document.getElementById('p-glossary').innerHTML = GLOSSARY_HTML();
   document.getElementById('p-menu').innerHTML     = MENU_HTML();
@@ -773,6 +839,1557 @@ function MENU_HTML(){
   +'<li>各問の <b>📋分析 / 🎯確認テスト</b> でAIプロンプトをクリップボードにコピー。10問以上でバッチ一括分析も可能。</li>'
   +'</ul></div>'
   +'<div class="card"><h3 style="margin-top:0">履歴</h3><button class="aibtn" id="reset-btn" style="border-color:#f85149;color:#f85149">学習履歴をリセット</button></div>';
+}
+
+</script>
+<script>
+/* ===== TEXTBOOK MODULE (Canvas-derived: CONCEPTS x80, GLOSSARY x152, EXAM x4) ===== */
+/* DF — Digital Firm & Markets (L1-2). Source: Canvas lecture slides L1, L2 + 6 articles
+   Birkinshaw 2018 / Van Alstyne et al. 2016 / Iansiti & Lakhani 2017 / Ghazawneh & Henfridsson 2013 /
+   Schreieck et al. 2024 / Tirole 2023. EN terms primary, JA explanation secondary. */
+window.CONCEPTS_DF = [
+{
+  id:'cDF_industrial_digital', ch:'DF', name:'Industrial Era vs Digital Era Transition', star:false,
+  scene:'**Birkinshaw (2018)** は、産業革命が企業をどう変えたかを振り返り、それを基準に**digital revolution**が今まさに何を変えつつあるかを問います。過去：従業員300人→300,000人へ巨大化。今：ソフトとネットワークが主役。',
+  compare:{ a:'Industrial era changes', b:'Digital era questions', table:[
+    {dim:'Firm size & scope', a:'Scale-up (300 → 300,000 employees)', b:'Few assets, global reach (Uber)'},
+    {dim:'Firm structure', a:'Informal → formalized bureaucracy', b:'Coordination replaces bureaucracy'},
+    {dim:'Institutions', a:'Limited liability company, IP rights & patents', b:'Data & intangible valuation, gig-worker law'} ]},
+  punchline:'Birkinshaw frames three dimensions — firm size/scope, firm structure/organisation, and institutional structures — to analyse how digital technology reshapes the corporation.',
+  defEN:'Birkinshaw (2018) argues technological change reshapes corporations along three dimensions: (1) **firm size and scope**, (2) **firm structure and organisation**, and (3) **institutional structures**. In the industrial era these produced large bureaucratic firms protected by limited liability and patents; the digital era pressures all three again.',
+  defJA:'めちゃくちゃ簡単に言うと、**Birkinshaw** は「技術変化が企業を変える」現象を、産業革命との対比で3つの軸で整理した論文です。① **firm size and scope**（規模と範囲）② **firm structure and organisation**（構造と組織）③ **institutional structures**（制度）。試験では、デジタル時代の中心的な政策課題が **valuing data and intangible assets**（データ・無形資産の評価）であると問われます。',
+  example:'In the industrial era, firms grew from ~300 to ~300,000 employees and created limited liability companies and patents; digital firms like Uber stay asset-light yet reach the entire world.',
+  whyNeeded:'この3軸は、後続のすべての論点（platform・hub・regulation）を「企業と制度がどう変わるか」という共通レンズで見るための土台です。試験はBirkinshawの**central policy challenge**を直接問います。',
+  mistakes:['**Pricing consumer goods fairly** や **preventing international trade** はBirkinshawの中心的政策課題ではない。正解は **valuing data and intangible assets**。',
+    '独占の伝統的指標は **rising consumer prices** だが、デジタル大企業は低価格を提供するため、この指標が効かなくなる点が論点。'],
+  memorize:'Birkinshaw = Size / Structure / Institutions (3 lenses)'
+},
+{
+  id:'cDF_software_consequences', ch:'DF', name:'Consequences of Software Business & Markets', star:true,
+  scene:'ソフトを売るビジネスは、鉄や車を売るビジネスと経済的性質が根本的に違います。コピーがほぼ無料で、使う人が増えるほど価値が上がる——この性質が市場の形を決めます。',
+  compare:null,
+  punchline:'Software businesses display network effects, great switching costs, non-rivalrous goods, winner-takes-all dynamics, and no diminishing returns to scale.',
+  defEN:'Per Birkinshaw, software markets share five consequences: **network effects** (value rises with users), **great switching costs**, **non-rivalrous** goods (one person\u2019s use does not reduce another\u2019s), **winner-takes-all** competition, and **no diminishing returns of scale**.',
+  defJA:'ソフト事業の5大帰結を覚えるブロックです。① **network effects** ② **great switching costs**（乗り換え費用が大きい）③ **non-rivalrous**（非競合：自分が使っても他人の取り分が減らない）④ **winner-takes-all**（勝者総取り）⑤ **no diminishing returns of scale**（収穫逓減がない）。この5つが「なぜデジタル市場は独占に向かうのか」の答えになります。',
+  example:'Adding one more WhatsApp user costs almost nothing (non-rivalrous, no diminishing returns) and makes the app more valuable to everyone (network effects), so one app tends to dominate (winner-takes-all).',
+  whyNeeded:'これらの性質が、後の **hub firms**・**economies of scale (demand side)**・規制論（Tirole）の前提になります。',
+  mistakes:['**Diminishing returns** が「ある」と書く選択肢は誤り。ソフトでは収穫逓減が効かない。',
+    '**Non-rivalrous**（非競合）と **non-excludable**（非排除）を混同しない。前者は消費が減らない、後者は排除できない。'],
+  memorize:'NSW-NN: Network, Switching, non-rivalrous, Winner-takes-all, No diminishing returns'
+},
+{
+  id:'cDF_network_effects', ch:'DF', name:'Network Effects', star:true,
+  scene:'電話を持つ人が1人なら無価値、全員が持てば必需品。ユーザーが増えるほど一人ひとりの価値が上がる——これが**network effects**です。',
+  compare:{ a:'Direct network effects', b:'Indirect (cross-side) network effects', table:[
+    {dim:'Definition', a:'More users of the same side raise value', b:'More users on one side raise value for the other side'},
+    {dim:'Example', a:'WhatsApp (more friends = more useful)', b:'iOS (more developers \u2192 more useful to users)'},
+    {dim:'Platform type', a:'Community platforms', b:'Transaction & innovation platforms'} ]},
+  punchline:'Network effects mean a product becomes more valuable as more people use it, driving demand-side economies of scale and winner-takes-all outcomes.',
+  defEN:'**Network effects** occur when the value of a product or platform increases as more users join. **Direct** effects come from users on the same side; **indirect** (cross-side) effects arise when users on one side (e.g., developers) raise value for another side (e.g., consumers).',
+  defJA:'**Network effects** は「使う人が増えるほど価値が上がる」効果です。同じ側のユーザー同士で効く **direct**（例：WhatsApp）と、別の側を引き寄せる **indirect/cross-side**（例：iOSの開発者↔ユーザー）があります。これが **demand-side economies of scale** を生み、**winner-takes-all** につながります。',
+  example:'iOS becomes more attractive to users as more developers build apps, and more attractive to developers as more users join \u2014 an indirect network effect that engrains the incumbent\u2019s position.',
+  whyNeeded:'Tiroleが「**network externalities** が既存プレイヤーに巨大な優位を与える」と論じる前提。分割(breakup)が難しい理由でもある。',
+  mistakes:['Network effects と **economies of scale (supply side)** を混同しない。前者は需要側・参加者価値、後者は固定費の分散。',
+    'indirect network effects（cross-side）を direct と取り違えない。'],
+  memorize:'More users \u2192 more value \u2192 winner-takes-all'
+},
+{
+  id:'cDF_switching_costs', ch:'DF', name:'Switching Costs', star:false,
+  scene:'長年Gmailを使い、写真も連絡先も予定も全部入っている。別サービスへ移すのは面倒——この「乗り換えの面倒さ」が企業を守ります。',
+  compare:null,
+  punchline:'High switching costs lock users into a platform, reinforcing incumbents and contributing to winner-takes-all markets.',
+  defEN:'**Switching costs** are the costs (time, money, lost data, relearning) a user faces when moving from one product or platform to another. In software markets these are typically large, locking in users and strengthening incumbents.',
+  defJA:'**Switching costs**（スイッチングコスト）は、別のサービスへ乗り換えるときに発生する費用（手間・お金・データ移行・学び直し）です。ソフト市場では大きくなりがちで、ユーザーを囲い込み既存企業を有利にします。**network effects** と組んで独占を強めます。',
+  example:'Moving years of email, contacts and calendar data out of Gmail is costly and risky, so users stay \u2014 a high switching cost.',
+  whyNeeded:'囲い込みは独占の源泉であり、**multihoming**（複数併用）を促す規制（Tirole/DMA）の標的になる。',
+  mistakes:['Switching costs は需要側の囲い込み。供給側の固定費(**fixed costs**)と混同しない。'],
+  memorize:null
+},
+{
+  id:'cDF_pipeline_platform', ch:'DF', name:'Pipeline vs Platform', star:true,
+  scene:'Fordはゴム農園まで自分で持ち、線形に車を作って売りました（pipeline）。Uberは何も所有せず、運転手と乗客を「つなぐ」だけ（platform）。価値の作り方が正反対です。',
+  compare:{ a:'Pipeline', b:'Platform', table:[
+    {dim:'Value creation', a:'Optimize a linear value chain (source \u2192 make \u2192 sell)', b:'Mediate interactions between external producers & consumers'},
+    {dim:'Assets', a:'Owns physical infrastructure', b:'Need not own infrastructure; capitalises on network effects'},
+    {dim:'Sides', a:'One-sided', b:'Multi-sided (two or more user groups)'},
+    {dim:'Focus', a:'Resource control & efficiency', b:'Ecosystem value & network growth'} ]},
+  punchline:'Pipelines create value by optimizing a linear value chain; platforms create value by mediating interactions between external producers and consumers.',
+  defEN:'A **pipeline** business creates value through a step-by-step **linear value chain** (sourcing, manufacturing, reselling, service). A **platform** creates value by **mediating interactions** in a **multi-sided market**, without needing to own the physical infrastructure (Van Alstyne et al., 2016).',
+  defJA:'**Pipeline**（パイプライン）は「仕入→製造→販売」の **linear value chain** を最適化して価値を生みます。**Platform**（プラットフォーム）は外部の生産者と消費者の **interactions を仲介** して価値を生み、物理インフラを所有する必要がありません。試験頻出：pipelineの価値創造＝**optimizing a linear value chain**。',
+  example:'How do pipeline businesses primarily create value? By optimizing a linear value chain \u2014 not by facilitating interactions, subsidizing a side, or leveraging user data (those describe platforms).',
+  whyNeeded:'プラットフォーム戦略・hub・統合戦略すべての出発点。「物理インフラを所有しなくてよい」点がデジタル市場の新しさ。',
+  mistakes:['Pipelineの価値創造を「facilitating interactions between users」と答えるのは誤り（それはplatform）。',
+    'プラットフォームは新しくない（新聞・モールも platform）。新しいのは **physical infrastructure を所有しなくてよい** 点。'],
+  memorize:'Pipeline = pipe (linear); Platform = mediator (multi-sided)'
+},
+{
+  id:'cDF_three_transitions', ch:'DF', name:'Three Transitions to Platform Strategy', star:false,
+  scene:'パイプライン企業がプラットフォームになるには、考え方を3つ転換する必要があります（Van Alstyne et al., 2016）。',
+  compare:null,
+  punchline:'Van Alstyne et al. (2016): from resource control to resource orchestration; from internal optimization to external interaction; from customer value to ecosystem value.',
+  defEN:'The three strategic transitions are: (1) from **resource control** to **resource orchestration** (the network, not assets, is the asset); (2) from **internal optimization** to **external interaction** (govern producers and consumers); (3) from **customer value** to **ecosystem value**.',
+  defJA:'プラットフォーム化に必要な3つの転換：①**resource control → resource orchestration**（所有する資源より、外部参加者のネットワークを編成する）②**internal optimization → external interaction**（社内の生産ラインより、外部の生産者・消費者の相互作用を統治する）③**customer value → ecosystem value**（個別顧客より、エコシステム全体の価値）。',
+  example:'A pipeline optimizes its own factory (internal optimization); a platform instead governs millions of external producers and consumers (external interaction).',
+  whyNeeded:'「なぜ既存の優良企業が数年で市場を失うのか」というPorter/Van Alstyneの問いへの答え。',
+  mistakes:['3つの転換を「効率化の話」と矮小化しない。核心は資産支配からネットワーク編成への発想転換。'],
+  memorize:'Control\u2192Orchestrate; Internal\u2192External; Customer\u2192Ecosystem'
+},
+{
+  id:'cDF_economies_scale', ch:'DF', name:'Economies of Scale: Supply vs Demand Side', star:true,
+  scene:'工場は「作るほど安くなる」（供給側）。プラットフォームは「参加者が増えるほど価値が上がる」（需要側）。スケールの効き方が違います。',
+  compare:{ a:'Supply-side (traditional)', b:'Demand-side (platform)', table:[
+    {dim:'Source', a:'Spread large fixed costs over volume', b:'Network value attracts participants'},
+    {dim:'Marginal cost', a:'Low marginal costs', b:'\u2248 No marginal cost'},
+    {dim:'Targets', a:'Resource control, efficiency, fend off 5 forces', b:'More participants, more transactions, more value per transaction'} ]},
+  punchline:'Traditional economies of scale are supply-side (spread fixed costs over volume); platform economies of scale are demand-side (network value attracts participants).',
+  defEN:'Traditional firms gain **supply-side economies of scale**: large fixed costs and low marginal costs reward high volume. Platforms gain **demand-side economies of scale**: greater network value attracts more participants, with near-zero marginal cost.',
+  defJA:'**Supply-side economies of scale**（供給側）は、大きな固定費を大量生産で薄める伝統的な仕組み。**Demand-side economies of scale**（需要側）は、ネットワーク価値が参加者を引き寄せる仕組みで、限界費用がほぼゼロ。プラットフォームは需要側で効きます。',
+  example:'A factory lowers unit cost by producing more (supply side). Spotify becomes more valuable as more listeners and artists join, at almost no extra cost (demand side).',
+  whyNeeded:'需要側スケール＝network effectsの経済的表現。winner-takes-allの説明に直結。',
+  mistakes:['プラットフォームのスケールを「supply side」と答えない。正解は **demand side**。',
+    '両者とも **large fixed costs** を持つ点は共通（違いは marginal cost と targets）。'],
+  memorize:'Traditional = Supply side; Platform = Demand side'
+},
+{
+  id:'cDF_hub_firms', ch:'DF', name:'Hub Firms', star:true,
+  scene:'Google, Apple, Amazon——少数の企業がボトルネックを握り、つながる全産業から不釣り合いに大きな価値を吸い上げます（Iansiti & Lakhani, 2017）。',
+  compare:null,
+  punchline:'Hub firms control bottlenecks connecting many users, capture a disproportionate and expanding share of value, and are self-reinforcing.',
+  defEN:'**Hub firms** (Iansiti & Lakhani, 2017) connect consumers with the technology of other parties, **control bottlenecks**, **capture a disproportionate and expanding share of value**, and are **self-reinforcing**. They use network-based assets from one setting to enter and transform another market from product-driven to network-driven.',
+  defJA:'**Hub firms**（ハブ企業）は、多数のユーザーをつなぐプラットフォームを支配し、**bottleneck**（ボトルネック）を握って不釣り合いに大きく拡大する価値を獲得し、**self-reinforcing**（自己強化的）に成長します。あるネットワーク資産を使って隣接産業に参入し、その市場を製品駆動からネットワーク駆動へ転換します。',
+  example:'What mechanism causes successful hubs to grow faster over time? **Positive feedback loops from usage** \u2014 not state funding, manufacturing economies of scale, or exclusive licensing.',
+  whyNeeded:'デジタル経済の権力集中を説明する中心概念。規制論(Tirole)の動機。',
+  mistakes:['Hub firmsを「主に物理財を生産する企業」と答えない。正解は「多数のユーザーをつなぐプラットフォームを支配する企業」。',
+    'hubが速く成長する原因は **positive feedback loops from usage**（利用の正のフィードバック）であって、国家保護や独占ライセンスではない。'],
+  memorize:'Hub = bottleneck + disproportionate value + self-reinforcing'
+},
+{
+  id:'cDF_boundary_resources', ch:'DF', name:'Boundary Resources Model', star:true,
+  scene:'AppleはSDK・API・App Store・規約を第三者開発者に渡します。これらが「プラットフォーム所有者」と「外部開発者」をつなぐ接着剤です（Ghazawneh & Henfridsson, 2013）。',
+  compare:null,
+  punchline:'Boundary resources (SDKs, APIs, tools, agreements) let a platform owner support third-party development while balancing openness against control.',
+  defEN:'**Boundary resources** are resources \u2014 software development kits (SDKs), APIs, tools, and regulations \u2014 initiated by the **platform owner** to support **third-party developers** who build applications for end users. They are the interface that balances external contribution with platform control.',
+  defJA:'**Boundary resources**（境界資源）は、**platform owner** が **third-party developer**（第三者開発者）の開発を支援するために提供する資源——**SDK**・**API**・ツール・規約（developer agreements）——です。プラットフォームの中核モジュールへ簡単にアクセスさせ、外部の貢献と統制のバランスをとる「接着剤」です。',
+  example:'Apple\u2019s SDK and APIs (e.g., GPS) let independent developers build apps for iPhone users \u2014 classic boundary resources connecting owner and third parties.',
+  whyNeeded:'**Resourcing vs Securing** のバランス論の前提。第三者開発の定義も頻出。',
+  mistakes:['Third-party developmentを「開発者はプラットフォーム所有者の従業員」と答えない。正解は「独立したアクターがエンドユーザー向けにアプリを開発」。'],
+  memorize:'Boundary resources = SDK + API + tools + agreements'
+},
+{
+  id:'cDF_resourcing_securing', ch:'DF', name:'Resourcing vs Securing', star:true,
+  scene:'プラットフォーム所有者は2つの相反する力でバランスをとります：もっと開かせる(resourcing) vs もっと統制する(securing)。Appleの歴史がその綱引きの記録です。',
+  compare:{ a:'Resourcing', b:'Securing', table:[
+    {dim:'Goal', a:'Expand scope & diversity of the platform', b:'Increase control over the platform'},
+    {dim:'Mechanism', a:'New apps by third parties; APIs, SDK', b:'Developer agreements, licensing, app review'},
+    {dim:'Risk if overdone', a:'Loss of control, malicious apps', b:'Reduced third-party participation'} ]},
+  punchline:'Resourcing expands a platform\u2019s scope and diversity; securing increases the owner\u2019s control \u2014 owners must balance the two.',
+  defEN:'**Resourcing** is the process by which the **scope and diversity** of a platform is enhanced (more third-party apps, more APIs). **Securing** is the process by which the **control** of a platform and its services is increased (developer agreements, licensing, review). Control ranges on a continuum from tight (automotive) to loose (open-source communities).',
+  defJA:'**Resourcing**（リソーシング）は、第三者アプリやAPIを増やしてプラットフォームの **scope and diversity** を拡大する過程。**Securing**（セキュアリング）は、規約・ライセンス・審査で所有者の **control** を強める過程。統制レベルは厳格（自動車）〜緩やか（OSSコミュニティ）の連続体。',
+  example:'What is the main risk of focusing only on securing while neglecting resourcing? **Reduced third-party participation** \u2014 over-control drives developers away.',
+  whyNeeded:'Appleのjailbreak→SDK導入→新規制という歴史を説明。statisticな統制過剰のリスクが頻出。',
+  mistakes:['Securing偏重のリスクを「regulatory penalties」「excessive competition」と答えない。正解は **reduced third-party participation**。',
+    'ResourcingとSecuringを「同じ方向の戦略」と捉えない。openness vs control の綱引き。'],
+  memorize:'Resourcing = open up (scope); Securing = lock down (control)'
+},
+{
+  id:'cDF_three_platform_types', ch:'DF', name:'Three Types of Platforms', star:true,
+  scene:'Uberは売買を仲介、iOSは開発者にイノベーションさせ、Redditは仲間が交流する。プラットフォームは大きく3類型に分かれます（Schreieck et al., 2024）。',
+  compare:{ a:'Type', b:'Example / mechanism', table:[
+    {dim:'Transaction platform', a:'Uber, Amazon, Airbnb', b:'Matching & transactions between buyers and sellers'},
+    {dim:'Innovation platform', a:'iOS, Windows, Android', b:'Generativity: complementors create innovations'},
+    {dim:'Community platform', a:'Facebook, Reddit, Twitter', b:'Communication & content sharing among members'} ]},
+  punchline:'Schreieck et al. (2024): transaction platforms match buyers/sellers; innovation platforms enable complementors to innovate; community platforms enable communication among members.',
+  defEN:'Three platform types: **Transaction platforms** (Uber, Amazon) facilitate matching and transactions between user groups; **Innovation platforms** (iOS, Android) provide an extensible system enabling **complementors** to create innovations (generativity); **Community platforms** (Facebook, Reddit) enable communication and content sharing among members who are both producers and consumers.',
+  defJA:'プラットフォーム3類型：①**Transaction platform**（取引型：Uber, Amazon）＝買い手と売り手をマッチングし取引を仲介。②**Innovation platform**（イノベーション型：iOS, Android）＝拡張可能な基盤で補完者(complementor)がイノベーションを生む（**generativity**）。③**Community platform**（コミュニティ型：Facebook, Reddit）＝メンバー間の交流とコンテンツ共有。',
+  example:'Which best describes a "transaction platform"? A platform that enables value-creating interactions between buyers and sellers \u2014 not co-innovation (innovation) or content sharing (community).',
+  whyNeeded:'統合戦略（同型 vs 異型）の前提分類。',
+  mistakes:['Innovation platform（開発者の共創）と Transaction platform（売買仲介）を取り違えない。'],
+  memorize:'Transaction (trade) / Innovation (build) / Community (talk)'
+},
+{
+  id:'cDF_integration_levels', ch:'DF', name:'Partial vs Full Platform Integration', star:false,
+  scene:'FacebookとWhatsAppは別物として「連携」(partial)。WeChatは1つの巨大アプリに「融合」(full)。ユーザーから見た区別可能性が違います。',
+  compare:{ a:'Partial integration', b:'Full integration', table:[
+    {dim:'Description', a:'Connected while remaining distinct', b:'Merged into a single coherent system'},
+    {dim:'Level', a:'Data & functional level', b:'User interface level'},
+    {dim:'User perspective', a:'Platforms remain distinguishable', b:'No longer distinguishable (superapp)'} ]},
+  punchline:'Partial integration links platforms at the data/functional level (still distinguishable); full integration merges them at the UI level into one indistinguishable superapp.',
+  defEN:'**Partial integration** connects platforms at the **data and functional level** while they remain distinguishable to users (Facebook & WhatsApp). **Full integration** merges platforms at the **user-interface level** into a single system that users can no longer distinguish (superapps like WeChat).',
+  defJA:'**Partial integration**（部分統合）は、データ・機能レベルで連携しつつ、ユーザーには別々のプラットフォームとして区別可能（Facebook & WhatsApp）。**Full integration**（完全統合）は、UIレベルで1つに融合し区別不可能（**superapp**、例：WeChat）。',
+  example:'Facebook and WhatsApp share data but stay separate apps (partial); WeChat bundles everything into one indistinguishable superapp (full).',
+  whyNeeded:'4統合戦略マトリクス（同型/異型 × 部分/完全）の片軸。',
+  mistakes:['superappは **full integration**（UIレベル融合）。partialと混同しない。'],
+  memorize:'Partial = data/function (still 2); Full = UI (one superapp)'
+},
+{
+  id:'cDF_integration_strategies', ch:'DF', name:'Four Integration Strategies (Assemblage)', star:true,
+  scene:'統合は「同型/異型 × 部分/完全」の2×2で4戦略になります。最大の補完性とsuperappを生むのは右上の**Assemblage**（Schreieck et al., 2024）。',
+  compare:{ a:'Strategy', b:'Type & integration', table:[
+    {dim:'1. Collection', a:'Partial integration of same-type platforms', b:'Shared data/functionality (Meta Group)'},
+    {dim:'2. Consolidation', a:'Full integration of same type', b:'Enlarged base, direct network effects (Amazon Prime Video)'},
+    {dim:'3. Symbiosis', a:'Partial integration of different types', b:'Shared infrastructure (Google Photos, SAP)'},
+    {dim:'4. Assemblage', a:'Full integration of different types', b:'Most complementarities \u2192 superapps (Facebook Apps)'} ]},
+  punchline:'Of the four integration strategies, Assemblage (full integration of different platform types) yields the most complementarities and brings superapps.',
+  defEN:'Combining type (same/different) and integration (partial/full) gives four strategies: **Collection** (partial, same type), **Consolidation** (full, same type), **Symbiosis** (partial, different types), and **Assemblage** (full, different types). **Assemblage yields the most complementarities and brings superapps.**',
+  defJA:'2軸（同型/異型 × 部分/完全）で4戦略：①**Collection**（部分・同型）②**Consolidation**（完全・同型）③**Symbiosis**（部分・異型）④**Assemblage**（完全・異型）。**Assemblage** が最大の補完性を生み、**superapp** をもたらします。',
+  example:'Why choose partial integration (Collection/Symbiosis) over full? E.g., operating in a **highly regulated industry with data-protection constraints** that prevents full UI merging.',
+  whyNeeded:'デジタル企業の成長戦略を体系化。superappの理論的根拠。',
+  mistakes:['superappを生む戦略は **Assemblage**（完全・異型）。Consolidation（完全・同型）と混同しない。'],
+  memorize:'Same/Diff \u00d7 Partial/Full \u2192 Collection/Consolidation/Symbiosis/Assemblage'
+},
+{
+  id:'cDF_dma_gatekeeper', ch:'DF', name:'Digital Markets Act (DMA) & Gatekeepers', star:true,
+  scene:'EUは事後・個別の独占摘発（Google Shopping＝14年かけて€2.42bn罰金）が遅すぎると気づき、**事前規制**のDMAを導入しました（Tirole, 2023）。',
+  compare:null,
+  punchline:'The DMA is ex-ante regulation that imposes do\u2019s and don\u2019ts on gatekeepers possessing Core Platform Services to keep digital markets fair and contestable.',
+  defEN:'The **Digital Markets Act (DMA)** is **ex-ante** (before-the-fact) regulation to keep digital markets fair and contestable. It designates **gatekeepers** that possess **Core Platform Services (CPS)** (e.g., social media, search engines, messaging) and sets 6 do\u2019s and 6 don\u2019ts plus an enforcement authority.',
+  defJA:'**DMA**（デジタル市場法）は、デジタル市場を公正で競争可能に保つための **ex-ante**（事前）規制。**Core Platform Services (CPS)** を持つ企業を **gatekeeper**（ゲートキーパー）に指定し、6つの義務と6つの禁止、執行機関を定めます。EU従来の **ex-post**（事後・個別）方式が遅すぎた反省（Google Shopping＝開始2014→確定2024）から生まれました。',
+  example:'Under the DMA, Article 7 forces gatekeepers to make basic messaging functionalities interoperable with rival services on request and free of charge.',
+  whyNeeded:'Tiroleが挙げる独占抑制の第一の代替策。ex-ante vs ex-post の区別が頻出。',
+  mistakes:['DMAは **ex-ante**（事前規制）。事後・個別の competition policy と混同しない。',
+    'gatekeeperの定義は **CPS保有**。単に大企業という意味ではない。'],
+  memorize:'DMA = ex-ante rules on gatekeepers (CPS), 6 do\u2019s + 6 don\u2019ts'
+},
+{
+  id:'cDF_monopoly_measures', ch:'DF', name:'Four Measures to Limit Monopoly Power', star:false,
+  scene:'DMA以外に、独占を抑える手段が4つ。ただしテック業界ではどれも一長一短で、特に「分割」は難しい（Tirole, 2023）。',
+  compare:null,
+  punchline:'Tirole lists four alternatives: public utility regulation, breakups, competition policy, and new sectoral regulation \u2014 each problematic for tech.',
+  defEN:'Beyond the DMA, Tirole (2023) discusses four measures: (1) **public utility regulation** (set a fixed price, but pricing is hard); (2) **breakups** (insulate a natural monopoly/bottleneck, but may destroy network externalities and the data advantage); (3) **competition policy** (slow and backward-looking); (4) **new regulation** (sectoral agencies).',
+  defJA:'独占抑制の4手段：①**public utility regulation**（公益事業規制：価格を固定。だが公正価格の設定が困難）②**breakups**（分割：自然独占を切り離す。だが**network externalities**を破壊し、**data advantage**を失わせるため困難）③**competition policy**（競争政策：遅く後ろ向き）④**new regulation**（新たな部門別規制機関）。',
+  example:'Why are breakups hard in tech? There is no stable essential facility, a breakup may destroy network externalities, and it may lose the data advantage.',
+  whyNeeded:'なぜTiroleが「完全分割は非現実的」と結論するかの根拠。',
+  mistakes:['breakupが容易だと答えない。テックでは network externalities・data advantage の喪失で困難。'],
+  memorize:'Utility / Breakup / Competition policy / New regulation'
+},
+{
+  id:'cDF_data_issues', ch:'DF', name:'Tirole: Data Issues', star:false,
+  scene:'私たちはGmailやYouTubeを「無料」で使い、代わりにデータで支払っています。この仕組みにはプライバシー問題があり、代替案も難しい（Tirole, 2023）。',
+  compare:null,
+  punchline:'We pay for "free" services with our data; alternatives (no collection, micropayments, data licensing, data trusts) each have serious drawbacks.',
+  defEN:'Tirole notes we receive great services (Gmail, YouTube) and **pay with our data**, raising **privacy** issues. Alternatives all have drawbacks: no data collection (lowers quality), micropayments (bots steal money), **data licensing** (hard to implement, like patents), and customer-centric data trusts (operational issues).',
+  defJA:'私たちは優れたサービスを受け、その対価を**data**（データ）で支払っており、**privacy**問題が生じます。代替案：データ収集をやめる（品質低下）、**micropayments**（ボットに盗まれる）、**data licensing**（特許のように困難）、**data trusts**（運用が難しい）。どれも一長一短。',
+  example:'Gmail is "free" but Google monetizes your data; proposed fixes like micropayments risk bots draining the payments.',
+  whyNeeded:'デジタル経済の核心的政策課題（データの価値評価）と接続。',
+  mistakes:['「無料サービス」を額面通り受け取らない。対価はデータ。'],
+  memorize:null
+},
+{
+  id:'cDF_industrial_policy', ch:'DF', name:'Tirole: Industrial Policy & Institutional Innovation', star:false,
+  scene:'政府が市場の失敗を直す介入には2種類。さらにTiroleは、より良い規制機関の必要性を訴えます（Tirole, 2023）。',
+  compare:{ a:'Non-targeted intervention', b:'Industrial policy (targeted)', table:[
+    {dim:'Definition', a:'Broad, not aimed at specific sectors', b:'Targets sectors, technologies, or companies'},
+    {dim:'Example', a:'Carbon pricing, R&D tax credits', b:'Cluster support, infrastructure sharing'} ]},
+  punchline:'Governments correct market failures via non-targeted tools (carbon pricing, R&D credits) or targeted industrial policy; Tirole urges adaptive, independent, mission-oriented regulators.',
+  defEN:'Governments have two intervention types: **non-targeted** (carbon pricing, R&D tax credits) and **industrial policy** (targeted at sectors/technologies/companies). Industrial policy can create cluster effects and shared learning but history makes economists cautious. Tirole calls for **institutional innovation**: regulators that are global, independent, mission-oriented, and adaptive.',
+  defJA:'政府の市場失敗是正には2種類：**non-targeted**（非標的：carbon pricing, R&D税額控除）と **industrial policy**（産業政策：特定の部門・技術・企業を標的）。産業政策はクラスター効果や学習共有を生むが、歴史的失敗から経済学者は慎重。Tiroleは**institutional innovation**——グローバルで政治・企業から独立し、使命志向で適応的な規制機関——を提唱。',
+  example:'Carbon pricing is non-targeted; subsidizing a specific chip cluster is industrial policy. Tirole prefers adaptive regulators using academia and industry input.',
+  whyNeeded:'Tiroleの結論（既存法内でも政策は改善できる）の根拠。',
+  mistakes:['carbon pricing を industrial policy（標的型）に分類しない。これは non-targeted。'],
+  memorize:'Non-targeted (carbon, R&D) vs Industrial policy (targeted)'
+}
+];
+
+/* TAX — Economics of Taxation (L3-4). Source: Canvas lecture slides L3, L4 +
+   Elliffe (2021) Taxing the Digital Economy ch1-3 + Beretta (2017). EN terms primary. */
+window.CONCEPTS_TAX = [
+{
+  id:'cTAX_definition', ch:'TAX', name:'Definition & Purpose of Taxation', star:true,
+  scene:'政府は道路・医療・教育・治安にお金が要ります。その財源として、納税者に強制的に課す負担が**taxation**です。',
+  compare:{ a:'Budgetary purpose', b:'Policy purpose', table:[
+    {dim:'Goal', a:'Finance public expenditures', b:'Influence behavior; redistribute income'},
+    {dim:'Example', a:'Law & order, healthcare, infrastructure, education', b:'Excise on alcohol; support for elderly/young/sick/poor'} ]},
+  punchline:'Taxation is a compulsory financial charge imposed on a taxpayer by a governmental organization to fund public expenditures.',
+  defEN:'**Taxation** is a **compulsory financial charge** imposed on a **taxpayer** by a **governmental organization** in order to **fund public expenditures**. Its purposes are **budgetary** (finance public spending) and **policy** (influence behavior, redistribute income, increase total welfare).',
+  defJA:'**Taxation**（課税）の定義：政府が納税者(**taxpayer**)に課す**compulsory**（強制的）な金銭的負担で、**public expenditures**（公共支出）を賄うためのもの。目的は2つ——**budgetary**（予算的：公共支出の財源）と**policy**（政策的：行動の誘導、所得の再分配、総厚生の増加）。',
+  example:'VAT and personal income tax fund public spending (budgetary), while excise duties on alcohol aim to change behavior (policy).',
+  whyNeeded:'すべての税の議論の出発点。「強制的」「政府による」「公共支出のため」の3要素が定義の核心。',
+  mistakes:['任意の寄付は税ではない。定義は **compulsory**（強制的）。',
+    'budgetary purpose（財源確保）と policy purpose（行動誘導・再分配）を混同しない。'],
+  memorize:'Tax = Compulsory + by Government + for Public expenditure'
+},
+{
+  id:'cTAX_company_types', ch:'TAX', name:'Taxation of Company Types', star:false,
+  scene:'一人親方、パートナーシップ、株式会社——事業形態によって誰がどう課税されるかが変わります。',
+  compare:{ a:'Form', b:'How taxed', table:[
+    {dim:'Self-employed (sole proprietor)', a:'Business profits taxed under personal income tax', b:'Taxpayer = the entrepreneur'},
+    {dim:'Partnership', a:'Often transparent for income tax', b:'Taxed at partner level by profit share'},
+    {dim:'Corporation', a:'Corporate income tax on profits', b:'Plus withholding tax on dividends/interest/royalties'} ]},
+  punchline:'Sole proprietors and partnerships are taxed at the individual/partner level; corporations pay corporate income tax on profits.',
+  defEN:'A **self-employed** person\u2019s business profits are taxed under the **personal income tax**. A **partnership** is often **transparent**, taxed at the partners\u2019 level by profit share. A **corporation** pays **corporate income tax** on profits (taxable subject = the company; tax object = profits; NL rate \u2248 25.8%), plus **withholding tax** on dividends, interest and royalties.',
+  defJA:'**Self-employed**（自営業）：事業利益は**personal income tax**で課税、納税者は起業家本人。**Partnership**（組合）：多くは**transparent**（透明）で、利益配分に応じてパートナー個人に課税。**Corporation**（法人）：利益に**corporate income tax**（課税主体＝会社、課税対象＝profits、NL約25.8%）と、配当・利子・ロイヤリティへの**withholding tax**。',
+  example:'A Dutch BV pays ~25.8% corporate income tax on profits; a sole trader instead reports business profit under personal income tax.',
+  whyNeeded:'「利益＝収益−費用」を減らせば税が減る、という多国籍企業の節税の前提。',
+  mistakes:['corporate income tax の課税対象は **profits**（利益）であって売上ではない。'],
+  memorize:'Sole/Partnership = personal level; Corporation = corporate tax on profits'
+},
+{
+  id:'cTAX_intl_objectives', ch:'TAX', name:'Objectives of International Tax Rules', star:false,
+  scene:'国際課税ルールが目指すもの。投資判断を歪めず、各国が協調できるように設計されるべきだとされます。',
+  compare:null,
+  punchline:'International tax rules aim at national wealth maximization, tax fairness, economic efficiency, administrative efficiency, and international compatibility.',
+  defEN:'The objectives of international tax rules are: (1) **national wealth maximization**, (2) **tax fairness**, (3) **economic efficiency**, (4) **administrative efficiency**, and (5) **international compatibility**. In a perfect world, capital is allocated efficiently to the highest risk-adjusted returns; **taxation distorts the investment decision**.',
+  defJA:'国際課税ルールの目的：①**national wealth maximization**（国富最大化）②**tax fairness**（公平）③**economic efficiency**（経済効率）④**administrative efficiency**（行政効率）⑤**international compatibility**（国際整合性）。理想世界では資本は最も効率的に配分されるが、**taxation distorts the investment decision**（課税が投資判断を歪める）。',
+  example:'A neutral tax system would not change where a rational investor puts capital; in practice taxes distort that choice, which CIN and CEN try to limit.',
+  whyNeeded:'CIN/CENという「中立性」概念が、なぜ重要かの背景。',
+  mistakes:['課税は中立ではない——投資判断を**distort**（歪める）するのが前提。'],
+  memorize:null
+},
+{
+  id:'cTAX_residence_source', ch:'TAX', name:'Residence vs Source Jurisdiction', star:true,
+  scene:'A国はどんな所得に課税できる？「A国の居住者」か「A国を源泉とする所得」か——課税権の2つの根拠です。',
+  compare:{ a:'Residence jurisdiction', b:'Source jurisdiction', table:[
+    {dim:'Who/what', a:'A resident of country A acting abroad', b:'A non-resident\u2019s activity in country A'},
+    {dim:'Example', a:'Taxation of worldwide income', b:'Real estate transfer tax on property bought by non-resident'},
+    {dim:'Justified by', a:'Ability-to-pay principle', b:'Benefit principle'} ]},
+  punchline:'Residence jurisdiction taxes a resident\u2019s worldwide income; source jurisdiction taxes income arising within the country regardless of residence.',
+  defEN:'Countries tax two kinds of cross-border activity. **Residence jurisdiction** covers activities by a **resident** of country A abroad (e.g., taxing **worldwide income**). **Source jurisdiction** covers a **non-resident\u2019s** activity **within** country A (e.g., real estate transfer tax). A core principle: country A cannot tax objects on country B\u2019s territory; a **source** of income is required.',
+  defJA:'国際課税の2つの根拠。**Residence jurisdiction**（居住地管轄）：A国の**resident**（居住者）が国外で行う活動に課税（例：worldwide income＝全世界所得）。**Source jurisdiction**（源泉地管轄）：**non-resident**（非居住者）がA国内で行う活動に課税（例：不動産取得税）。原則：A国はB国の領域の課税対象には課税できず、課税には**source**（源泉）が必要。',
+  example:'The Netherlands taxes a Dutch resident\u2019s global income (residence) but also taxes a foreigner buying Dutch property (source).',
+  whyNeeded:'CIN/CEN・二重課税・PE・DSTすべての土台。Benefit/Ability-to-pay原則の正当化対象。',
+  mistakes:['residence＝全世界所得、source＝国内源泉所得。逆にしない。'],
+  memorize:'Residence = your worldwide income; Source = income arising here'
+},
+{
+  id:'cTAX_cin', ch:'TAX', name:'Capital Import Neutrality (CIN)', star:true,
+  scene:'A国に入ってくる投資（inbound）について、国内投資家も外国投資家も同じ税率にする——これが資本の「輸入」中立性です。',
+  compare:null,
+  punchline:'Capital import neutrality means domestic and foreign investors are taxed equally on inbound investments in a country.',
+  defEN:'**Capital import neutrality (CIN)** means **domestic and foreign investors are taxed equally for inbound investments** in country A. Method: equal rates and relief for foreign investors. Risk: tax exemptions to attract foreign capital. If all countries were source-only jurisdictions, CIN would be achieved.',
+  defJA:'**Capital import neutrality (CIN)**（資本輸入中立性）：A国への**inbound**（対内）投資について、**国内投資家も外国投資家も同じ税率**で課税。方法＝同率＋外国投資家への救済。もし全ての国が**source jurisdiction only**（源泉地のみ課税）なら、CINが達成される。',
+  example:'If every country taxed only income sourced on its soil, all investors in country A would face country A\u2019s rate \u2014 capital import neutrality.',
+  whyNeeded:'二重課税救済の選択（免税方式はCINを達成しCENは達成しない）に直結。',
+  mistakes:['CIN（輸入＝inbound、同じ国内で投資家を平等に）と CEN（輸出＝outbound、居住者の内外投資を平等に）を混同しない。'],
+  memorize:'CIN = same tax for everyone investing INTO a country (source-based)'
+},
+{
+  id:'cTAX_cen', ch:'TAX', name:'Capital Export Neutrality (CEN)', star:true,
+  scene:'A国の居住者が、国内に投資しても外国に投資しても同じ実効税率になる——これが資本の「輸出」中立性です。',
+  compare:{ a:'CIN (Capital Import Neutrality)', b:'CEN (Capital Export Neutrality)', table:[
+    {dim:'Focus', a:'Inbound investment into a country', b:'A resident\u2019s investment at home vs abroad'},
+    {dim:'Equality', a:'Domestic & foreign investors equal in country A', b:'Resident faces same effective rate home or abroad'},
+    {dim:'Method', a:'Equal rates, relief for foreigners', b:'Tax worldwide income at the same rate'} ]},
+  punchline:'Capital export neutrality means a resident investor faces the same effective domestic tax rate whether investing at home or abroad.',
+  defEN:'**Capital export neutrality (CEN)** means an investor **resident in country A is taxed equally** for investments in **both country A and country B** \u2014 i.e., residents face the **same effective domestic tax rate** irrespective of whether they invest at home or abroad. Method: tax **worldwide income** at the same rate.',
+  defJA:'**Capital export neutrality (CEN)**（資本輸出中立性）：A国の**resident**（居住者）が、A国に投資してもB国に投資しても**同じ実効国内税率**になること。方法＝全世界所得(**worldwide income**)を同率で課税。CINと対で問われる頻出論点。',
+  example:'CEN: a Dutch resident pays the same effective Dutch rate on profits whether earned in the Netherlands or abroad (worldwide income taxed equally).',
+  whyNeeded:'免税方式(exemption)では達成できない中立性。BEPS・利益移転の議論の基準。',
+  mistakes:['CEN は「低い法人税率で外国投資を抑制すること」ではない。居住者の内外投資の実効税率を等しくすること。',
+    'exemption method（免税方式）では CEN は達成できない（CINは可）。'],
+  memorize:'CEN = same tax for a resident investing anywhere (residence-based)'
+},
+{
+  id:'cTAX_double_taxation', ch:'TAX', name:'Double Taxation & Relief', star:true,
+  scene:'A国とB国が同じ所得に二重に課税してしまう。これを解く4つの方式があります。',
+  compare:null,
+  punchline:'Double taxation arises when two countries tax the same income; relief uses the tax credit, exemption, proportional, or allocation method.',
+  defEN:'**Double taxation** occurs when **country A and country B both tax the same income**. Relief methods: **tax credit**, **exemption**, **proportional**, and **allocation**. The **exemption method** achieves CIN but **cannot achieve CEN**.',
+  defJA:'**Double taxation**（二重課税）：A国とB国が同じ所得に課税してしまう状態。救済方式は4つ——**tax credit**（税額控除）、**exemption**（免税）、**proportional**（比例）、**allocation**（割当）。**exemption method** はCINを達成するが**CENは達成できない**（試験頻出）。',
+  example:'What cannot be achieved with the tax exemption method? **Capital export neutrality** \u2014 exemption gives CIN, not CEN.',
+  whyNeeded:'CIN/CENとの接続。tax treaty（OECD model）の主目的の一つ。',
+  mistakes:['exemption method が CEN を達成すると答えない。達成するのは CIN。'],
+  memorize:'Relief: Credit / Exemption / Proportional / Allocation. Exemption \u2192 CIN (not CEN)'
+},
+{
+  id:'cTAX_residence_criteria', ch:'TAX', name:'Determining Residence', star:false,
+  scene:'では「居住者」とは誰か？個人と会社で判定基準が違います。',
+  compare:{ a:'Natural person', b:'Company', table:[
+    {dim:'Criteria', a:'Nationality / citizenship; 183-day rule; centre of economic & social interest', b:'Place of incorporation; place of effective management'} ]},
+  punchline:'Residence of a natural person uses nationality, the 183-day rule, and centre of interests; a company uses place of incorporation and effective management.',
+  defEN:'Residence of a **natural person** depends on nationality/citizenship, the **183-days-in-a-year** criterion, and the place of economic and social interest. Residence of a **company** depends on the **place of incorporation** and the **place of effective management**. Residence matters for the taxable subject and for treaty access.',
+  defJA:'**Residence**（居住地）の判定：**natural person**（自然人）＝国籍・市民権、年**183日**基準、経済・社会的利益の中心地。**company**（会社）＝**place of incorporation**（設立地）と**place of effective management**（実質的管理地）。居住地は課税主体の決定とtreaty access（条約適用）に重要。',
+  example:'A person spending 200 days/year in the Netherlands likely becomes a Dutch resident (183-day rule); a company is resident where it is incorporated or effectively managed.',
+  whyNeeded:'residence jurisdictionの適用対象を特定。Uberの構造（どこが居住者か）を理解する鍵。',
+  mistakes:['会社の居住地判定に 183-day rule を使わない（それは自然人）。'],
+  memorize:'Person: 183 days + interests; Company: incorporation + effective management'
+},
+{
+  id:'cTAX_pe', ch:'TAX', name:'Permanent Establishment (PE)', star:true,
+  scene:'外国企業に源泉地課税するには「物理的な足場」が要ります。それが**permanent establishment**——支店・工場・事務所など。',
+  compare:null,
+  punchline:'A permanent establishment is a fixed place of business through which an enterprise carries on its business, enabling source taxation of business income.',
+  defEN:'A **permanent establishment (PE)** is **a fixed place of business through which the business of an enterprise is carried on** \u2014 e.g., a branch, office, factory, workshop, or mine. PE is the threshold for source-taxing business income. Digital firms need no physical presence, so PE is **outdated** for the digital economy.',
+  defJA:'**Permanent establishment (PE)**（恒久的施設）：企業の事業が行われる**固定的な事業の場所**（支店・事務所・工場・作業場・鉱山など）。事業所得への源泉地課税の閾値。デジタル企業は物理的存在が不要なので、PEはデジタル経済には**outdated**（時代遅れ）。',
+  example:'In international tax law, a "permanent establishment" is a fixed place of business through which an enterprise carries on its business activities \u2014 not merely where it is registered, nor a contract duration.',
+  whyNeeded:'デジタル課税の中心的な機能不全。Uberが各国でPEを避ける構造の鍵。',
+  mistakes:['PEを「会社が登記された場所」と答えない。正解は「事業が行われる固定的な事業の場所」。',
+    'PEは契約期間や2社間の長期契約ではない。'],
+  memorize:'PE = fixed place of business (branch/office/factory) \u2192 source tax'
+},
+{
+  id:'cTAX_treaties', ch:'TAX', name:'Double Tax Treaties & OECD Model', star:false,
+  scene:'国際的な「税法」は存在しません。あるのは各国の税法と、2国間の租税条約です（EUは例外）。',
+  compare:null,
+  punchline:'There is no overarching international tax law; bilateral double tax treaties (often the OECD model) remove double taxation and prevent avoidance/evasion.',
+  defEN:'There is **no overarching international tax law** (except the EU). Instead, countries sign **bilateral double tax treaties**, typically based on the **OECD model treaty**, whose purposes are to (1) remove double taxation and (2) prevent tax avoidance/evasion.',
+  defJA:'**国際的な「税法」は存在しない**（EUは例外）。あるのは各国の税法と、2国間(**bilateral**)の**double tax treaty**（租税条約、多くは**OECD model treaty**）。目的は①二重課税の除去 ②租税回避・脱税の防止。',
+  example:'The Netherlands and the US sign a bilateral treaty (OECD-model based) to decide which country taxes what, removing double taxation.',
+  whyNeeded:'BEPSプロジェクト（stateless incomeの防止）と接続。',
+  mistakes:['世界共通の国際税法が「ある」と答えない。あるのは各国法＋二国間条約。'],
+  memorize:'No global tax law \u2192 bilateral treaties (OECD model): remove double tax + stop avoidance'
+},
+{
+  id:'cTAX_evasion_avoidance', ch:'TAX', name:'Tax Evasion vs Tax Avoidance', star:true,
+  scene:'税を減らす行為。法を破れば脱税(illegal)、法の範囲内なら回避(legal)。ただし回避も「攻撃的」だと評判リスク。',
+  compare:{ a:'Tax evasion', b:'Tax avoidance', table:[
+    {dim:'Legality', a:'Illegal', b:'Within the law (can be "aggressive")'},
+    {dim:'Nature', a:'Hiding income, fraud', b:'Creative compliance; letter vs spirit of law'},
+    {dim:'Risk', a:'Penalties, prosecution', b:'Reputational damage'} ]},
+  punchline:'Tax evasion is illegal; tax avoidance is within the law but can be aggressive, complying with the letter while avoiding the spirit of the law.',
+  defEN:'Both reduce the tax burden. **Tax evasion** is **illegal**. **Tax avoidance** is **within the law** but can be experienced as **aggressive** \u2014 minimizing tax through **creative compliance**, complying with the **letter** of the law while avoiding its **spirit**, risking reputational damage.',
+  defJA:'どちらも税負担を減らす。**Tax evasion**（脱税）＝**違法**。**Tax avoidance**（租税回避）＝**合法**だが「攻撃的(aggressive)」になりうる。法の**letter**（文言）には従いつつ**spirit**（趣旨）を回避する**creative compliance**で、評判リスクを伴う。',
+  example:'Hiding income offshore is evasion (illegal); routing profits through low-tax entities while obeying the letter of the law is (aggressive) avoidance.',
+  whyNeeded:'profit shifting・transfer pricing abuse・Uber構造の評価軸。',
+  mistakes:['avoidance（合法）と evasion（違法）を混同しない。',
+    'aggressive tax avoidance も違法ではない（評判リスクはある）。'],
+  memorize:'Evasion = illegal; Avoidance = legal (letter vs spirit)'
+},
+{
+  id:'cTAX_profit_shifting', ch:'TAX', name:'Profit Shifting', star:true,
+  scene:'高税率国の利益を減らし、低税率国の利益を増やす。グループ内取引でこれをやるのが**profit shifting**です。',
+  compare:null,
+  punchline:'Profit shifting increases profits booked in low-tax jurisdictions and reduces them in high-tax jurisdictions through intercompany transactions.',
+  defEN:'**Profit shifting** means **increasing profits booked in low-tax jurisdictions** and **reducing tax payments in high-tax jurisdictions**, through **intercompany transactions**. Since profit = earnings \u2212 costs, firms reduce tax by reducing earnings or increasing costs in high-tax countries. It exploits **mismatches between tax systems**.',
+  defJA:'**Profit shifting**（利益移転）：**低税率国に計上する利益を増やし**、**高税率国の納税を減らす**。手段は**intercompany transactions**（グループ内取引）。利益＝収益−費用なので、高税率国で収益を減らすか費用を増やせば税が減る。税制間の**mismatch**を突く。',
+  example:'A group books most profit in a low-tax entity and loads costs (interest, royalties) onto its high-tax entities, cutting overall tax.',
+  whyNeeded:'transfer pricing・IP transfer・Uberの€16bnローンの仕組みを理解する鍵。',
+  mistakes:['profit shifting は基本的に租税回避（合法だが攻撃的）の手段で、必ずしも脱税ではない。'],
+  memorize:'Profit shifting = move profit to low-tax, costs to high-tax'
+},
+{
+  id:'cTAX_transfer_pricing', ch:'TAX', name:'Transfer Pricing & Arm\u2019s Length', star:true,
+  scene:'グループ内で売買する価格(transfer price)は、無関係な他人同士なら付けるであろう価格——**arm\u2019s length**——にしなければなりません。',
+  compare:null,
+  punchline:'Transfer pricing requires intercompany transactions to be priced at arm\u2019s length \u2014 the fair market value unrelated parties would use.',
+  defEN:'**Transfer pricing** sets the price of **intercompany transactions**, which must follow the **arm\u2019s length principle**: act as if the parties were **unrelated**, so the transfer price equals **fair market value** (ideally a comparable uncontrolled price). It is **difficult for intangibles** (IP, data) that have no clear market comparable.',
+  defJA:'**Transfer pricing**（移転価格）：グループ内取引(**intercompany transactions**)の価格付け。**arm\u2019s length principle**（独立企業間原則）に従い、無関係な当事者(**unrelated**)であるかのように、**fair market value**（公正市場価値、理想は比較可能な非関連価格）で取引する。**intangibles**（IP・データ）では比較対象がなく困難。',
+  example:'What is true about transfer pricing? Unrelated companies pay fair market value, and **related companies must act on an at arm\u2019s length basis** \u2014 paying 100 for something worth 1,000 is NOT arm\u2019s length.',
+  whyNeeded:'transfer pricing abuse（IPをタックスヘイブンに移しロイヤリティを払う）の正常基準。',
+  mistakes:['関連会社が市場価値1,000の物を100で取引するのは arm\u2019s length では「ない」。',
+    'arm\u2019s length は「公正市場価値で取引」。関連だから安くしてよい、ではない。'],
+  memorize:'Transfer price = arm\u2019s length = fair market value (as if unrelated)'
+},
+{
+  id:'cTAX_tp_abuse', ch:'TAX', name:'Transfer Pricing Abuse', star:false,
+  scene:'IPをケイマン諸島の子会社に移し、本体がそこへ高額のロイヤリティを払う——利益をタックスヘイブンへ流す典型手口です。',
+  compare:null,
+  punchline:'Transfer pricing abuse shifts profit via debt shifting, IP transfer to tax havens, royalty payments, and financial leasing.',
+  defEN:'**Transfer pricing abuse** shifts profit through **debt shifting**, **IP transfer** to a tax haven, **royalty payments**, and **financial leasing**. A classic structure: transfer IP to a tax-haven IP company, which then charges royalty fees to operating subsidiaries, moving profit out of high-tax countries. The correction is **arm\u2019s length** transfer pricing.',
+  defJA:'**Transfer pricing abuse**（移転価格の濫用）：**debt shifting**（負債移転）、**IP transfer**（IPをタックスヘイブンへ移転）、**royalty payments**（ロイヤリティ支払）、**financial leasing**で利益を移す。典型：IPをタックスヘイブンのIP会社に移し、そこが事業子会社へロイヤリティを請求して利益を吸い上げる。是正策は**arm\u2019s length**な移転価格。',
+  example:'A group moves its IP to a Cayman Islands IP-Co, then its Dutch subsidiary pays large royalties to Cayman, shifting profit to the tax haven.',
+  whyNeeded:'Uberの実際の法的構造（IP・子会社の売却、€16bnの8%ローン）の理解。',
+  mistakes:['是正策は arm\u2019s length pricing。濫用の手口（royalty/IP transfer）と是正策を混同しない。'],
+  memorize:'Abuse: debt shift / IP transfer / royalties / leasing \u2192 fix with arm\u2019s length'
+},
+{
+  id:'cTAX_race_bottom', ch:'TAX', name:'Race to the Bottom', star:false,
+  scene:'各国が企業を呼び込もうと税率を下げ合う。結果、誰も十分な税収を得られない「底辺への競争」。',
+  compare:null,
+  punchline:'A "race to the bottom" is tax competition in which countries cut tax rates to attract companies and investment.',
+  defEN:'A **\u201crace to the bottom\u201d** is **tax competition** between countries that **reduce tax rates to attract companies and investments**. Its effectiveness is questionable, as all countries cutting rates can erode everyone\u2019s revenue.',
+  defJA:'**Race to the bottom**（底辺への競争）：企業や投資を呼び込もうと各国が**tax competition**（税の引き下げ競争）をすること。全員が下げると税収が痩せるため、その有効性には疑問符が付く。',
+  example:'If country A cuts its corporate rate to attract firms, B and C follow, and all end up with lower revenue \u2014 a race to the bottom.',
+  whyNeeded:'BEPS・国際協調（OECD-G20）の必要性の背景。',
+  mistakes:['race to the bottom は税率の「引き下げ」競争。引き上げではない。'],
+  memorize:'Race to the bottom = countries cut rates to attract firms'
+},
+{
+  id:'cTAX_digital_challenges', ch:'TAX', name:'Challenges of Taxing the Digital Economy', star:true,
+  scene:'租税条約は1920年代の「煉瓦とモルタル(brick-and-mortar)」経済を前提。物理拠点のないデジタル企業には合いません。',
+  compare:null,
+  punchline:'Tax treaties were designed for the 1920s brick-and-mortar economy; digital firms break PE, residence/source, and intangible valuation, and the core issue is allocating taxing rights.',
+  defEN:'Current treaties were **devised for the 1920s \u201cbrick-and-mortar\u201d economy** and do not cater to the digital economy. Problems: **PE** requires physical presence that digital firms lack; **residence and source** do not fit; **intangible assets** (IP, data, algorithms) are hard to value and price. The issue is **not only tax avoidance but the allocation of taxing rights**.',
+  defJA:'現行の租税条約は**1920年代の「brick-and-mortar」**（有形）経済を前提とし、デジタル経済に合わない。問題：**PE**は物理的存在を要するがデジタル企業は持たない、**residence/source**が機能しない、**intangible assets**（IP・データ・アルゴリズム）の評価・移転価格が困難。論点は租税回避だけでなく**allocation of taxing rights**（課税権の配分）。',
+  example:'A big-tech firm registered in A and B serves customers in C, earning ad and data revenue \u2014 yet has no PE in C, so C cannot tax it under old rules.',
+  whyNeeded:'DST登場の理由。"value creation"・user jurisdictionの議論の前提。',
+  mistakes:['デジタル課税の問題を「租税回避だけ」と捉えない。課税権の配分(allocation)も核心。'],
+  memorize:'Old treaties (1920s) \u2260 digital: PE/residence/source/intangibles all break'
+},
+{
+  id:'cTAX_dst', ch:'TAX', name:'Digital Services Tax (DST)', star:true,
+  scene:'協調が進まない中、フランスが2019年にDST3%を導入→米国がフランスワインに25%関税で報復。各国がばらばらに動きました。',
+  compare:{ a:'Country', b:'DST rate & base', table:[
+    {dim:'France', a:'3%', b:'Advertising, digital interface, sale of user data'},
+    {dim:'Italy', a:'3%', b:'Advertising, digital interface'},
+    {dim:'Spain', a:'3%', b:'Advertising, sale of user data'},
+    {dim:'United Kingdom', a:'2%', b:'Social media, search engine, marketplace'} ]},
+  punchline:'A Digital Services Tax taxes digital revenue (e.g., advertising, user data); France led with 3% in 2019, prompting US tariff retaliation.',
+  defEN:'A **Digital Services Tax (DST)** taxes digital revenue where traditional PE-based rules fail. With **no coordination**, France announced a **3% DST in 2019**; the US retaliated with **25% tariffs on French wine**. Rates: France 3%, Italy 3%, Spain 3%, UK 2%, on bases such as advertising, digital interfaces and sale of user data.',
+  defJA:'**Digital Services Tax (DST)**（デジタルサービス税）：PEベースのルールが効かないデジタル収益に課税。**協調がない**まま、フランスが**2019年に3%**を導入→米国が**フランスワインに25%関税**で報復。仏3%・伊3%・西3%・英2%（対象＝広告・デジタルインターフェース・ユーザーデータ販売等）。',
+  example:'France\u2019s 3% DST on ad and data revenue triggered a 25% US tariff on French wine \u2014 a sign of uncoordinated, unilateral digital taxation.',
+  whyNeeded:'デジタル課税の現実の政策対応。協調の欠如(no coordination)を象徴。',
+  mistakes:['DSTは利益ではなく、デジタル「収益(revenue)」に課税する税であることが多い。'],
+  memorize:'DST: France 3% (2019) \u2192 US 25% wine tariff; UK 2%'
+},
+{
+  id:'cTAX_principles', ch:'TAX', name:'Benefit vs Ability-to-Pay Principle', star:true,
+  scene:'なぜ税を払うのか？「公共サービスの受益に対して」（benefit）か「支払い能力に応じて」（ability-to-pay）か。どちらを採るかで源泉地課税か居住地課税かが変わります。',
+  compare:{ a:'Benefit principle', b:'Ability-to-pay principle', table:[
+    {dim:'Basis', a:'Taxpayers benefit from government services', b:'Pay based on income (vertical equity)'},
+    {dim:'Justifies', a:'Source taxation', b:'Residence taxation'},
+    {dim:'Link to services', a:'Link between taxes and public services', b:'No link between taxes and public services'} ]},
+  punchline:'The benefit principle justifies source taxation (you pay where you benefit); the ability-to-pay principle justifies residence taxation (you pay by income).',
+  defEN:'The **benefit principle** says taxpayers should pay because they **benefit from government** services \u2014 justifying **source taxation** and linking taxes to public services. The **ability-to-pay principle** says people should pay **based on income** (vertical equity) \u2014 justifying **residence taxation**, with no direct link to services. **Value creation** (internationally agreed but vague) aligns with the benefit principle.',
+  defJA:'**Benefit principle**（受益者原則）：納税者は政府サービスから**受益**するから払う→**source taxation**（源泉地課税）を正当化、税と公共サービスにリンクあり。**Ability-to-pay principle**（応能原則）：**所得**に応じて払う（垂直的公平）→**residence taxation**（居住地課税）を正当化、サービスとのリンクなし。**Value creation**（国際合意だが曖昧）は benefit principle と整合。',
+  example:'\u201cThe benefits principle links public expenditure to citizens\u2019 obligation to pay\u201d is a correct statement \u2014 it justifies source taxation.',
+  whyNeeded:'residence/source の正当化根拠。digital taxationのvalue creation議論に直結。',
+  mistakes:['benefit→source、ability-to-pay→residence の対応を逆にしない。'],
+  memorize:'Benefit \u2192 Source (you benefit here); Ability-to-pay \u2192 Residence (by income)'
+},
+{
+  id:'cTAX_sharing_economy', ch:'TAX', name:'Taxation of the Sharing Economy (Beretta)', star:true,
+  scene:'AirbnbやUberで個人が資産を収益化。これは趣味か事業か？申告されにくく、課税が難しい（Beretta, 2017）。',
+  compare:null,
+  punchline:'In the sharing economy, individuals monetize assets but income is often unreported; Beretta argues the solution is platform reporting, not separate laws.',
+  defEN:'In the **sharing economy**, individuals monetize assets (house, car). Income is often **incorrectly reported** because platforms treat earners as **contractors** and do not report. Transaction types Beretta recognizes: **cash, barter, cost-sharing, gifts/donations**. The solution is **platform reporting**. Beretta argues **against separate laws** for the sharing economy, because taxpayers providing similar services could be taxed differently, **violating a principle of good taxation** (neutrality/equity).',
+  defJA:'**Sharing economy**（シェアリング経済）：個人が資産（家・車）を収益化。プラットフォームが稼ぎ手を**contractor**（請負）扱いし報告しないため、所得が**正しく申告されない**。Berettaが認める取引類型：**cash**（現金）・**barter**（物々交換）・**cost-sharing**（費用分担）・**gifts/donations**（贈与）。解決＝**platform reporting**（プラットフォーム報告）。Berettaは**シェアリング経済だけに別の法**を作るのに反対——似たサービスの提供者が違う課税を受け、良い課税の原則に反するから。',
+  example:'Which transactions does Beretta recognize as part of the sharing economy? **Cost-sharing arrangements** (not credit-card payments, interest-free loans, or subsidies). Country rules: Australia taxes all; UK exempts first \u00a32,000\u20137,500; Belgium requires platform reporting.',
+  whyNeeded:'デジタル課税の個人レベル版。Berettaの「別法反対」論拠が頻出。',
+  mistakes:['Berettaが「シェアリング経済専用法を作るべき」と主張したと答えない。彼は反対（neutrality違反のため）。',
+    'sharing economyの取引に credit card payments/subsidies は含まれない。cost-sharing は含まれる。'],
+  memorize:'Sharing economy: cash/barter/cost-share/gifts; fix = platform reporting; no separate law'
+}
+];
+
+/* MLM — Moral Limits of Markets (L5-6). Source: Canvas lecture slides L5,L6 +
+   Falk & Szech (2013) / Awad et al. (2018) / Cowen & Tabarrok (2024, ch21,22 & info asymmetry). EN terms primary. */
+window.CONCEPTS_MLM = [
+{
+  id:'cMLM_market_society', ch:'MLM', name:'Market Economy vs Market Society', star:true,
+  scene:'臓器を売る、議会の傍聴席を買う、額に広告を入れる——市場の論理が生活のあらゆる領域に広がると、社会そのものが市場になります。これは是か非か。',
+  compare:{ a:'Arguments FOR markets', b:'Arguments AGAINST markets', table:[
+    {dim:'Libertarian', a:'People are free to buy/sell if they violate no one\u2019s rights', b:'\u2014'},
+    {dim:'Utilitarian', a:'Exchange benefits buyers & sellers, raising social utility', b:'\u2014'},
+    {dim:'Fairness', a:'\u2014', b:'Price = willingness + ability to pay (unfair to poor)'},
+    {dim:'Value corruption', a:'\u2014', b:'Markets can corrupt essential values'} ]},
+  punchline:'A market economy becomes a market society when market logic expands into spheres of life it may corrupt; libertarian and utilitarian arguments favor it, fairness and value-corruption arguments oppose it.',
+  defEN:'A **market economy** is a tool; a **market society** is a place where market values reach into every sphere of life. Arguments **for**: **libertarian** (freedom to trade if no rights are violated) and **utilitarian** (exchange benefits both sides, raising social utility). Arguments **against**: **fairness** (price reflects willingness + ability to pay) and **value corruption** (markets can corrupt essential values such as equal security).',
+  defJA:'**Market economy**（市場経済）は道具だが、**market society**（市場社会）は市場の価値が生活のあらゆる領域に入り込んだ状態。賛成論：**libertarian**（他者の権利を侵さなければ自由に売買できる）と**utilitarian**（交換は双方に利益＝社会的効用を高める）。反対論：**fairness**（価格＝支払い意思＋支払い能力で、貧者に不公平）と**value corruption**（市場が本質的価値を腐敗させる）。',
+  example:'Allowing the sale of kidneys or congressional-hearing seats raises fairness and value-corruption objections, even if libertarians defend the freedom to trade.',
+  whyNeeded:'MLM全体の枠組み。Falk&Szechの実験はvalue corruptionの実証。',
+  mistakes:['libertarianとutilitarianはどちらも「賛成」側。混同しない。',
+    'fairnessの論拠は「価格＝支払い意思＋能力」で、お金がある人ほど有利になる点。'],
+  memorize:'For: Libertarian + Utilitarian. Against: Fairness + Value corruption'
+},
+{
+  id:'cMLM_markets_erode_morals', ch:'MLM', name:'Markets Erode Moral Values (Falk & Szech)', star:true,
+  scene:'マウスを生かすか€10をもらうか。一人で決めると殺す人は45.9%、二者市場で72.2%、多者市場で75.9%——市場が道徳を侵食しました（Falk & Szech, 2013）。',
+  compare:{ a:'Treatment', b:'% willing to kill the mouse for \u2264\u20ac10', table:[
+    {dim:'Individual decision', a:'45.9%', b:'Lowest'},
+    {dim:'Bilateral market', a:'72.2%', b:'Higher'},
+    {dim:'Multilateral market', a:'75.9%', b:'Highest'} ]},
+  punchline:'Falk & Szech (2013): market interaction raised willingness to kill a mouse for money (45.9% \u2192 72.2% \u2192 75.9%), showing markets erode moral values.',
+  defEN:'In **Falk & Szech (2013)**, subjects chose between saving a mouse\u2019s life or earning money across three treatments: **individual** (45.9% willing to kill for \u2264\u20ac10), **bilateral market** (72.2%), and **multilateral market** (75.9%). Markets **eroded the value of life**. Mechanisms: **diffusion of responsibility**, **social norm formation**, and **materialistic framing**.',
+  defJA:'**Falk & Szech (2013)**：被験者はマウスの命か金かを選択。3条件で「\u2264\u20ac10で殺す意思」は——**individual**（個人）45.9%、**bilateral market**（二者市場）72.2%、**multilateral market**（多者市場）75.9%。市場が命の価値を**erode**（侵食）した。機構：**diffusion of responsibility**（責任の分散）、**social norm formation**（社会規範の形成）、**materialistic framing**（物質主義的フレーミング）。',
+  example:'In a multilateral market, more participants share responsibility for the mouse\u2019s death, so willingness to kill rises to 75.9% \u2014 above the 45.9% individual baseline.',
+  whyNeeded:'value corruptionの実証的中核。統計的有意性(評価する科学的主張)も問われる。',
+  mistakes:['「市場の方が殺す意思が低い」と書く選択肢は誤り。市場ほど**高い**（45.9%<72.2%<75.9%）。',
+    '差が統計的に有意かどうかが「key point」——印象だけで判断しない。'],
+  memorize:'45.9% \u2192 72.2% \u2192 75.9% (individual < bilateral < multilateral)'
+},
+{
+  id:'cMLM_crowding_out', ch:'MLM', name:'Crowding Out Motivation', star:true,
+  scene:'保育園が「遅刻に罰金」を導入したら、遅刻が増えました。価格をつけると道徳的動機が締め出されたのです（Gneezy & Rustichini, 2000）。',
+  compare:null,
+  punchline:'Setting a price can crowd out moral motivation: a fine for late pickup increased lateness (Gneezy & Rustichini, 2000).',
+  defEN:'**Crowding out** occurs when **setting a price can crowd out (moral) motivation**. In Gneezy & Rustichini (2000), 10 day-care centers were observed; when 6 introduced a **fine for parents >10 min late**, **lateness increased** \u2014 the fine reframed lateness as a purchasable service, displacing guilt.',
+  defJA:'**Crowding out**（締め出し）：価格を設定すると（道徳的）動機が締め出される現象。Gneezy & Rustichini (2000)では、保育園が「10分以上の遅刻に**fine**（罰金）」を導入したところ、**遅刻が増加**。罰金が遅刻を「買えるサービス」に変え、罪悪感を追い出した。',
+  example:'After a fine for late pickup, parents felt they were simply paying for extra time, so more arrived late \u2014 the monetary incentive crowded out moral motivation.',
+  whyNeeded:'「価格が常に行動を抑制する」という素朴な経済直感への反例。',
+  mistakes:['罰金で遅刻が「減った」と答えない。実際は**増えた**（crowding out）。'],
+  memorize:'Fine for lateness \u2192 MORE lateness (crowding out)'
+},
+{
+  id:'cMLM_willful_ignorance', ch:'MLM', name:'Willful Ignorance', star:true,
+  scene:'自分の利益になる決定が他人に与える悪影響——その情報を「あえて見ない」ことで、人は利己的に振る舞います（Dana et al.; Vu et al.）。',
+  compare:null,
+  punchline:'Willful ignorance is avoiding information about the negative externalities of self-serving decisions; ~40% avoid the info and altruism drops ~16%.',
+  defEN:'**Willful ignorance** is **avoiding information about the negative externalities of self-serving decisions**. A meta-analysis (Vu et al., 2023; n = 6,434) found **~40% avoid the information** and willful ignorance is linked to a **~16% drop in altruism**. It lets people preserve a self-image while choosing selfishly.',
+  defJA:'**Willful ignorance**（意図的無知）：自己利益的な決定が生む**negative externalities**（負の外部性）についての情報を、あえて回避すること。メタ分析（Vu et al., 2023; n=6,434）では**約40%が情報を回避**し、利他性が**約16%低下**。「知らなければ罪悪感がない」状態を保ち、利己的に選ぶ。',
+  example:'Given the option to learn whether their payoff harms another person, ~40% choose not to look, then act more selfishly \u2014 willful ignorance.',
+  whyNeeded:'motivated reasoning（自己奉仕的な認知）の一形態。市場が道徳を侵す経路。',
+  mistakes:['willful ignorance を単なる「無知」と捉えない。情報を**意図的に回避**する点が核心。'],
+  memorize:'Willful ignorance: avoid info on harm \u2192 40% avoid, 16% less altruism'
+},
+{
+  id:'cMLM_moral_machine', ch:'MLM', name:'The Moral Machine Experiment (Awad)', star:true,
+  scene:'自動運転車が事故を避けられないとき、誰を助ける？世界中の人の選択を集めると、アルゴリズムは中立ではないと分かります（Awad et al., 2018）。',
+  compare:null,
+  punchline:'The Moral Machine experiment shows algorithms are not neutral: adding character details led to greater differentiation in whom participants chose to spare.',
+  defEN:'The **Moral Machine experiment** (Awad et al., 2018) gathered global choices about whom self-driving cars should spare in unavoidable accidents. **Adding character details led to greater differentiation in choices**, revealing a **stronger preference for sparing certain types of characters** \u2014 evidence that algorithms encode value judgments and are **not neutral**.',
+  defJA:'**Moral Machine experiment**（Awad et al., 2018）：自動運転車が避けられない事故で誰を助けるべきか、世界中の選択を収集。**登場人物の詳細を加えると選択がより差別化**され、**特定タイプを助ける選好が強まった**。＝アルゴリズムは価値判断を埋め込んでおり**中立ではない**。',
+  example:'When scenarios specified the characters (e.g., child vs elderly), participants\u2019 choices diverged more, showing systematic preferences \u2014 algorithms are not value-neutral.',
+  whyNeeded:'「アルゴリズムは中立か？」という問いへの実証。デジタル倫理と接続。',
+  mistakes:['「詳細を加えても選択に影響なし」と答えない。詳細追加で選択は**差別化**された。'],
+  memorize:'Moral Machine: more details \u2192 more differentiation \u2192 algorithms not neutral'
+},
+{
+  id:'cMLM_six_objections', ch:'MLM', name:'Six Objections to Standard Economic Reasoning', star:true,
+  scene:'経済学は倫理を無視すると言われがちですが、Cowen & Tabarrokは「経済推論を道徳領域に使うこと」への6つの反論を整理します（ch21）。',
+  compare:null,
+  punchline:'Cowen & Tabarrok list six objections to standard economic reasoning in moral domains: exploitation, meddlesome preferences, fair treatment, cultural goods/paternalism, poverty/inequality, and who counts.',
+  defEN:'Cowen & Tabarrok (ch.21) give **six objections** to standard economic reasoning in moral domains: (1) **the problem of exploitation**, (2) **meddlesome preferences**, (3) **fair and equal treatment**, (4) **cultural goods and paternalism**, (5) **poverty, inequality, and the distribution of income**, and (6) **who counts? should some count for more?** Economists do respect individual choice, voluntary trade, and equality of treatment.',
+  defJA:'Cowen & Tabarrok（ch21）が挙げる、道徳領域に経済推論を使うことへの**6つの反論**：①**exploitation**（搾取）②**meddlesome preferences**（干渉的選好）③**fair and equal treatment**（公平・平等な扱い）④**cultural goods and paternalism**（文化財とパターナリズム）⑤**poverty, inequality, distribution of income**（貧困・不平等・分配）⑥**who counts?**（誰を数えるか）。経済学も個人の選択・自発的交換・平等な扱いを尊重している。',
+  example:'Bus accessibility in NYC: the economic argument (cheaper taxi coupons) clashes with the moral argument (equal treatment) \u2014 objection 3, fair and equal treatment.',
+  whyNeeded:'各論（fair treatment, cultural goods, distribution）の親概念。',
+  mistakes:['6反論は「経済学は無用」ではなく、「道徳領域に経済推論を機械的に使う限界」を示す。'],
+  memorize:'6: Exploitation / Meddlesome / Fair treatment / Cultural-paternalism / Poverty / Who counts'
+},
+{
+  id:'cMLM_rawls_maximin', ch:'MLM', name:'Rawls\u2019 Maximin / Difference Principle', star:true,
+  scene:'正義は最も恵まれない層の利益を最大化することにある——無知のヴェールの下なら誰もがそう選ぶ、とRawlsは言います。',
+  compare:{ a:'Society', b:'Red / Blue / Green (Average)', table:[
+    {dim:'A', a:'100 / 100 / 100', b:'Avg 100'},
+    {dim:'B', a:'150 / 100 / 50', b:'Avg 100 (worst-off = 50)'},
+    {dim:'C', a:'600 / 600 / 99', b:'Avg 433 (worst-off = 99)'},
+    {dim:'D', a:'1096 / 102 / 101', b:'Avg 433 (worst-off = 101)'} ]},
+  punchline:'Rawls\u2019 maximin (difference) principle: justice requires maximizing the benefits going to society\u2019s most disadvantaged group, chosen behind a veil of ignorance.',
+  defEN:'**Rawls\u2019 maximin (difference) principle**: justice requires **maximizing the benefits going to society\u2019s most disadvantaged group**, decided behind a **veil of ignorance**. Rank societies by their **worst-off** group: a society whose lowest group is highest is most just. Equality itself is not the criterion \u2014 raising the floor is.',
+  defJA:'**Rawls\u2019 maximin / difference principle**（マキシミン／格差原理）：正義とは**社会で最も恵まれない層の利益を最大化**すること。**veil of ignorance**（無知のヴェール）の下で選ばれる。社会は**最下層**で比較し、最下層が最も高い社会が最も正義。平等そのものではなく「底上げ」が基準。',
+  example:'Refer to the income table: by the maximin principle the society ranked lowest is the one whose worst-off group is poorest (Society B, worst-off = 50).',
+  whyNeeded:'Mock Q1・Q9の直接の根拠。Utilitarian/Nozickとの対比で問われる。',
+  mistakes:['maximinは「格差の小ささ」や「完全平等」を求めるのではない。最下層の**水準**を最大化する。',
+    '平均所得の高さで判断しない。最下層(worst-off)で比較する。'],
+  memorize:'Maximin = maximize the worst-off (raise the floor), veil of ignorance'
+},
+{
+  id:'cMLM_utilitarianism', ch:'MLM', name:'Utilitarianism', star:true,
+  scene:'最良の社会は効用の総和を最大化する社会。ただし「最弱者を守る」ことそのものが目的ではなく、インセンティブも考慮します。',
+  compare:{ a:'Rawls (Maximin)', b:'Utilitarianism', table:[
+    {dim:'Goal', a:'Maximize the worst-off group', b:'Maximize the sum of utility'},
+    {dim:'Weak members', a:'Protected by construction', b:'Not protected per se'},
+    {dim:'Incentives', a:'Less central', b:'Central (too much redistribution cuts incentives)'} ]},
+  punchline:'Utilitarianism holds the best society maximizes the sum of utility \u2014 not the weakest per se \u2014 and takes incentives into account.',
+  defEN:'**Utilitarianism** holds the best society **maximizes the sum of utility** (not the weak ones per se). It **takes incentives into account**: taxing the rich too heavily may cut their incentive to earn, and paying people to be poor may reduce motivation and keep many poor. **Measuring utility is not trivial.**',
+  defJA:'**Utilitarianism**（功利主義）：最良の社会は**効用の総和を最大化**する（最弱者を守ること自体が目的ではない）。**incentives**（インセンティブ）を考慮：富裕層に課税しすぎると稼ぐ意欲が下がり、貧者に金を払うと働く動機が下がり貧困が固定される。効用の測定は容易でない。',
+  example:'A utilitarian might accept some inequality if it raises total utility through stronger incentives \u2014 unlike Rawls, who focuses on the worst-off.',
+  whyNeeded:'Rawls/Nozickとの三つ巴の比較で頻出。',
+  mistakes:['功利主義を「最弱者を守る思想」と誤解しない。守るのは**総和**で、最弱者は特別扱いされない。'],
+  memorize:'Utilitarian = maximize SUM of utility (+ incentives), not the worst-off'
+},
+{
+  id:'cMLM_nozick', ch:'MLM', name:'Nozick\u2019s Entitlement Theory', star:true,
+  scene:'みんな平等な所得から始めても、好きな選手を見に行く人と行かない人がいれば不平等が生まれる。正当に得て自発的に交換したなら、その不平等も正義だとNozickは言います。',
+  compare:null,
+  punchline:'Nozick\u2019s entitlement theory: a distribution is just if property is justly acquired and voluntarily exchanged \u2014 even resulting inequality is just.',
+  defEN:'**Nozick\u2019s entitlement theory** says the distribution of income is **just if property is justly acquired and voluntarily exchanged**. Start from equal income; some pay to watch a player (de Jong) and some do not \u2014 the result is inequality, yet it is just. If people want to trade something, it is up to them, as long as they don\u2019t infringe others\u2019 rights.',
+  defJA:'**Nozick\u2019s entitlement theory**（権原理論）：所得分配は、財産が**正当に取得され、自発的に交換**されたなら正義。平等な所得から始めても、ある選手を見にお金を払う人がいれば不平等が生じるが、それも正義。他者の権利を侵さない限り、何を取引するかは本人の自由。',
+  example:'If everyone starts equal and some freely pay to watch a star play, inequality emerges \u2014 just, under Nozick, because acquisition and exchange were voluntary.',
+  whyNeeded:'libertarian正義論の代表。Rawls/Utilitarianとの対比。',
+  mistakes:['Nozickは結果の平等を求めない。重視するのは取得と交換の**正当性・自発性**（過程）。'],
+  memorize:'Nozick = just if justly acquired + voluntarily exchanged (process, not pattern)'
+},
+{
+  id:'cMLM_adverse_selection', ch:'MLM', name:'Adverse Selection', star:true,
+  scene:'中古車市場。売り手は車の質を知り、買い手は知らない。この情報の非対称が、良い車を市場から追い出します（取引「前」の問題）。',
+  compare:{ a:'Adverse Selection', b:'Moral Hazard', table:[
+    {dim:'Timing', a:'Before the transaction', b:'After the transaction'},
+    {dim:'Hidden thing', a:'Hidden information (quality)', b:'Hidden action (behavior)'},
+    {dim:'Example', a:'Lemons in used-car market', b:'Reckless driving once insured'} ]},
+  punchline:'Adverse selection is a pre-transaction market failure where one party has hidden information the other lacks (the lemons problem).',
+  defEN:'**Adverse selection** is a market failure arising **before** a transaction when one party has **hidden information** the other lacks (e.g., a seller knows the used car\u2019s quality; the buyer does not \u2014 the lemons problem). When traders know exactly what is being traded, adverse selection does **not** exist and **trades that occur will be mutually beneficial**.',
+  defJA:'**Adverse selection**（逆選択）：取引の**前**に、一方が他方の知らない**hidden information**（隠れた情報）を持つことで生じる市場の失敗（中古車の質を売り手だけが知る＝lemons問題）。取引対象が完全に分かっていれば逆選択は存在せず、**成立する取引は相互に有益**になる。',
+  example:'When traders know exactly what is being traded, adverse selection does not exist and trades that occur will be mutually beneficial (Mock Q2).',
+  whyNeeded:'情報の非対称の取引「前」の問題。moral hazardとの区別が頻出。',
+  mistakes:['adverse selection（取引前・隠れた情報）と moral hazard（取引後・隠れた行動）を混同しない。'],
+  memorize:'Adverse selection = hidden INFO, BEFORE trade (lemons)'
+},
+{
+  id:'cMLM_moral_hazard', ch:'MLM', name:'Moral Hazard & Ratings', star:true,
+  scene:'保険に入ると人は無謀になる（取引「後」の隠れた行動）。レビューや評価でこれを抑えられますが、偽レビューや未評価があると失敗します。',
+  compare:null,
+  punchline:'Moral hazard is a post-transaction problem of hidden action; ratings and reviews can mitigate it but fail if reviews are faked or not all products are reviewed.',
+  defEN:'**Moral hazard** is a problem of **hidden action after** a transaction (e.g., a party takes more risk because it does not bear the full cost, like reckless driving once insured). **Ratings and reviews** can mitigate it, but **fail if ratings are faked or exaggerated, or if not all products are reviewed.** Overrating of mortgage-backed securities before 2007\u20132009 was attributed to **the sellers of the securities paying for the ratings**.',
+  defJA:'**Moral hazard**（モラルハザード）：取引の**後**に生じる**hidden action**（隠れた行動）の問題（保険加入後に無謀運転など、全費用を負担しないためリスクを取る）。**ratings and reviews**（評価・レビュー）で緩和できるが、**偽・誇張レビューや、全商品が評価されていない**と失敗。2007–09年危機前のMBS過大評価は、**証券の売り手が格付けの代金を払っていた**ことが原因とされる。',
+  example:'Ratings can fail to mitigate moral hazard if not all products are reviewed, or if ratings are faked or exaggerated (Mock Q3).',
+  whyNeeded:'adverse selectionとの対比。markets work bestの条件と接続。',
+  mistakes:['MBS過大評価の原因は「顧客が格付けに払った」ではなく「**売り手**が払った」点。',
+    'moral hazard は取引**後**の隠れた**行動**。adverse selection（前・情報）と取り違えない。'],
+  memorize:'Moral hazard = hidden ACTION, AFTER trade; MBS = sellers paid for ratings'
+},
+{
+  id:'cMLM_markets_work_best', ch:'MLM', name:'When Markets Work Best', star:false,
+  scene:'市場がうまく機能する条件は？完璧な情報でなくても、双方が「ある程度」情報を持っていれば回ります。',
+  compare:null,
+  punchline:'Markets work best when both buyers and sellers have at least some information about what is being exchanged.',
+  defEN:'**Markets work best when both buyers and sellers have at least some information about what is being exchanged.** This is weaker than requiring perfect information; some information on both sides is enough to reduce adverse selection and enable mutually beneficial trade.',
+  defJA:'市場が最もうまく機能するのは、**買い手と売り手の双方が、交換されるものについて少なくともある程度の情報を持つ**とき。完全情報は不要——双方にいくらか情報があれば、逆選択を抑え、相互に有益な取引が可能になる。',
+  example:'Markets work best when both buyers and sellers have at least some information \u2014 not only when buyers know, only when sellers signal, or only with perfect information (Mock Q10).',
+  whyNeeded:'adverse selection/信号・選別の応用。微妙な選択肢の区別が問われる。',
+  mistakes:['「買い手だけが知る」「売り手だけが信号を出す」「双方が完全に知る」ではなく、「**双方がある程度**知る」が正解。'],
+  memorize:'Best = BOTH sides have AT LEAST SOME info'
+},
+{
+  id:'cMLM_managing_incentives', ch:'MLM', name:'Managing Incentives: You Get What You Pay For', star:true,
+  scene:'教師を生徒の成績で評価したら、カンニングを誘発するかも。「払ったもの」が「欲しいもの」と一致しない問題です（ch22）。',
+  compare:null,
+  punchline:'Tying pay to performance can backfire: you get what you pay for, not what you want (e.g., paying teachers by student scores may induce cheating).',
+  defEN:'In managing incentives (ch.22): **you get what you pay for** \u2014 and **what you pay for may not equal what you want**. Paying teachers by student performance can **induce cheating**. Other lessons: tying pay to performance, money isn\u2019t everything, and (ab)using a nudge.',
+  defJA:'インセンティブ管理（ch22）：**you get what you pay for**（払ったものが手に入る）——しかし**払う対象が欲しいものと一致しない**ことがある。教師を生徒の成績で評価すると**カンニングを誘発**しうる。他の教訓：成果連動報酬、お金が全てではない、ナッジの(濫)用。',
+  example:'Paying teachers by student test scores rewards higher scores \u2014 which can be achieved by cheating, not better learning: you get what you pay for, not what you want.',
+  whyNeeded:'インセンティブ設計の落とし穴。nudge・decoy effectと同じ章。',
+  mistakes:['成果連動報酬が常に良い結果を生むと考えない。測定指標の歪み(cheating)に注意。'],
+  memorize:'You get what you pay for \u2260 what you want'
+},
+{
+  id:'cMLM_nudge', ch:'MLM', name:'Nudge', star:true,
+  scene:'臓器提供をデフォルトにすると同意率が跳ね上がる。経済的インセンティブを変えずに、選択肢の並べ方で行動を変える——それがナッジ。',
+  compare:null,
+  punchline:'A nudge alters people\u2019s behavior predictably without significantly changing their economic incentives (e.g., organ-donation defaults).',
+  defEN:'A **nudge** is **\u201caltering people\u2019s behavior in a predictable way without significantly changing their economic incentives\u201d** \u2014 a change to **choice architecture**. Example: **organ-donation defaults** (opt-out vs opt-in) dramatically change consent rates. Nudges can also be **abused**, which is especially troubling when they deepen poverty.',
+  defJA:'**Nudge**（ナッジ）：「経済的インセンティブを大きく変えずに、予測可能な形で人の行動を変えること」——**choice architecture**（選択の設計）の変更。例：**臓器提供のデフォルト**（オプトアウト vs オプトイン）で同意率が激変。ナッジは**濫用**もされ、特に貧困を深めるときに問題。',
+  example:'Switching organ donation from opt-in to opt-out (a default change) sharply raises consent without changing any financial incentive \u2014 a nudge.',
+  whyNeeded:'post-growth政策（choice architectureの変更）でも再登場。',
+  mistakes:['ナッジは経済的インセンティブを変えない点が定義の核心。補助金や罰金はナッジではない。'],
+  memorize:'Nudge = change behavior via choice architecture, NOT incentives'
+},
+{
+  id:'cMLM_decoy_effect', ch:'MLM', name:'The Decoy Effect', star:false,
+  scene:'明らかに劣る選択肢(おとり)を加えると、人の選択が予測通りに動く。非合理だが実在する効果です。',
+  compare:null,
+  punchline:'The decoy effect: adding an asymmetrically dominated (decoy) option shifts choices toward a target, violating regularity.',
+  defEN:'The **decoy effect** (Huber, Payne & Puto, 1982) occurs when **adding an asymmetrically dominated alternative** (a decoy) shifts people\u2019s choices toward a particular \u201ctarget\u201d option, **violating regularity and the similarity hypothesis**. It is a form of (ab)using a nudge.',
+  defJA:'**Decoy effect**（おとり効果、Huber, Payne & Puto, 1982）：**非対称的に劣る選択肢（おとり）を加える**と、人の選択が特定の「ターゲット」へ移動し、**regularity（規則性）に反する**。ナッジの(濫)用の一形態。',
+  example:'Adding a clearly worse \u201cdecoy\u201d subscription makes a target plan look better, shifting choices toward it \u2014 the decoy effect.',
+  whyNeeded:'choice architecture操作の具体例。nudgeの応用。',
+  mistakes:['decoyは選ばせるための「劣った当て馬」。実際に選ばせたいのは別の選択肢(target)。'],
+  memorize:'Decoy = add a worse option \u2192 pushes choice to the target'
+},
+{
+  id:'cMLM_survivorship_bias', ch:'MLM', name:'Survivorship Bias & Causation', star:true,
+  scene:'成功者の伝記を読めば成功できる？大学を中退して億万長者になった人を見て自分もそうなれる？——生存者バイアスと「相関≠因果」の罠です。',
+  compare:null,
+  punchline:'Survivorship bias and correlation\u2260causation: studying only successful survivors (e.g., college dropouts who got rich) misleads, like armoring only the planes that returned.',
+  defEN:'**Survivorship bias** means drawing conclusions only from those who \u201csurvived\u201d (e.g., reading biographies of the most successful entrepreneurs, or noting that Jobs, Gates and Zuckerberg dropped out and got rich). It ignores the many who did the same and failed. Related: **correlation is not causation** (Mani et al.: being less well-off can cause lower productivity, not just correlate). Classic image: \u201carmor all sections but engines and cockpit\u201d (the returning planes).',
+  defJA:'**Survivorship bias**（生存者バイアス）：「生き残った」者だけから結論する誤り（成功した起業家の伝記だけを読む、Jobs・Gates・Zuckerbergが中退して成功した、など）。同じことをして失敗した多数を無視している。関連：**correlation is not causation**（相関≠因果；Maniらは「貧しさが低生産性を**引き起こす**」と論じる）。象徴：帰還した飛行機の弾痕だけ見て装甲する誤り。',
+  example:'\u201cJobs and Gates dropped out and got rich, so will I\u201d ignores all dropouts who failed \u2014 survivorship bias; the dropout\u2013wealth link is not proof of causation.',
+  whyNeeded:'科学的主張の評価（assessing claims）の中核。positive vs normativeと同じ評価スキル。',
+  mistakes:['成功者の共通点が成功の**原因**だと即断しない（生存者バイアス＋相関≠因果）。'],
+  memorize:'Survivorship bias = only look at survivors; correlation \u2260 causation'
+},
+{
+  id:'cMLM_positive_normative', ch:'MLM', name:'Positive vs Normative Statements', star:false,
+  scene:'「教育は何年も資金不足だった」は事実の主張(positive)。「教育はもっと資金を減らすべき」は価値の主張(normative)。試験はこの区別を問います。',
+  compare:{ a:'Positive statement', b:'Normative statement', table:[
+    {dim:'Nature', a:'Describes what is (testable fact)', b:'Prescribes what ought to be (value)'},
+    {dim:'Example', a:'\u201cHigher education was under-funded for years\u201d', b:'\u201cHigher education should receive less funding\u201d'} ]},
+  punchline:'Positive statements describe what is (factual, testable); normative statements prescribe what ought to be (value judgments).',
+  defEN:'A **positive economic statement** describes **what is** and can in principle be tested (e.g., \u201cHigher education was under-funded for years\u201d; \u201cWeaker higher education is associated with less innovation\u201d). A **normative statement** says **what ought to be** (e.g., \u201cHigher education should receive less funding\u201d).',
+  defJA:'**Positive**（実証的）言明は**事実**を述べ、原理上検証可能（例：「高等教育は何年も資金不足だった」「弱い高等教育は低い革新と関連する」）。**Normative**（規範的）言明は**べき論**＝価値判断（例：「高等教育は資金を減らすべき」）。',
+  example:'Which is a positive statement? \u201cHigher education was under-funded for years\u201d (fact) \u2014 not \u201cshould receive less funding\u201d (normative).',
+  whyNeeded:'科学的主張の評価スキル。Mock Q5の直接の根拠。',
+  mistakes:['"should"を含む主張は normative。事実の記述(positive)と混同しない。'],
+  memorize:'Positive = IS (fact); Normative = OUGHT (value, "should")'
+}
+];
+
+/* SUST — Sustainability (L7-8). Source: Canvas slides L7,L8 + Ehrenfeld 2005 / Busch et al 2024 /
+   Wright & Nyberg 2017 / West et al 2023 / Fanning & Raworth 2025 / Kallis et al 2025 /
+   Hickel & Kallis 2020 / Costanza 2024 / Brundtland / Jevons / Solow / Boulding / Malthus / Easterlin. */
+window.CONCEPTS_SUST = [
+{
+  id:'cSUST_definition', ch:'SUST', name:'Defining Sustainability (Brundtland)', star:true,
+  scene:'「持続可能性」の定義は300以上あります。最も有名なのはBrundtlandの「将来世代の能力を損なわず現在のニーズを満たす発展」。',
+  compare:null,
+  punchline:'Brundtland (1987): sustainable development meets the needs of the present without compromising the ability of future generations to meet their own needs.',
+  defEN:'Geissdoerfer et al. (2017) count **>300 definitions** of sustainability. The most popular is **Brundtland (1987)**: \u201c**Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.**\u201d',
+  defJA:'Geissdoerferら(2017)によれば、持続可能性の定義は**300以上**ある。最も有名なのは**Brundtland (1987)**：「**sustainable development**（持続可能な発展）とは、将来世代が自らのニーズを満たす能力を損なうことなく、現在のニーズを満たす発展」。',
+  example:'Drawing down a fishery faster than it regenerates meets present needs but compromises future generations \u2014 not sustainable by Brundtland\u2019s definition.',
+  whyNeeded:'weak/strong sustainabilityの上位概念。トラック全体の出発点。',
+  mistakes:['Brundtland定義は「現在のニーズ」と「将来世代の能力」の両立が核心。'],
+  memorize:'Brundtland: present needs WITHOUT compromising future generations'
+},
+{
+  id:'cSUST_weak_strong', ch:'SUST', name:'Weak vs Strong Sustainability', star:true,
+  scene:'自然資本と人工資本は交換できる？「できる」なら弱い持続可能性、「別々に維持すべき」なら強い持続可能性。環境経済学 vs 生態経済学の対立軸です。',
+  compare:{ a:'Weak sustainability', b:'Strong sustainability', table:[
+    {dim:'Rule', a:'Maintain the SUM of human-made + natural capital', b:'Maintain natural & human-made capital SEPARATELY'},
+    {dim:'Substitution', a:'Capital is substitutable', b:'Natural capital not (fully) substitutable'},
+    {dim:'Lens', a:'Environmental economics', b:'Ecological economics'},
+    {dim:'Scarcity emphasis', a:'Relative scarcity', b:'Absolute scarcity'} ]},
+  punchline:'Weak sustainability maintains the non-decreasing SUM of human-made and natural capital; strong sustainability maintains natural and human-made capital SEPARATELY.',
+  defEN:'**Weak sustainability** is \u201cmaintaining intact the **sum** of human-made and total natural capital\u201d (capital is substitutable; environmental-economics lens; **relative** scarcity, **unlimited** substitution). **Strong sustainability** is \u201cmaintaining intact natural capital and man-made capital **separately**\u201d (ecological-economics lens; **absolute** scarcity, **limited** substitution).',
+  defJA:'**Weak sustainability**（弱い持続可能性）：人工資本＋自然資本の**合計(sum)**を非減少に保つ（資本は代替可能、環境経済学のレンズ、**relative scarcity**＝相対的希少性・代替**unlimited**）。**Strong sustainability**（強い持続可能性）：自然資本と人工資本を**別々(separately)**に維持（生態経済学のレンズ、**absolute scarcity**＝絶対的希少性・代替**limited**）。',
+  example:'How do economists define weak sustainability? Developments that maintain a non-decreasing **sum** of human-made and natural capital (Mock Q22). Ecological economics emphasizes **(i) absolute scarcity and (ii) limited substitution** (Mock Q21).',
+  whyNeeded:'環境経済学(weak) vs 生態経済学(strong)の対立。Solow/Kallisの位置づけに直結。',
+  mistakes:['weak＝合計を維持(代替可)、strong＝別々に維持(代替不可)。逆にしない。',
+    'ecological economics は (i) absolute scarcity, (ii) limited substitution。relative/unlimited ではない。'],
+  memorize:'Weak = SUM (substitutable); Strong = SEPARATE (not substitutable). Ecological = absolute + limited'
+},
+{
+  id:'cSUST_five_cs', ch:'SUST', name:'The 5 Cs of Academic Writing', star:false,
+  scene:'良い論文は5つのCで構成される、とLange & Pfarrer (2017)。授業ではこれを各論文に当てはめて読み解きます。',
+  compare:null,
+  punchline:'Lange & Pfarrer (2017): a good article formulates five Cs \u2014 Common ground, Complication, Concern, Course of action, Contribution.',
+  defEN:'Per **Lange & Pfarrer (2017)**, any good article has five Cs: **Common ground** (what the literature establishes), **Complication** (why the common ground is insufficient), **Concern** (why the complication matters), **Course of action** (how it is addressed \u2014 the main body), and **Contribution** (what we learn).',
+  defJA:'**Lange & Pfarrer (2017)** によれば、良い論文は5つのC：**Common ground**（文献で確立されたこと）、**Complication**（なぜそれが不十分か）、**Concern**（その問題がなぜ重要か）、**Course of action**（どう対処するか＝本論）、**Contribution**（何を学ぶか）。',
+  example:'Applied to Ehrenfeld (2005): Common ground = business case for sustainability; Complication = \u201creducing unsustainability \u2260 creating sustainability.\u201d',
+  whyNeeded:'全論文(Ehrenfeld/Busch/Wright&Nyberg/West/Costanza/Kallis)の読解フレーム。',
+  mistakes:['5Cの順序・意味を取り違えない。Course of actionが本論、Contributionが結論的貢献。'],
+  memorize:'5 Cs: Common ground / Complication / Concern / Course of action / Contribution'
+},
+{
+  id:'cSUST_ehrenfeld', ch:'SUST', name:'Ehrenfeld: Reducing Unsustainability \u2260 Creating Sustainability', star:true,
+  scene:'省エネ(eco-efficiency)は良いこと。でもEhrenfeldは「持続不可能性を減らすことは、持続可能性を作ることと同じではない」と釘を刺します。',
+  compare:null,
+  punchline:'Ehrenfeld (2005): \u201cReducing unsustainability is not the same as creating sustainability\u201d; corporate efforts have been \u201clittle more than Band-Aids.\u201d',
+  defEN:'**Ehrenfeld (2005)** argues \u201c**Reducing unsustainability is not the same as creating sustainability**\u201d (the **complication**). The **common ground** is eco-efficiency (\u201cmore value for less environmental burden\u201d \u2248 absolute decoupling). His **concern**: current efforts are \u201clittle more than **Band-Aids**.\u201d His **contribution**: a definition rooted in **eudaimonia** \u2014 \u201cthe possibility that all forms of life will flourish forever.\u201d Mechanisms firms use: **shifting the burden**, **enlightenment** (world-as-machine), and the **Friedman doctrine**.',
+  defJA:'**Ehrenfeld (2005)** の核心（complication）：「**持続不可能性を減らすこと**は、**持続可能性を作ること**と同じではない」。common ground＝eco-efficiency（環境負荷あたりの価値を高める≒絶対的デカップリング）。concern＝企業の取組みは「**Band-Aids**（ばんそうこう）に過ぎない」。contribution＝**eudaimonia**（万物の繁栄）に根ざす定義。企業が使う機構：**shifting the burden**（症状だけ対処）、**enlightenment**（世界＝機械観）、**Friedman doctrine**。',
+  example:'A firm cutting emissions per unit (eco-efficiency) reduces unsustainability but, per Ehrenfeld, does not by itself create sustainability \u2014 a Band-Aid.',
+  whyNeeded:'business case批判(Busch)・normalizing(Wright&Nyberg)の思想的土台。',
+  mistakes:['「持続不可能性を減らせば持続可能になる」と読み替えない。Ehrenfeldはそれを否定。'],
+  memorize:'Ehrenfeld: reduce unsustainability \u2260 create sustainability (Band-Aids)'
+},
+{
+  id:'cSUST_friedman', ch:'SUST', name:'The Friedman Doctrine', star:true,
+  scene:'「企業の社会的責任は利益を増やすこと」。FriedmanはCEOの唯一の責任は株主の利益最大化だと主張しました。',
+  compare:null,
+  punchline:'The Friedman doctrine: the social responsibility of business is to increase its profits \u2014 a CEO\u2019s sole duty is maximizing shareholder profit, within the law.',
+  defEN:'The **Friedman doctrine (1970)**: \u201c**The social responsibility of business is to increase its profits.**\u201d A CEO\u2019s sole responsibility is to **maximize profits for shareholders** (within the law); otherwise they spend shareholders\u2019 money or tax consumers. Like Smith\u2019s **invisible hand**, business best serves society through profitability and efficiency. Main counter-arguments: **weak governments / government failure** and **telecoupling** (distant impacts).',
+  defJA:'**Friedman doctrine (1970)**：「**企業の社会的責任は利益を増やすこと**」。CEOの唯一の責任は法の範囲内で**株主利益を最大化**すること。さもなくば株主の金を使い消費者に課税するのと同じ。Smithの**invisible hand**（見えざる手）同様、企業は利益と効率の追求で社会に最も貢献する。主な反論：**weak governments / government failure**（政府の失敗）と**telecoupling**（遠隔地への影響）。',
+  example:'Under the Friedman doctrine, a CEO should focus only on lawful profit maximization, leaving equity and justice to other social mechanisms \u2014 a stance Ehrenfeld critiques.',
+  whyNeeded:'business case for sustainabilityの思想的背景。Busch批判の対象。',
+  mistakes:['Friedman doctrineは「利益最大化が企業の責任」。CSRを企業の第一義務とする立場ではない。'],
+  memorize:'Friedman: business\u2019s responsibility = increase profits (shareholders)'
+},
+{
+  id:'cSUST_business_case_critique', ch:'SUST', name:'Busch et al.: Case Against \u201cthe\u201d Business Case', star:true,
+  scene:'「持続可能性は儲かる(win-win)」という主張は魅力的。でも多くの取組みは儲からない。Buschらは3つの批判を挙げます（2024）。',
+  compare:null,
+  punchline:'Busch et al. (2024) criticize "the" business case via three points: the suboptimality of optimization, pessimism about techno-optimism (Jevons), and consumerism.',
+  defEN:'**Busch et al. (2024)** note the **common ground**: \u201cthe\u201d business case has **win-win appeal**, but many sustainability efforts are **not profitable**. The **case against** it has three criticisms: (1) **the suboptimality of optimization** (merely reducing unsustainability), (2) **the pessimism regarding techno-optimism** (e.g., Jevons paradox), and (3) **consumerism** (e.g., Patagonia\u2019s \u201cdon\u2019t buy this jacket\u201d). It does NOT claim the business case \u201cprioritizes social over environmental goals.\u201d',
+  defJA:'**Busch et al. (2024)**：common ground＝「the」business caseは**win-win**で魅力的だが、多くの取組みは**儲からない**。3つの批判：①**suboptimality of optimization**（最適化の準最適性＝持続不可能性を減らすだけ）②**pessimism regarding techno-optimism**（技術楽観への悲観、例：Jevons）③**consumerism**（消費主義、例：Patagonia「このジャケットを買うな」）。「社会目標を環境問題より優先する」は批判に**含まれない**。',
+  example:'Which is NOT a Busch et al. criticism? \u201cThe business case prioritizes social goals over environmental problems\u201d \u2014 the real three are optimization-suboptimality, techno-optimism pessimism, and consumerism (Mock Q23).',
+  whyNeeded:'business case批判の3本柱。Jevons・consumerismへの橋渡し。',
+  mistakes:['「社会目標を環境より優先」はBuschの批判では**ない**（ひっかけ）。'],
+  memorize:'Busch 3 critiques: optimization / techno-optimism / consumerism'
+},
+{
+  id:'cSUST_jevons', ch:'SUST', name:'Jevons\u2019 Paradox (Rebound Effect)', star:true,
+  scene:'燃料を効率的に使えば消費は減る？Jevonsは「逆だ」と言いました。効率化が総消費を増やすのです。',
+  compare:null,
+  punchline:'Jevons\u2019 paradox: efficiency improvements can RAISE total resource consumption (rebound), via profitability, new uses, and consumer behavior.',
+  defEN:'**Jevons\u2019 paradox** (1865): \u201cIt is wholly a confusion of ideas to suppose that the economical use of fuel is equivalent to a diminished consumption. The very contrary is the truth.\u201d Efficiency can **raise** consumption through (1) increased profitability, (2) inventions/new uses, and (3) consumer behavior. **Rebound effects** range \u201cfrom less than 1% to several hundred percent, but never zero or less than one\u201d (Alcott, 2005).',
+  defJA:'**Jevons\u2019 paradox**（ジェヴォンズのパラドックス、1865）：「燃料の節約的利用が消費の減少に等しいと考えるのは完全な誤り。真実は正反対だ」。効率化は①利益増②新発明・新用途③消費者行動を通じて消費を**増やす**ことがある。**rebound effect**（リバウンド効果）は「1%未満〜数百%、ただしゼロや1未満には決してならない」（Alcott, 2005）。',
+  example:'More fuel-efficient engines lower running costs, so people drive more and new uses appear \u2014 total fuel use can rise (Jevons\u2019 rebound).',
+  whyNeeded:'techno-optimism批判の実体。green growthがJevons型リバウンドで「complicated」になる根拠。',
+  mistakes:['効率化が必ず総消費を減らすと考えない。リバウンドで増えうる（never zero）。'],
+  memorize:'Jevons: efficiency \u2192 MORE consumption (rebound, never < 1)'
+},
+{
+  id:'cSUST_business_solutions', ch:'SUST', name:'Making Business Cases Work', star:false,
+  scene:'では持続可能性をビジネスで機能させるには？Buschは3つのcourse of actionを示します。',
+  compare:null,
+  punchline:'Busch et al.: make business cases work via sustainable entrepreneurship, business-model transformation, and sensitivity to market failures (need for government intervention).',
+  defEN:'Busch et al.\u2019s **course of action**: (1) **sustainable entrepreneurship** (social mission central, e.g., B Corporations), (2) **business model transformation** (circular/sharing economy, e.g., BlaBlaCar), and (3) **sensitivity to market failures** \u2014 \u201cthere remains a clear need for **government interventions**.\u201d **Contribution**: a systems-lens reorientation (impact orientation, collaboration, economic restraint/degrowth).',
+  defJA:'Buschの**course of action**：①**sustainable entrepreneurship**（社会的使命が事業の中核、例：B Corporation）②**business model transformation**（循環・シェアリング経済、例：BlaBlaCar）③**sensitivity to market failures**＝「**government interventions**（政府介入）が明確に必要」。**contribution**：システムレンズへの転換（impact志向・collaboration・economic restraint/degrowth）。',
+  example:'Beyond profit-seeking, Busch argues firms need business-model transformation and that government intervention remains necessary where markets fail.',
+  whyNeeded:'business case批判の建設的帰結。政府介入の必要性が頻出。',
+  mistakes:['Buschは「市場だけで解決できる」とは言わない。**government intervention**が必要と強調。'],
+  memorize:'Make it work: entrepreneurship / model transformation / market-failure sensitivity (govt)'
+},
+{
+  id:'cSUST_wright_nyberg', ch:'SUST', name:'Wright & Nyberg: Back to Business as Usual', star:true,
+  scene:'企業の環境への熱意は、やがて「通常業務」に薄められる。Wright & Nyberg (2017)は、その3段階を描きます。',
+  compare:null,
+  punchline:'Wright & Nyberg (2017): firms translate climate ambition into business-as-usual through framing, localizing, and normalizing.',
+  defEN:'**Wright & Nyberg (2017)** studied five 10-year Australian cases. **Complication**: corporate environmentalism is hard to sustain for long-term grand challenges. **Concern**: initial engagement becomes business-as-usual. Process: **Framing** (association: win-win, leadership; disassociation: not altruism), **Localizing** (incorporation, commensuration via KPIs, proselytization), and **Normalizing** (purification, dilution).',
+  defJA:'**Wright & Nyberg (2017)**：豪州5社の10年ケース。complication＝企業の環境主義は長期的大課題には維持困難。concern＝当初の関与が**business-as-usual**（通常業務）に戻る。過程：**Framing**（フレーミング：association＝win-win/リーダーシップ、disassociation＝利他でない）、**Localizing**（取り込み・KPI化(commensuration)・布教(proselytization)）、**Normalizing**（正常化：purification, dilution）。',
+  example:'A firm first frames climate action as a win-win opportunity, then localizes it into KPIs, and finally normalizes it \u2014 diluting ambition back to business-as-usual.',
+  whyNeeded:'greenwashing/normalizingの理論。Mock Q25の根拠。',
+  mistakes:['3段階の順序：Framing→Localizing→Normalizing。最後が業務化(dilution)。'],
+  memorize:'Wright & Nyberg: Framing \u2192 Localizing \u2192 Normalizing (\u2192 business-as-usual)'
+},
+{
+  id:'cSUST_normalizing', ch:'SUST', name:'Normalizing: Purification & Dilution', star:true,
+  scene:'最終段階「正常化」では、当初の気候の約束が「株主価値の最大化」へ再整合され、希釈されます。',
+  compare:null,
+  punchline:'In the "normalizing" stage, climate practices are realigned with the dominant discourse of maximizing shareholder value, diluting earlier initiatives.',
+  defEN:'During **normalizing**, \u201ccorporate practices are realigned with the dominant organizational discourse of **maximizing shareholder value**, often involving the **dilution** of earlier climate initiatives.\u201d It works through **purification** and **dilution**: \u201ccontinuous critique of competing demands eventually purifies dominant market discourses and practices.\u201d',
+  defJA:'**Normalizing**（正常化）段階では、「企業実践が支配的言説である**maximizing shareholder value**（株主価値最大化）へ再整合され、初期の気候イニシアチブが**dilution**（希釈）される」。機構は**purification**（純化）と**dilution**：「競合する要求への継続的批判が、支配的な市場言説と実践を純化する」。',
+  example:'What occurs during \u201cnormalizing\u201d? Practices are realigned with maximizing shareholder value, diluting earlier climate initiatives \u2014 not solidifying them (Mock Q25).',
+  whyNeeded:'Wright & Nybergモデルの最終段階。greenwashing評価の核心。',
+  mistakes:['normalizingを「気候への約束が長期戦略に固まる段階」と誤読しない。実際は希釈(dilution)。'],
+  memorize:'Normalizing = realign to shareholder value + dilute climate ambition'
+},
+{
+  id:'cSUST_carbon_offsets', ch:'SUST', name:'Carbon Offsets & Uber Planet (West)', star:true,
+  scene:'Uber Planetは+5%でCO2を相殺できると言う。でもオフセットは本当に効くのか？West et al. (2023)が検証します。',
+  compare:null,
+  punchline:'Carbon offsets are a >$1bn market, but West et al. (2023) find only ~6% of promised offsets delivered real emission reductions.',
+  defEN:'**Carbon offsets** have become common (>$1bn market). **Uber Planet** lets customers pay ~+5% to offset emissions. Critics: it **shifts responsibility to consumers**, the symbolic amount is insufficient, and **offsets do not deliver promised reductions**. **West et al. (2023)** evaluated 26 forest projects and found **only ~6% of promised offsets gave real emission reductions**.',
+  defJA:'**Carbon offsets**（炭素オフセット）は一般化（>$1bn市場）。**Uber Planet**は+5%で排出を相殺できるとする。批判：**責任を消費者に転嫁**、象徴的な額では不十分、**オフセットは約束した削減を実現しない**。**West et al. (2023)**は26の森林プロジェクトを評価し、**約束されたオフセットの約6%しか実際の排出削減をもたらさなかった**と発見。',
+  example:'Uber Planet\u2019s +5% offset fee shifts responsibility to riders, yet West et al. find ~94% of such promised offsets do not reduce real emissions.',
+  whyNeeded:'additionality/counterfactualの実証的文脈。greenwashing評価。',
+  mistakes:['オフセットが約束通り機能すると考えない。Westでは**約6%のみ**有効。'],
+  memorize:'West et al.: only ~6% of offsets = real reductions'
+},
+{
+  id:'cSUST_additionality', ch:'SUST', name:'Additionality', star:true,
+  scene:'オフセットが「追加的」とは、そのプロジェクトがなければ起きなかった削減のこと。基準(counterfactual)の取り方で結論が激変します。',
+  compare:null,
+  punchline:'Additionality exists when a project\u2019s actual deforestation is lower than its counterfactual scenario derived from observable control areas.',
+  defEN:'**Additionality** means the emission reduction is **additional** \u2014 it would not have happened without the project. West et al.: **\u201cthere is additionality when a project\u2019s actual deforestation is lower than its counterfactual scenario derived from observable control areas.\u201d** A weakness is that additionality is often set on the developers\u2019 **ex-ante baseline**, which can be strategically inflated.',
+  defJA:'**Additionality**（追加性）：その排出削減が**追加的**＝プロジェクトがなければ起きなかったこと。West et al.：「**プロジェクトの実際の森林減少が、観測可能なコントロール地域から導いた counterfactual シナリオより低いとき、追加性がある**」。弱点：追加性は開発者の**ex-ante baseline**（事前ベースライン）で設定されがちで、戦略的に水増しされうる。',
+  example:'Additionality holds when actual deforestation in the project area is lower than the counterfactual estimated from comparable control areas (Mock Q24).',
+  whyNeeded:'counterfactual/synthetic controlとセットで頻出。West分析の核心。',
+  mistakes:['additionalityの基準は「予測 vs 観測」ではなく「実際 vs counterfactual（観測可能なコントロール由来）」。',
+    'ex-ante baselineだけで判定すると水増しされやすい点が批判。'],
+  memorize:'Additionality = actual < counterfactual (from control areas)'
+},
+{
+  id:'cSUST_counterfactual', ch:'SUST', name:'Counterfactual & Synthetic Control', star:true,
+  scene:'「もしプロジェクトがなかったら？」という仮想の結果がcounterfactual。実験できないときは、似た地域から「合成コントロール」を作ります。',
+  compare:null,
+  punchline:'A counterfactual is the hypothetical outcome under a different treatment ("what if"); synthetic controls build a comparable control group from similar pre-treatment observations.',
+  defEN:'A **counterfactual** is \u201ca hypothetical outcome describing what would have happened under a different treatment (the \u2018what if\u2019).\u201d Randomization creates counterfactuals; when experiments are impossible, **quasi-experimental methods** (regression discontinuity, diff-in-diff, instrumental variables, matching) are used. West et al. use **matching** to build a **\u2018synthetic\u2019 control** \u2014 areas with similar historical deforestation and characteristics before treatment.',
+  defJA:'**Counterfactual**（反事実）：「別の処置だったら何が起きたか（もし〜なら）」という仮想の結果。ランダム化が反事実を作るが、実験不可能なときは**quasi-experimental methods**（回帰不連続・差の差・操作変数・matching）を使う。West et al.は**matching**で**synthetic control**（合成コントロール）——処置前に森林減少の履歴と特性が似た地域——を作る。',
+  example:'To judge whether a forest project reduced deforestation, West et al. compare it to a synthetic control of similar areas \u2014 the counterfactual \u201cwhat would have happened.\u201d',
+  whyNeeded:'additionality判定の方法論。因果推論の基礎。',
+  mistakes:['counterfactualは「実際に起きたこと」ではなく「起きなかった仮想」。'],
+  memorize:'Counterfactual = the "what if"; synthetic control = matched comparison group'
+},
+{
+  id:'cSUST_biodiversity', ch:'SUST', name:'Why Biodiversity Conservation Matters', star:false,
+  scene:'生物多様性の喪失は、生態系の効率・安定性を損ない、感染症リスクを高めます。',
+  compare:null,
+  punchline:'Biodiversity loss harms ecosystem efficiency and stability and increases the risk of infectious diseases.',
+  defEN:'Biodiversity conservation matters because biodiversity loss: (1) **harms ecosystem efficiency** \u2014 fewer genes/species reduce how well communities capture resources and convert them to biomass (Cardinale et al., 2012); (2) **harms ecosystem stability** \u2014 systems reliant on few species are vulnerable to disturbance (Rockstr\u00f6m et al., 2009); and (3) **increases infectious-disease risk** \u2014 loss tends to increase pathogen transmission (Keesing et al., 2010).',
+  defJA:'生物多様性保全が重要な理由：生物多様性の喪失は①**生態系効率を損なう**——遺伝子・種が減ると資源を捕捉しバイオマスに変える効率が落ちる(Cardinale et al., 2012)②**生態系の安定性を損なう**——少数種に依存する系は撹乱に脆弱(Rockström et al., 2009)③**感染症リスクを高める**——喪失は病原体伝播を増やす(Keesing et al., 2010)。',
+  example:'Losing key species lowers how efficiently an ecosystem captures nutrients and makes it less stable and more disease-prone.',
+  whyNeeded:'L8の経済学的動機。生態系サービス評価の前提。',
+  mistakes:['生物多様性喪失の影響を「効率」だけと捉えない。安定性・感染症も含む。'],
+  memorize:'Biodiversity loss: \u2193efficiency, \u2193stability, \u2191disease'
+},
+{
+  id:'cSUST_boulding_malthus', ch:'SUST', name:'Cowboy vs Spaceman Economy; Malthus', star:false,
+  scene:'Bouldingは「無限のフロンティアがあるカウボーイ経済」と「資源が閉じた宇宙船経済」を対比。Malthusは人口の幾何級数的増加を警告しました。',
+  compare:{ a:'Cowboy economy', b:'Spaceman economy', table:[
+    {dim:'View', a:'Open frontier, unlimited resources', b:'Closed system, finite resources'},
+    {dim:'Behavior', a:'Consume & pollute freely', b:'Recycle, live within limits'} ]},
+  punchline:'Boulding contrasts the open "cowboy economy" with the closed "spaceman economy"; Malthus warned population grows geometrically while subsistence grows arithmetically.',
+  defEN:'**Boulding (1966)** contrasts the **cowboy economy** (open frontier, unlimited resources) with the **spaceman economy** (closed, finite Earth). **Malthus (1798)**: \u201cPopulation, when unchecked, increases in a **geometrical ratio** [exponential]\u2026 Subsistence increases only in an **arithmetical ratio** [linear].\u201d Malthus was **critiqued** because fertility falls with income and food production grew faster than population.',
+  defJA:'**Boulding (1966)**：**cowboy economy**（開かれたフロンティア・無限資源）と**spaceman economy**（閉じた有限の地球）を対比。**Malthus (1798)**：「人口は抑制なしでは**幾何級数(geometrical)**＝指数的に増えるが、食料は**算術級数(arithmetical)**＝線形にしか増えない」。Malthusへの**批判**：所得上昇で出生率は低下し、食料生産は人口より速く増えた。',
+  example:'A \u201ccowboy\u201d treats Earth as an open frontier; a \u201cspaceman\u201d treats it as a closed ship that must recycle \u2014 Boulding\u2019s contrast.',
+  whyNeeded:'Limits to Growth(Kallis)の思想的系譜。',
+  mistakes:['Malthus: 人口=幾何級数、食料=算術級数。逆にしない。'],
+  memorize:'Cowboy (open) vs Spaceman (closed); Malthus: pop geometric > food arithmetic'
+},
+{
+  id:'cSUST_limits_growth', ch:'SUST', name:'Limits to Growth & Double Resources', star:true,
+  scene:'「成長の限界」モデルの再検証では、現実は「Double Resources」シナリオに最も近く、崩壊は資源枯渇ではなく汚染（sink限界）が駆動すると分かりました（Kallis et al., 2025）。',
+  compare:{ a:'Source limit', b:'Sink limit', table:[
+    {dim:'Driver of collapse', a:'Scarcity of non-renewable resources', b:'Persistent pollution & regenerative-capacity limit'},
+    {dim:'Scenario', a:'Standard Run', b:'Double Resources (closest to reality)'} ]},
+  punchline:'Kallis et al. (2025): historical data since 1970 most closely follows the "Double Resources" scenario, where collapse is driven by persistent pollution and sink limits, not resource scarcity.',
+  defEN:'\u201cLimits to Growth\u201d (Meadows et al., 1972) inherited Malthus\u2019s logic. **Kallis et al. (2025)**: data since 1970 most closely track the **\u201cDouble Resources\u201d scenario** (initial non-renewable stock twice the Standard Run). There, **collapse occurs later and is driven NOT by resource scarcity (a source limit) but by persistent pollution and its impact on ecosystem stability (a sink limit / regenerative-capacity limit).**',
+  defJA:'「Limits to Growth」（Meadows et al., 1972）はMalthusの論理を継承。**Kallis et al. (2025)**：1970年以降のデータは**「Double Resources」シナリオ**（非再生資源の初期ストックがStandard Runの2倍）に最も近い。そこでは**崩壊はより遅く起き、資源枯渇（source limit）ではなく、持続的汚染とその生態系安定性への影響（sink limit＝再生能力の限界）が駆動する**。',
+  example:'Under the Double Resources scenario, collapse is driven by **persistent pollution and sink limits to ecosystem stability**, not resource depletion or population decline (Mock Q28).',
+  whyNeeded:'post-growthの実証的根拠。source vs sink limitの区別が頻出。',
+  mistakes:['Double Resourcesの崩壊要因を「資源枯渇」や「人口減少」と答えない。正解は**持続的汚染(sink limit)**。'],
+  memorize:'Double Resources: collapse from POLLUTION/sink limit, not source scarcity'
+},
+{
+  id:'cSUST_solow', ch:'SUST', name:'Solow: Relative Scarcity & Substitution', star:true,
+  scene:'資源が枯れても価格が上がれば、より豊富で安い代替材へ移る——Solowは「限界はない」という相対的希少性の立場です。',
+  compare:null,
+  punchline:'Solow (1973): rising prices of exhaustible resources drive substitution toward cheaper, plentiful materials, automatically reducing resource use per unit of GDP.',
+  defEN:'**Solow (1973)** argues **relative scarcity** handles exhaustion: \u201chigher and rising prices of exhaustible resources lead producers to **substitute** other materials that are more plentiful and therefore cheaper,\u201d reducing resource requirements per unit of GDP. **Caveats**: (i) unpriced externalities and unmarketable services, and (ii) substitution is **not a sufficient condition for sustainability**.',
+  defJA:'**Solow (1973)**：**relative scarcity**（相対的希少性）が枯渇に対処する。「枯渇資源の価格が上昇すると、生産者はより豊富で安い材料へ**substitute**（代替）する」ため、GDP当たりの資源必要量が減る。**Caveats（留保）**：(i) 価格のつかない外部性・市場にならないサービス、(ii) 代替は持続可能性の**十分条件ではない**。',
+  example:'As oil prices rise, firms substitute toward cheaper, more abundant inputs \u2014 Solow\u2019s mechanism \u2014 but this ignores unpriced externalities.',
+  whyNeeded:'weak sustainability（環境経済学）の代表的立場。Kallisとの対立軸。',
+  mistakes:['Solowの立場は「代替で限界を回避」。だが externalities を無視し、持続可能性の十分条件ではない点が留保。'],
+  memorize:'Solow: price \u2191 \u2192 substitution (relative scarcity); caveats = externalities, not sufficient'
+},
+{
+  id:'cSUST_planetary_boundaries', ch:'SUST', name:'Planetary Boundaries & the Doughnut', star:true,
+  scene:'ドーナツモデルは「社会的基盤(内側)」と「生態的天井(外側)」の間の安全な空間を示します。最新版では、オゾン層だけが安全圏内（Fanning & Raworth, 2025）。',
+  compare:null,
+  punchline:'The doughnut adds a social foundation inside ecological ceilings; in Fanning & Raworth (2025), ozone depletion is within safe planetary boundaries while climate, biodiversity and nitrogen are exceeded.',
+  defEN:'**Planetary boundaries** define a safe operating space; the **doughnut** (Fanning & Raworth) adds a **social foundation** (inner ring) inside the **ecological ceiling** (outer ring). Their 2025 update assesses 21 social and 13 ecological indicators (2000\u20132022), showing \u201ca world out of balance.\u201d Among Earth systems, **ozone depletion is within** safe boundaries, while **climate change, biodiversity loss, and the nitrogen cycle** are exceeded.',
+  defJA:'**Planetary boundaries**（惑星限界）は安全な活動空間を定義。**doughnut**（Fanning & Raworth）は外側の**ecological ceiling**（生態的天井）の内側に**social foundation**（社会的基盤）を加える。2025年版は21の社会指標と13の生態指標(2000–2022)を評価し「均衡を欠いた世界」を示す。地球システムのうち**オゾン層(ozone depletion)は安全圏内**、**気候変動・生物多様性喪失・窒素循環**は超過。',
+  example:'Which Earth system is within safe planetary boundaries? **Ozone depletion** \u2014 unlike climate change, biodiversity loss, or nitrogen disturbance (Mock Q30).',
+  whyNeeded:'生態経済学の到達点。world out of balanceの図。',
+  mistakes:['安全圏内なのは**ozone depletion**。climate/biodiversity/nitrogen は超過しているので選ばない。'],
+  memorize:'Doughnut = social floor + ecological ceiling; SAFE = ozone (not climate/biodiversity/N)'
+},
+{
+  id:'cSUST_world_out_of_balance', ch:'SUST', name:'A World Out of Balance', star:false,
+  scene:'社会的基盤を多く満たす国ほど、生態的天井を多く超える。逆に環境内に収まる国は社会条件を満たせていない——両立できている国がない。',
+  compare:null,
+  punchline:'Typically, countries that meet more social foundations exceed more ecological ceilings, while those within planetary boundaries fail to provide social conditions.',
+  defEN:'O\u2019Neill et al. (2018) and Fanning & Raworth show \u201c**a world out of balance**\u201d: countries that **meet more social-foundation thresholds tend to exceed more ecological ceilings**, while countries with footprints **within planetary boundaries fail to provide good social conditions**. No country yet achieves both.',
+  defJA:'O\u2019Neill et al. (2018)とFanning & Raworthが示す「**a world out of balance**（均衡を欠いた世界）」：**社会的基盤を多く満たす国ほど生態的天井を多く超過**し、逆に**惑星限界内に収まる国は良い社会条件を提供できていない**。両立できている国はまだない。',
+  example:'Rich nations meet social needs but blow past ecological ceilings; low-footprint nations stay within boundaries but lack social provision \u2014 a world out of balance.',
+  whyNeeded:'green growth批判・post-growth主張の実証的基盤。',
+  mistakes:['「社会も環境も満たす国が多い」と考えない。トレードオフが観測される。'],
+  memorize:'More social \u2192 more ecological overshoot (no country does both)'
+},
+{
+  id:'cSUST_decoupling', ch:'SUST', name:'Absolute vs Relative Decoupling (Green Growth)', star:true,
+  scene:'GDPが増えても環境負荷が減るのが絶対デカップリング＝グリーン成長。でもHickel & Kallisは「世界規模での証拠はない」と言います。',
+  compare:{ a:'Absolute decoupling', b:'Relative decoupling', table:[
+    {dim:'Definition', a:'GDP increases, impact decreases', b:'Impact increases slower than GDP'},
+    {dim:'Green growth?', a:'Yes \u2014 only absolute counts', b:'No'},
+    {dim:'Evidence', a:'No global evidence (Hickel & Kallis)', b:'Observed, even \u2018recoupling\u2019'} ]},
+  punchline:'Only absolute decoupling (GDP up, impact down) counts as green growth, and achieving it via innovation is complicated by Jevons-type rebound; Hickel & Kallis find no global evidence of it.',
+  defEN:'**Absolute decoupling**: GDP increases while environmental impact **decreases**. **Relative decoupling**: impact increases **slower** than GDP. **Only absolute decoupling can be described as green growth**, and achieving it through innovation is **complicated** by Jevons-type rebound effects. **Hickel & Kallis (2020)**: **no evidence of absolute decoupling of resource use at global scale**; recent decades show \u2018recoupling\u2019, and GHG decoupling in the Global North is too slow for Paris (Vogel & Hickel: >200 years to net-zero).',
+  defJA:'**Absolute decoupling**（絶対的デカップリング）：GDP増・環境負荷**減**。**Relative decoupling**（相対的）：負荷はGDPより**遅く**増える。**グリーン成長と呼べるのは絶対的デカップリングだけ**で、それを革新で達成するのはJevons型リバウンドで**complicated（困難）**。**Hickel & Kallis (2020)**：**世界規模での資源使用の絶対的デカップリングの証拠はない**。近年は「recoupling」、Global NorthのGHGデカップリングもParis目標には遅すぎる（Vogel & Hickel：net-zeroまで200年超）。',
+  example:'Only (I) absolute decoupling is green growth, and achieving it through innovation is (II) complicated by Jevons-type rebound (Mock Q27).',
+  whyNeeded:'green growth vs post-growthの中核論点。Jevonsと接続。',
+  mistakes:['green growth＝**absolute** decoupling のみ。relativeではない。',
+    '革新でのグリーン成長は「facilitated（促進）」ではなく「complicated（困難）」（Jevonsのため）。'],
+  memorize:'Green growth = ABSOLUTE decoupling only; innovation route COMPLICATED by Jevons'
+},
+{
+  id:'cSUST_easterlin', ch:'SUST', name:'Easterlin Paradox', star:true,
+  scene:'お金持ちほど幸せ——だが国全体が豊かになっても、時間が経っても、平均幸福度は上がらない。Easterlinの逆説です。',
+  compare:null,
+  punchline:'Easterlin paradox: income correlates with happiness within a country at a point in time, but income is unrelated to happiness across countries and over time.',
+  defEN:'The **Easterlin paradox (1974)**: (1) income is **positively correlated** with happiness **within** countries at one point in time, but (2) income is **unrelated** to happiness **across** countries, and (3) **unrelated over time**. Explanations: **relative income** (status), **hedonic adaptation**, and **uneconomic growth**.',
+  defJA:'**Easterlin paradox**（イースタリンの逆説、1974）：①ある時点で国**内**では所得と幸福は**正に相関**するが、②国**間**では所得と幸福は**無関係**、③**時間を通じても無関係**。説明：**relative income**（相対所得＝地位）、**hedonic adaptation**（快楽順応）、**uneconomic growth**（不経済な成長）。',
+  example:'Within a country richer people report more happiness, yet decades of GDP growth do not raise average happiness \u2014 the Easterlin paradox.',
+  whyNeeded:'post-growthの厚生論的根拠（成長≠幸福）。',
+  mistakes:['国内の相関だけ見て「所得が増えれば社会全体が幸せになる」と結論しない（国間・時系列では無関係）。'],
+  memorize:'Easterlin: income~happiness WITHIN (yes), ACROSS & OVER TIME (no)'
+},
+{
+  id:'cSUST_post_growth', ch:'SUST', name:'Post-growth Policy Proposals', star:true,
+  scene:'成長を前提にしない政策。労働時間短縮、富の上限、ベーシックインカム…厳しさの「はしご」で並べられます（Kallis et al., 2025）。',
+  compare:null,
+  punchline:'Post-growth questions the feasibility and desirability of continued growth, proposing policies like working-time reduction, wealth/maximum-income caps, carbon tax & dividend, and UBI/job guarantee.',
+  defEN:'**Kallis et al. (2025)** review **post-growth** alternatives, questioning the **feasibility and desirability** of continued growth (reviewing Limits to Growth, debunking absolute decoupling, and the Easterlin paradox). Proposals, ranked on the **Nuffield ladder** of policy strictness, include **working-time reduction, maximum income / wealth tax, cap and adapt, carbon tax and dividend, universal basic income, job guarantee, and universal basic services**. **Nudges** are changes to choice architecture without changing financial incentives.',
+  defJA:'**Kallis et al. (2025)**は**post-growth**（脱成長）の代替策をレビューし、継続的成長の**実現可能性と望ましさ**を問う（Limits to Growth再検討、絶対的デカップリングの反証、Easterlin逆説）。**Nuffield ladder**（政策の強制度のはしご）で整理される提案：**working-time reduction**（労働時間短縮）、**maximum income / wealth tax**、**cap and adapt**、**carbon tax and dividend**、**UBI**、**job guarantee**、**universal basic services**。**nudge**は財政的インセンティブを変えずに選択設計を変えるもの。',
+  example:'Post-growth proposals like working-time reduction, a wealth tax, and carbon tax-and-dividend sit at different rungs of the Nuffield ladder of policy strictness.',
+  whyNeeded:'green growth批判の政策的帰結。nudgeとの接続。',
+  mistakes:['post-growthは「成長を続ける前提」を問い直す。green growth楽観とは対立。'],
+  memorize:'Post-growth: working-time \u2193, wealth/max-income, carbon tax+dividend, UBI'
+},
+{
+  id:'cSUST_ecosystem_public_goods', ch:'SUST', name:'Ecosystem Services as Public Goods', star:true,
+  scene:'多くの生態系サービスは公共財：誰も排除できず(non-excludable)、一人の消費が他人の分を減らさない(non-rival)。だから市場が供給しにくい。',
+  compare:{ a:'Non-excludable', b:'Non-rival', table:[
+    {dim:'Meaning', a:'Impossible to exclude someone from consumption', b:'One person\u2019s use does not reduce others\u2019 use'},
+    {dim:'Example', a:'Clean air, fireworks', b:'Fireworks, vaccines (herd effect)'} ]},
+  punchline:'Many ecosystem services are public goods: non-excludable (cannot exclude anyone) and non-rival (one\u2019s consumption does not reduce another\u2019s).',
+  defEN:'Costanza (2024): many **ecosystem services are public goods**. **Non-excludable**: it is impossible to exclude someone from consumption. **Non-rival**: consumption by one does not decrease the consumption possibility of others. Because no one can be excluded and use is non-rival, markets under-provide them.',
+  defJA:'Costanza (2024)：多くの**ecosystem services**（生態系サービス）は**public goods**（公共財）。**Non-excludable**（非排除性）：消費から誰かを排除できない。**Non-rival**（非競合性）：一人の消費が他人の消費可能性を減らさない。排除できず非競合だから、市場は過少供給する。',
+  example:'Which good has non-rival consumption? **Fireworks** \u2014 one viewer does not reduce another\u2019s view, unlike timber (rival) (Mock Q26).',
+  whyNeeded:'なぜ生態系サービスに市場価格がつきにくいか。評価手法(CV等)の必要性。',
+  mistakes:['non-excludable（排除不可）と non-rival（消費が減らない）を混同しない。',
+    'fireworksは non-rival の典型。timber（材木）は rival なので注意。'],
+  memorize:'Public good = non-excludable + non-rival (fireworks)'
+},
+{
+  id:'cSUST_revealed_preference', ch:'SUST', name:'Revealed Preference Valuation', star:false,
+  scene:'人の「実際の行動」から自然の価値を推定。公園までの旅行費用や、住宅価格の差から測ります。',
+  compare:{ a:'Travel cost method', b:'Hedonic regression', table:[
+    {dim:'Idea', a:'Value a site from how far/much people travel to it', b:'Infer value from price differences (e.g., housing)'},
+    {dim:'Use', a:'Parks, recreation sites', b:'Proximity to green space, air quality, noise'} ]},
+  punchline:'Revealed preference methods infer nature\u2019s value from actual behavior: the travel cost method and hedonic regression.',
+  defEN:'**Revealed preference** methods infer value from actual behavior. **Hotelling\u2019s travel cost method** values a site from the distances/costs people incur to visit it. **Hedonic regression** uses price differences (e.g., housing) to value proximity to green space, air quality, or noise. Drawbacks: cannot estimate non-use values and struggles with substitutes/combined visits.',
+  defJA:'**Revealed preference**（顕示選好）法は実際の行動から価値を推定。**travel cost method**（旅行費用法、Hotelling）は人が訪問にかける距離・費用から場所の価値を測る。**hedonic regression**（ヘドニック回帰）は住宅価格などの差から、緑地の近さ・大気質・騒音の価値を推定。欠点：**non-use values**（非利用価値）を測れない、代替・複合訪問の扱いが難しい。',
+  example:'Estimating a park\u2019s value from how far visitors travel (travel cost) or pricing clean air from house prices (hedonic) are revealed-preference methods.',
+  whyNeeded:'stated preference(CV)との対比。評価手法の体系。',
+  mistakes:['revealed（実際の行動）と stated（仮想の表明）を混同しない。'],
+  memorize:'Revealed = behavior: travel cost + hedonic (no non-use values)'
+},
+{
+  id:'cSUST_contingent_valuation', ch:'SUST', name:'Stated Preference: Contingent Valuation (CV)', star:true,
+  scene:'「もし保全のためにいくら払う？」と直接尋ねる仮想評価(CV)。Diamond & Hausmanは「埋め込み効果」などを理由に批判します。',
+  compare:{ a:'In favor (Kling et al.)', b:'Against (Diamond & Hausman)', table:[
+    {dim:'Stance', a:'CV performs well if best practices followed', b:'CV is unreliable; use expert opinion'},
+    {dim:'Issues', a:'Referendum format, familiar payment, graphics', b:'Embedding/scope, order effects, WTP\u2260WTA'} ]},
+  punchline:'Contingent valuation asks WTP for a hypothetical change; Diamond & Hausman (1994) criticize it for embedding/scope effects, order effects, and WTP\u2260WTA.',
+  defEN:'**Contingent valuation (CV)** is a **stated preference** method that asks people\u2019s **willingness to pay (WTP)** for a hypothetical change. **Diamond & Hausman (1994)** criticize it: **embedding/scope effects** (WTP_total \u2248 WTP_part), **order effects**, different payment mechanisms give different WTP, and **WTP \u2260 WTA** (endowment effect) \u2014 concluding policy is better informed by expert opinion. **Kling et al. (2012)** argue CV performs well if best practices (referendum format, familiar payment, graphics) are followed.',
+  defJA:'**Contingent valuation (CV)**（仮想評価法）は**stated preference**（表明選好）で、仮想の変化への**WTP**（支払意思額）を尋ねる。**Diamond & Hausman (1994)**の批判：**embedding/scope effects**（WTP_total≈WTP_part）、**order effects**（順序効果）、支払方法でWTPが変わる、**WTP≠WTA**（保有効果）→政策は専門家の意見の方が良い。**Kling et al. (2012)**：ベストプラクティス（referendum形式・馴染みある支払・図示）を守ればCVは妥当。',
+  example:'Asking \u201chow much would you pay to preserve this wetland?\u201d is CV; Diamond & Hausman warn its WTP shows embedding and order effects and WTP\u2260WTA.',
+  whyNeeded:'revealed preferenceで測れない非利用価値の評価。批判が頻出。',
+  mistakes:['CVは仮想の「表明」選好。実際の行動(revealed)ではない。',
+    'WTP（支払意思）とWTA（受入意思）は一致しない（endowment effect）。'],
+  memorize:'CV = stated WTP; Diamond & Hausman: embedding, order effects, WTP\u2260WTA'
+},
+{
+  id:'cSUST_vsl_qaly', ch:'SUST', name:'VSL & QALY', star:false,
+  scene:'命や健康の価値を金額・年数で表す指標。VSL（統計的生命価値）とQALY（質調整生存年）。',
+  compare:{ a:'VSL', b:'QALY', table:[
+    {dim:'Measures', a:'Benefits of saving a (statistical) life', b:'Years of life weighted by health quality'},
+    {dim:'Used in', a:'Safety & pollution standards (CBA)', b:'Healthcare policy'},
+    {dim:'Drawback', a:'Depends on income', b:'Rare conditions, age' } ]},
+  punchline:'VSL expresses the benefit of saving a statistical life (used in cost-benefit analysis); QALY weights life-years by health quality (used in healthcare).',
+  defEN:'The **Value of Statistical Life (VSL)** expresses \u201cthe benefits of saving a life,\u201d estimated from hypothetical gambles, discounted future earnings, or government spending (a common US/EU figure is ~$10 million). Drawback: **VSL depends on income**. **Quality-Adjusted Life Years (QALY)** weight life-years by health, via Cantril-scale ratings and choice experiments; drawbacks: rare conditions and age.',
+  defJA:'**VSL（Value of Statistical Life、統計的生命価値）**：「命を救う便益」を表し、仮想の賭け・割引将来所得・政府支出から推定（US/EUで約$10M）。欠点：**VSLは所得に依存**。**QALY（Quality-Adjusted Life Years、質調整生存年）**：生存年を健康で重み付け（Cantrilスケール評価・選択実験）。欠点：希少疾患・年齢。',
+  example:'Safety regulations use VSL (~$10M) in cost-benefit analysis; healthcare policy uses QALYs to weigh treatments \u2014 but VSL depends on income.',
+  whyNeeded:'生命・健康の貨幣化。生態系サービス評価の応用（例：ハゲワシ消失の死亡コスト）。',
+  mistakes:['VSLは「個人の命の値段」ではなく統計的なリスク削減の価値。所得依存が欠点。'],
+  memorize:'VSL = save-a-life value (CBA, income-dependent); QALY = health-weighted years'
+},
+{
+  id:'cSUST_intrinsic_value', ch:'SUST', name:'Intrinsic Value & Rights of Nature (Costanza)', star:true,
+  scene:'すべての自然の価値をお金で表せるわけではありません。内在的価値＝自然の権利は貨幣化できない、とCostanzaは言います。',
+  compare:null,
+  punchline:'Intrinsic values \u2014 about the rights of nature \u2014 are least suitable to express as monetary value (Costanza, 2024).',
+  defEN:'**Costanza (2024)** clarifies misconceptions: ecosystem-service valuation is not only market-based and is **not commodification**; valuation is complementary to rights-based approaches. **Intrinsic values** are about the **rights of nature** and **cannot be translated to monetary estimates** \u2014 they are the **least suitable** to express as (relative) monetary value. Examples of rights of nature: the Whanganui River (NZ), Pachamama (Ecuador).',
+  defJA:'**Costanza (2024)**は誤解を正す：生態系サービス評価は市場ベースだけではなく、**commodification（商品化）ではない**。評価は権利ベースのアプローチと補完的。**intrinsic values**（内在的価値）は**自然の権利(rights of nature)**に関わり、**貨幣推定に翻訳できない**——（相対）貨幣価値で表すのに**最も適さない**。自然の権利の例：Whanganui川(NZ)、Pachamama(エクアドル)。',
+  example:'Which values of nature are least suitable to express as monetary value? **Intrinsic values** \u2014 not instrumental, cultural, or regulating values (Mock Q29).',
+  whyNeeded:'評価の限界。価値の多元性(Pascual et al.)と接続。',
+  mistakes:['貨幣化に最も適さないのは **intrinsic values**。instrumental/regulating/cultural ではない。',
+    'Costanzaは評価＝商品化(commodification)ではないと強調。'],
+  memorize:'Intrinsic value = rights of nature = NOT monetizable (least suitable)'
+}
+];
+
+/* TB_GLOSSARY — inline-chip glossary for the textbook tab.
+   term = English (chip text), def = Japanese with English terms kept. Canvas-derived (L1-8 + articles + Mock). Alphabetical. */
+window.TB_GLOSSARY = [
+{term:'Ability-to-pay principle', def:'\u5fdc\u80fd\u539f\u5247\u3002\u6240\u5f97(income)\u306b\u5fdc\u3058\u3066\u8ab2\u7a0e\u3059\u3079\u304d\u3068\u3044\u3046\u8003\u3048\u65b9\uff08vertical equity\uff09\u3002residence taxation\u3092\u6b63\u5f53\u5316\u3002'},
+{term:'Absolute decoupling', def:'\u7d76\u5bfe\u7684\u30c7\u30ab\u30c3\u30d7\u30ea\u30f3\u30b0\u3002GDP\u304c\u5897\u3048\u3066\u3082\u74b0\u5883\u8ca0\u8377(impact)\u304c\u6e1b\u308b\u3053\u3068\u3002green growth\u3068\u547c\u3079\u308b\u306e\u306f\u3053\u308c\u3060\u3051\u3002'},
+{term:'Absolute scarcity', def:'\u7d76\u5bfe\u7684\u5e0c\u5c11\u6027\u3002\u8cc7\u6e90\u306b\u4ee3\u66ff\u4e0d\u53ef\u80fd\u306a\u9650\u754c\u304c\u3042\u308b\u3068\u3059\u308b\u898b\u65b9\uff08ecological economics\uff09\u3002'},
+{term:'Additionality', def:'\u8ffd\u52a0\u6027\u3002\u305d\u306e\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u304c\u306a\u3051\u308c\u3070\u8d77\u304d\u306a\u304b\u3063\u305f\u524a\u6e1b\u3002actual\u304ccounterfactual\u3088\u308a\u4f4e\u3044\u3068\u304d\u306b\u6210\u7acb\uff08West et al.\uff09\u3002'},
+{term:'Adverse selection', def:'\u9006\u9078\u629e\u3002\u53d6\u5f15\u306e\u300c\u524d\u300d\u306b\u4e00\u65b9\u304chidden information\u3092\u6301\u3064\u3053\u3068\u3067\u751f\u3058\u308bmarket failure\u3002\u4f8b\uff1alemons\u554f\u984c\u3002'},
+{term:'Allocation method', def:'\u5272\u5f53\u65b9\u5f0f\u3002double taxation\u3092\u6551\u6e08\u3059\u308b4\u65b9\u5f0f\u306e\u3072\u3068\u3064\u3002'},
+{term:'Allocation of taxing rights', def:'\u8ab2\u7a0e\u6a29\u306e\u914d\u5206\u3002\u30c7\u30b8\u30bf\u30eb\u8ab2\u7a0e\u306e\u4e2d\u6838\u8ad6\u70b9\u3067\u3001\u56de\u907f\u3060\u3051\u3067\u306a\u304f\u300c\u3069\u306e\u56fd\u304c\u8ab2\u7a0e\u3059\u308b\u304b\u300d\u304c\u554f\u984c\u3002'},
+{term:'Arm\u2019s length principle', def:'\u72ec\u7acb\u4f01\u696d\u9593\u539f\u5247\u3002\u95a2\u9023\u4f1a\u793e\u9593\u306e\u53d6\u5f15\u3092\u3001\u7121\u95a2\u4fc2(unrelated)\u306a\u4ed6\u4eba\u540c\u58eb\u306e\u3088\u3046\u306bfair market value\u3067\u884c\u3046\u3053\u3068\u3002'},
+{term:'Assemblage', def:'\u7570\u7a2e\u306eplatform\u3092\u5b8c\u5168\u7d71\u5408\u3059\u308b\u6226\u7565\u3002\u6700\u5927\u306ecomplementarities\u3092\u751f\u307f\u3001superapp\u3092\u3082\u305f\u3089\u3059\uff08Schreieck\uff09\u3002'},
+{term:'Barter', def:'\u7269\u3005\u4ea4\u63db\u3002Beretta\u304csharing economy\u306e\u53d6\u5f15\u985e\u578b\u3068\u3057\u3066\u8a8d\u3081\u308b\u3082\u306e\u306e\u3072\u3068\u3064\u3002'},
+{term:'Benefit principle', def:'\u53d7\u76ca\u8005\u539f\u5247\u3002\u7d0d\u7a0e\u8005\u306f\u653f\u5e9c\u30b5\u30fc\u30d3\u30b9\u304b\u3089\u53d7\u76ca\u3059\u308b\u304b\u3089\u6255\u3046\u3002source taxation\u3092\u6b63\u5f53\u5316\u3002'},
+{term:'Biodiversity loss', def:'\u751f\u7269\u591a\u69d8\u6027\u306e\u55aa\u5931\u3002ecosystem\u306e\u52b9\u7387\u30fb\u5b89\u5b9a\u6027\u3092\u640d\u306a\u3044\u3001infectious disease\u306e\u30ea\u30b9\u30af\u3092\u9ad8\u3081\u308b\u3002'},
+{term:'Boundary resources', def:'\u5883\u754c\u8cc7\u6e90\u3002platform owner\u304cthird-party developer\u3092\u652f\u63f4\u3059\u308bSDK\u30fbAPI\u30fb\u30c4\u30fc\u30eb\u30fb\u898f\u7d04\uff08Ghazawneh & Henfridsson\uff09\u3002'},
+{term:'Brundtland definition', def:'\u300c\u5c06\u6765\u4e16\u4ee3\u306e\u80fd\u529b\u3092\u640d\u306a\u308f\u305a\u73fe\u5728\u306e\u30cb\u30fc\u30ba\u3092\u6e80\u305f\u3059\u767a\u5c55\u300d(1987)\u3002sustainable development\u306e\u6700\u3082\u6709\u540d\u306a\u5b9a\u7fa9\u3002'},
+{term:'Budgetary purpose', def:'\u4e88\u7b97\u7684\u76ee\u7684\u3002\u516c\u5171\u652f\u51fa(public expenditures)\u3092\u8cc4\u3046\u305f\u3081\u306e\u8ab2\u7a0e\u306e\u76ee\u7684\u3002'},
+{term:'Business as usual', def:'\u901a\u5e38\u696d\u52d9\u3002\u4f01\u696d\u306e\u6c17\u5019\u30fb\u74b0\u5883\u3078\u306e\u71b1\u610f\u304c\u3084\u304c\u3066\u85c4\u308c\u3066\u5143\u306b\u623b\u308b\u72b6\u614b\uff08Wright & Nyberg\uff09\u3002'},
+{term:'Capital export neutrality (CEN)', def:'\u8cc7\u672c\u8f38\u51fa\u4e2d\u7acb\u6027\u3002\u5c45\u4f4f\u8005\u304c\u56fd\u5185\u30fb\u56fd\u5916\u3069\u3061\u3089\u306b\u6295\u8cc7\u3057\u3066\u3082\u540c\u3058\u5b9f\u52b9\u56fd\u5185\u7a0e\u7387\u306b\u306a\u308b\u3053\u3068\u3002'},
+{term:'Capital import neutrality (CIN)', def:'\u8cc7\u672c\u8f38\u5165\u4e2d\u7acb\u6027\u3002\u5bfe\u5185(inbound)\u6295\u8cc7\u3067\u3001\u56fd\u5185\u6295\u8cc7\u5bb6\u3068\u5916\u56fd\u6295\u8cc7\u5bb6\u3092\u540c\u7387\u3067\u8ab2\u7a0e\u3002'},
+{term:'Carbon offset', def:'\u70ad\u7d20\u30aa\u30d5\u30bb\u30c3\u30c8\u3002\u6392\u51fa\u3092\u4ed6\u6240\u306e\u524a\u6e1b\u3067\u76f8\u6bba\u3002West et al.\u3067\u306f\u7d04\u675f\u306e\u7d046%\u3057\u304b\u5b9f\u52b9\u3057\u306a\u304b\u3063\u305f\u3002'},
+{term:'Choice architecture', def:'\u9078\u629e\u306e\u8a2d\u8a08\u3002\u9078\u629e\u80a2\u306e\u4e26\u3079\u65b9\u3084\u30c7\u30d5\u30a9\u30eb\u30c8\u3002nudge\u306f\u3053\u308c\u3092\u5909\u3048\u3066\u884c\u52d5\u3092\u5909\u3048\u308b\u3002'},
+{term:'Community platform', def:'\u30b3\u30df\u30e5\u30cb\u30c6\u30a3\u578b\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3002\u30e1\u30f3\u30d0\u30fc\u9593\u306e\u4ea4\u6d41\u30fb\u30b3\u30f3\u30c6\u30f3\u30c4\u5171\u6709\uff08Facebook, Reddit\uff09\u3002'},
+{term:'Consolidation', def:'\u540c\u578bplatform\u3092\u5b8c\u5168\u7d71\u5408\u3059\u308b\u6226\u7565\u3002\u30e6\u30fc\u30b6\u30fc\u57fa\u76e4\u62e1\u5927\u3068direct network effects\uff08Amazon Prime\uff09\u3002'},
+{term:'Contingent valuation (CV)', def:'\u4eee\u60f3\u8a55\u4fa1\u6cd5\u3002stated preference\u3067WTP\u3092\u5c0b\u306d\u308b\u3002Diamond & Hausman\u304cembedding\u30fborder effects\u3067\u6279\u5224\u3002'},
+{term:'Core Platform Services (CPS)', def:'\u4e2d\u6838\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u30b5\u30fc\u30d3\u30b9\u3002DMA\u3067gatekeeper\u3092\u8b58\u5225\u3059\u308b\u57fa\u6e96\uff08SNS\u30fb\u691c\u7d22\u30fb\u30e1\u30c3\u30bb\u30fc\u30b8\u30f3\u30b0\uff09\u3002'},
+{term:'Corporate income tax', def:'\u6cd5\u4eba\u6240\u5f97\u7a0e\u3002\u8ab2\u7a0e\u5bfe\u8c61\u306fprofits\uff08\u5229\u76ca\uff09\u3002NL\u7d0425.8%\u3002'},
+{term:'Correlation is not causation', def:'\u76f8\u95a2\u2260\u56e0\u679c\u3002\u4e8c\u3064\u304c\u4f34\u3046\u3060\u3051\u3067\u306f\u4e00\u65b9\u304c\u4ed6\u65b9\u3092\u5f15\u304d\u8d77\u3053\u3057\u305f\u3068\u306f\u8a00\u3048\u306a\u3044\u3002'},
+{term:'Cost-sharing', def:'\u8cbb\u7528\u5206\u62c5\u3002Beretta\u304csharing economy\u306e\u53d6\u5f15\u985e\u578b\u3068\u3057\u3066\u8a8d\u3081\u308b\u3082\u306e\u3002'},
+{term:'Counterfactual', def:'\u53cd\u4e8b\u5b9f\u3002\u300c\u3082\u3057\u5225\u306e\u51e6\u7f6e\u3060\u3063\u305f\u3089\u4f55\u304c\u8d77\u304d\u305f\u304b\u300d\u3068\u3044\u3046\u4eee\u60f3\u306e\u7d50\u679c\u3002synthetic control\u3067\u4f5c\u308b\u3002'},
+{term:'Cowboy economy', def:'\u30ab\u30a6\u30dc\u30fc\u30a4\u7d4c\u6e08\u3002\u7121\u9650\u306e\u8cc7\u6e90\u3068\u958b\u304b\u308c\u305f\u30d5\u30ed\u30f3\u30c6\u30a3\u30a2\u3092\u524d\u63d0\u3068\u3059\u308b\u898b\u65b9\uff08Boulding\uff09\u3002'},
+{term:'Crowding out', def:'\u7de0\u3081\u51fa\u3057\u3002\u4fa1\u683c\u3092\u3064\u3051\u308b\u3068\u9053\u5fb3\u7684\u52d5\u6a5f\u304c\u6392\u9664\u3055\u308c\u308b\u3002\u9045\u523b\u7f70\u91d1\u3067\u9045\u523b\u304c\u5897\u3048\u305f\u4f8b\uff08Gneezy & Rustichini\uff09\u3002'},
+{term:'Decoy effect', def:'\u304a\u3068\u308a\u52b9\u679c\u3002\u660e\u3089\u304b\u306b\u52a3\u308b\u9078\u629e\u80a2\u3092\u52a0\u3048\u308b\u3068\u3001\u9078\u629e\u304c\u30bf\u30fc\u30b2\u30c3\u30c8\u3078\u52d5\u304f\uff08regularity\u9055\u53cd\uff09\u3002'},
+{term:'Demand-side economies of scale', def:'\u9700\u8981\u5074\u306e\u898f\u6a21\u306e\u7d4c\u6e08\u3002network value\u304c\u53c2\u52a0\u8005\u3092\u5f15\u304d\u5bc4\u305b\u308b\u3002platform\u306e\u30b9\u30b1\u30fc\u30eb\u306e\u6e90\u6cc9\u3002'},
+{term:'Difference principle', def:'\u683c\u5dee\u539f\u5247\uff08Rawls\uff09\u3002\u6700\u3082\u6075\u307e\u308c\u306a\u3044\u5c64\u306e\u5229\u76ca\u3092\u6700\u5927\u5316\u3059\u308b\u3053\u3068\u304c\u6b63\u7fa9\u3002maximin\u3068\u540c\u7fa9\u3002'},
+{term:'Diffusion of responsibility', def:'\u8cac\u4efb\u306e\u5206\u6563\u3002\u5e02\u5834\u3067\u8907\u6570\u4eba\u304c\u7d50\u679c\u306b\u8cac\u4efb\u3092\u6301\u3064\u305f\u3081\u9053\u5fb3\u304c\u8584\u308c\u308b\uff08Falk & Szech\uff09\u3002'},
+{term:'Digital Markets Act (DMA)', def:'\u30c7\u30b8\u30bf\u30eb\u5e02\u5834\u6cd5\u3002gatekeeper\u306bex-ante\u3067\u7fa9\u52d9\u3068\u7981\u6b62\u3092\u8ab2\u3059EU\u306e\u4e8b\u524d\u898f\u5236\uff08Tirole\uff09\u3002'},
+{term:'Digital Services Tax (DST)', def:'\u30c7\u30b8\u30bf\u30eb\u30b5\u30fc\u30d3\u30b9\u7a0e\u3002\u30c7\u30b8\u30bf\u30eb\u53ce\u76ca\u306b\u8ab2\u7a0e\u3002\u4ecf\u56fd3%(2019)\u2192\u7c73\u304c\u30ef\u30a4\u30f3\u306b25%\u95a2\u7a0e\u3002'},
+{term:'Direct network effects', def:'\u76f4\u63a5\u306e\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u52b9\u679c\u3002\u540c\u3058\u5074\u306e\u30e6\u30fc\u30b6\u30fc\u304c\u5897\u3048\u308b\u307b\u3069\u4fa1\u5024\u304c\u4e0a\u304c\u308b\uff08WhatsApp\uff09\u3002'},
+{term:'Double taxation', def:'\u4e8c\u91cd\u8ab2\u7a0e\u3002A\u56fd\u3068B\u56fd\u304c\u540c\u3058\u6240\u5f97\u306b\u8ab2\u7a0e\u3057\u3066\u3057\u307e\u3046\u72b6\u614b\u3002'},
+{term:'Double tax treaty', def:'\u79df\u7a0e\u6761\u7d04\u3002\u4e8c\u56fd\u9593(bilateral)\u3067\u4e8c\u91cd\u8ab2\u7a0e\u3092\u9664\u53bb\u3057\u56de\u907f\u3092\u9632\u3050\u3002OECD model\u304c\u4ee3\u8868\u3002'},
+{term:'Doughnut model', def:'\u30c9\u30fc\u30ca\u30c4\u6a21\u578b\u3002\u5185\u5074\u306bsocial foundation\u3001\u5916\u5074\u306becological ceiling\u3092\u7f6e\u304f\uff08Fanning & Raworth\uff09\u3002'},
+{term:'Easterlin paradox', def:'\u30a4\u30fc\u30b9\u30bf\u30ea\u30f3\u306e\u9006\u8aac\u3002\u56fd\u5185\u3067\u306f\u6240\u5f97\u3068\u5e78\u798f\u304c\u76f8\u95a2\u3059\u308b\u304c\u3001\u56fd\u9593\u30fb\u6642\u7cfb\u5217\u3067\u306f\u7121\u95a2\u4fc2\u3002'},
+{term:'Ecological ceiling', def:'\u751f\u614b\u7684\u5929\u4e95\u3002doughnut\u306e\u5916\u5074\u3002\u8d85\u3048\u308b\u3068planetary boundaries\u3092\u4fb5\u3059\u3002'},
+{term:'Ecological economics', def:'\u751f\u614b\u7d4c\u6e08\u5b66\u3002absolute scarcity\u3068limited substitution\u3092\u91cd\u8996\u3059\u308bstrong sustainability\u306e\u30ec\u30f3\u30ba\u3002'},
+{term:'Economies of scale', def:'\u898f\u6a21\u306e\u7d4c\u6e08\u3002\u4f1d\u7d71\u306f\u4f9b\u7d66\u5074(supply side)\u3001platform\u306f\u9700\u8981\u5074(demand side)\u3002'},
+{term:'Ecosystem services', def:'\u751f\u614b\u7cfb\u30b5\u30fc\u30d3\u30b9\u3002\u591a\u304f\u306fpublic goods\uff08non-excludable\u304b\u3064non-rival\uff09\uff08Costanza\uff09\u3002'},
+{term:'Ehrenfeld', def:'\u300creducing unsustainability \u2260 creating sustainability\u300d\u3092\u6307\u6458\u3057\u305f\u8ad6\u8005\u3002\u4f01\u696d\u306e\u53d6\u7d44\u307f\u306fBand-Aids\u3068\u6279\u5224\u3002'},
+{term:'Embedding effect', def:'\u57cb\u3081\u8fbc\u307f\u52b9\u679c\uff08scope effect\uff09\u3002CV\u3067WTP_total\u2248WTP_part\u306b\u306a\u308b\u554f\u984c\uff08Diamond & Hausman\uff09\u3002'},
+{term:'Entitlement theory', def:'\u6a29\u539f\u7406\u8ad6\uff08Nozick\uff09\u3002\u8ca1\u7523\u304c\u6b63\u5f53\u306b\u53d6\u5f97\u3055\u308c\u81ea\u767a\u7684\u306b\u4ea4\u63db\u3055\u308c\u305f\u306a\u3089\u3001\u4e0d\u5e73\u7b49\u3067\u3082\u6b63\u7fa9\u3002'},
+{term:'Eudaimonia', def:'\u30a8\u30a6\u30c0\u30a4\u30e2\u30cb\u30a2\u3002Ehrenfeld\u306e\u6301\u7d9a\u53ef\u80fd\u6027\u5b9a\u7fa9\u300c\u3042\u3089\u3086\u308b\u751f\u547d\u304c\u6c38\u9060\u306b\u7e41\u6804\u3059\u308b\u53ef\u80fd\u6027\u300d\u306e\u6839\u3002'},
+{term:'Exemption method', def:'\u514d\u7a0e\u65b9\u5f0f\u3002double taxation\u6551\u6e08\u306e\u3072\u3068\u3064\u3002CIN\u306f\u9054\u6210\u3059\u308b\u304cCEN\u306f\u9054\u6210\u3067\u304d\u306a\u3044\u3002'},
+{term:'Fairness objection', def:'\u516c\u5e73\u6027\u306e\u53cd\u8ad6\u3002\u5e02\u5834\u4fa1\u683c\u306fwillingness + ability to pay\u3067\u6c7a\u307e\u308a\u3001\u8ca7\u8005\u306b\u4e0d\u5229\u3002'},
+{term:'Falk & Szech', def:'\u30de\u30a6\u30b9\u5b9f\u9a13\u3002\u5e02\u5834\u304c\u9053\u5fb3\u3092\u4fb5\u98df\uff1aindividual 45.9% < bilateral 72.2% < multilateral 75.9%\u304c\u6bba\u3059\u610f\u601d\u3002'},
+{term:'Fixed costs', def:'\u56fa\u5b9a\u8cbb\u3002\u751f\u7523\u91cf\u306b\u4f9d\u3089\u305a\u304b\u304b\u308b\u8cbb\u7528\u3002\u53c2\u5165\u969c\u58c1\u3068\u306a\u308a\u3001\u65e2\u5b58\u4f01\u696d\u3092\u6709\u5229\u306b\u3059\u308b\uff08Tirole\uff09\u3002'},
+{term:'Friedman doctrine', def:'\u30d5\u30ea\u30fc\u30c9\u30de\u30f3\u30fb\u30c9\u30af\u30c8\u30ea\u30f3\u3002\u300c\u4f01\u696d\u306e\u793e\u4f1a\u7684\u8cac\u4efb\u306f\u5229\u76ca\u3092\u5897\u3084\u3059\u3053\u3068\u300d\u3002CEO\u306e\u552f\u4e00\u306e\u8cac\u4efb\u306fshareholder\u5229\u76ca\u6700\u5927\u5316\u3002'},
+{term:'Full integration', def:'\u5b8c\u5168\u7d71\u5408\u3002UI\u30ec\u30d9\u30eb\u3067\u878d\u5408\u3057\u533a\u5225\u4e0d\u53ef\u80fd\u306b\u306a\u308b\uff08superapp\uff0cWeChat\uff09\u3002'},
+{term:'Gatekeeper', def:'\u30b2\u30fc\u30c8\u30ad\u30fc\u30d1\u30fc\u3002CPS\u3092\u4fdd\u6709\u3057DMA\u306e\u7fa9\u52d9\u30fb\u7981\u6b62\u3092\u8ab2\u3055\u308c\u308b\u5927\u898f\u6a21\u30c7\u30b8\u30bf\u30eb\u4f01\u696d\u3002'},
+{term:'Generativity', def:'\u751f\u6210\u6027\u3002innovation platform\u3067\u3001\u88dc\u5b8c\u8005(complementor)\u304c\u30a4\u30ce\u30d9\u30fc\u30b7\u30e7\u30f3\u3092\u751f\u3080\u80fd\u529b\u3002'},
+{term:'Green growth', def:'\u30b0\u30ea\u30fc\u30f3\u6210\u9577\u3002GDP\u6210\u9577\u3068\u74b0\u5883\u8ca0\u8377\u6e1b\u306e\u4e21\u7acb\u3002absolute decoupling\u306e\u307f\u304c\u8a72\u5f53\u3002Hickel & Kallis\u306f\u4e16\u754c\u898f\u6a21\u306e\u8a3c\u62e0\u306a\u3057\u3068\u3059\u308b\u3002'},
+{term:'Hedonic regression', def:'\u30d8\u30c9\u30cb\u30c3\u30af\u56de\u5e30\u3002\u4f4f\u5b85\u4fa1\u683c\u306a\u3069\u306e\u5dee\u304b\u3089\u7dd1\u5730\u30fb\u5927\u6c17\u8cea\u306e\u4fa1\u5024\u3092\u63a8\u5b9a\u3059\u308brevealed preference\u6cd5\u3002'},
+{term:'Hidden action', def:'\u96a0\u308c\u305f\u884c\u52d5\u3002\u53d6\u5f15\u300c\u5f8c\u300d\u306e\u884c\u52d5\u304c\u898b\u3048\u306a\u3044\u3053\u3068\u3002moral hazard\u306e\u539f\u56e0\u3002'},
+{term:'Hidden information', def:'\u96a0\u308c\u305f\u60c5\u5831\u3002\u53d6\u5f15\u300c\u524d\u300d\u306b\u4e00\u65b9\u3060\u3051\u304c\u77e5\u308b\u60c5\u5831\u3002adverse selection\u306e\u539f\u56e0\u3002'},
+{term:'Hub firm', def:'\u30cf\u30d6\u4f01\u696d\u3002bottleneck\u3092\u63e1\u308a\u3001\u4e0d\u91e3\u308a\u5408\u3044\u306b\u5927\u304d\u3044\u4fa1\u5024\u3092\u7372\u5f97\u3057\u3001self-reinforcing\u306b\u6210\u9577\uff08Iansiti & Lakhani\uff09\u3002'},
+{term:'Indirect network effects', def:'\u9593\u63a5\uff08cross-side\uff09\u306e\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u52b9\u679c\u3002\u4e00\u65b9\u306e\u30e6\u30fc\u30b6\u30fc\u304c\u4ed6\u65b9\u306e\u4fa1\u5024\u3092\u9ad8\u3081\u308b\uff08iOS\u306e\u958b\u767a\u8005\u2194\u30e6\u30fc\u30b6\u30fc\uff09\u3002'},
+{term:'Industrial policy', def:'\u7523\u696d\u653f\u7b56\u3002\u7279\u5b9a\u306e\u90e8\u9580\u30fb\u6280\u8853\u30fb\u4f01\u696d\u3092\u6a19\u7684\u3068\u3059\u308b\u4ecb\u5165\uff08targeted\uff09\u3002carbon pricing\u306fnon-targeted\u3002'},
+{term:'Information asymmetry', def:'\u60c5\u5831\u306e\u975e\u5bfe\u79f0\u3002\u4e00\u65b9\u304c\u4ed6\u65b9\u3088\u308a\u591a\u304f\u306e\u60c5\u5831\u3092\u6301\u3064\u72b6\u614b\u3002adverse selection / moral hazard\u3092\u751f\u3080\u3002'},
+{term:'Innovation platform', def:'\u30a4\u30ce\u30d9\u30fc\u30b7\u30e7\u30f3\u578b\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3002\u88dc\u5b8c\u8005\u304c\u30a4\u30ce\u30d9\u30fc\u30b7\u30e7\u30f3\u3092\u751f\u3080\u62e1\u5f35\u53ef\u80fd\u306a\u57fa\u76e4\uff08iOS, Android\uff09\u3002'},
+{term:'Intangible assets', def:'\u7121\u5f62\u8cc7\u7523\u3002IP\u30fb\u30c7\u30fc\u30bf\u30fb\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3002\u8a55\u4fa1\u3068transfer pricing\u304c\u56f0\u96e3\u3067\u30c7\u30b8\u30bf\u30eb\u8ab2\u7a0e\u306e\u96e3\u70b9\u3002'},
+{term:'Intrinsic value', def:'\u5185\u5728\u7684\u4fa1\u5024\u3002rights of nature\u306b\u95a2\u308f\u308a\u3001\u8ca8\u5e63\u5316\u3067\u304d\u306a\u3044\u3002\u8ca8\u5e63\u8868\u793a\u306b\u6700\u3082\u9069\u3055\u306a\u3044\uff08Costanza\uff09\u3002'},
+{term:'Jevons\u2019 paradox', def:'\u30b8\u30a7\u30f4\u30a9\u30f3\u30ba\u306e\u30d1\u30e9\u30c9\u30c3\u30af\u30b9\u3002\u52b9\u7387\u5316\u304c\u7dcf\u6d88\u8cbb\u3092\u5897\u3084\u3059\uff08rebound effect\uff09\u3002'},
+{term:'Lemons problem', def:'\u30ec\u30e2\u30f3\u554f\u984c\u3002\u4e2d\u53e4\u8eca\u5e02\u5834\u3067adverse selection\u306b\u3088\u308a\u826f\u8cea\u8ca1\u304c\u6392\u9664\u3055\u308c\u308b\u4f8b\u3002'},
+{term:'Libertarian argument', def:'\u30ea\u30d0\u30bf\u30ea\u30a2\u30f3\u306e\u8ad6\u62e0\u3002\u4ed6\u8005\u306e\u6a29\u5229\u3092\u4fb5\u3055\u306a\u3051\u308c\u3070\u81ea\u7531\u306b\u58f2\u8cb7\u3067\u304d\u308b\uff08market\u8cdb\u6210\uff09\u3002'},
+{term:'Limits to Growth', def:'\u6210\u9577\u306e\u9650\u754c\u3002Malthus\u306e\u8ad6\u7406\u3092\u7d99\u627f\u3002\u73fe\u5b9f\u306fDouble Resources\u30b7\u30ca\u30ea\u30aa\u306b\u6700\u3082\u8fd1\u3044\uff08Kallis\uff09\u3002'},
+{term:'Localizing', def:'Wright & Nyberg\u306e\u4e2d\u6bb5\u968e\u3002incorporation\u30fbcommensuration(KPI\u5316)\u30fbproselytization\u3067\u6c17\u5019\u53d6\u7d44\u3092\u793e\u5185\u5316\u3002'},
+{term:'Market failure', def:'\u5e02\u5834\u306e\u5931\u6557\u3002adverse selection\u30fbmoral hazard\u30fbexternalities\u30fbpublic goods\u306a\u3069\u3067\u5e02\u5834\u304c\u6700\u9069\u306b\u306a\u3089\u306a\u3044\u3002'},
+{term:'Market society', def:'\u5e02\u5834\u793e\u4f1a\u3002\u5e02\u5834\u306e\u8ad6\u7406\u304c\u751f\u6d3b\u306e\u3042\u3089\u3086\u308b\u9818\u57df\u306b\u62e1\u5927\u3057\u3001\u672c\u8cea\u7684\u4fa1\u5024\u3092\u8150\u6557\u3055\u305b\u3046\u308b\u72b6\u614b\u3002'},
+{term:'Materialistic framing', def:'\u7269\u8cea\u4e3b\u7fa9\u7684\u30d5\u30ec\u30fc\u30df\u30f3\u30b0\u3002\u300c\u6700\u3082\u3088\u3044\u53d6\u5f15\u3092\u3059\u308b\u300d\u610f\u8b58\u304c\u9053\u5fb3\u3092\u8584\u3081\u308b\uff08Falk & Szech\uff09\u3002'},
+{term:'Maximin principle', def:'\u30de\u30ad\u30b7\u30df\u30f3\u539f\u7406\uff08Rawls\uff09\u3002\u6700\u3082\u6075\u307e\u308c\u306a\u3044\u5c64(worst-off)\u3092\u6700\u5927\u5316\u3059\u308b\u3002veil of ignorance\u306e\u4e0b\u3067\u9078\u3070\u308c\u308b\u3002'},
+{term:'Meddlesome preferences', def:'\u5e72\u6e09\u7684\u9078\u597d\u3002Cowen & Tabarrok\u306e6\u53cd\u8ad6\u306e\u3072\u3068\u3064\u3002'},
+{term:'Moral hazard', def:'\u30e2\u30e9\u30eb\u30cf\u30b6\u30fc\u30c9\u3002\u53d6\u5f15\u300c\u5f8c\u300d\u306ehidden action\u306e\u554f\u984c\u3002\u4fdd\u967a\u52a0\u5165\u5f8c\u306e\u7121\u8b00\u884c\u52d5\u306a\u3069\u3002'},
+{term:'Moral Machine experiment', def:'\u9053\u5fb3\u6a5f\u68b0\u5b9f\u9a13\uff08Awad\uff09\u3002\u8a73\u7d30\u3092\u52a0\u3048\u308b\u3068\u9078\u629e\u304c\u5dee\u5225\u5316\u3055\u308c\u3001algorithm\u306f\u4e2d\u7acb\u3067\u306a\u3044\u3068\u793a\u3057\u305f\u3002'},
+{term:'Multi-sided market', def:'\u591a\u9762\u5e02\u5834\u3002\u8907\u6570\u306e\u30e6\u30fc\u30b6\u30fc\u30b0\u30eb\u30fc\u30d7\u3092\u4ef2\u4ecb\u3059\u308bplatform\u306e\u5e02\u5834\u3002'},
+{term:'Network effects', def:'\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u52b9\u679c\u3002\u5229\u7528\u8005\u304c\u5897\u3048\u308b\u307b\u3069\u4fa1\u5024\u304c\u4e0a\u304c\u308b\u3002winner-takes-all\u306e\u6e90\u6cc9\u3002'},
+{term:'Non-excludable', def:'\u975e\u6392\u9664\u6027\u3002\u8ab0\u3082\u6d88\u8cbb\u304b\u3089\u6392\u9664\u3067\u304d\u306a\u3044\u3002public good\u306e\u7279\u5fb4\u3002'},
+{term:'Non-rivalrous', def:'\u975e\u7af6\u5408\u6027\u3002\u4e00\u4eba\u306e\u6d88\u8cbb\u304c\u4ed6\u4eba\u306e\u6d88\u8cbb\u53ef\u80fd\u91cf\u3092\u6e1b\u3089\u3055\u306a\u3044\u3002\u4f8b\uff1afireworks, vaccines\u3002'},
+{term:'Normalizing', def:'\u6b63\u5e38\u5316\u3002Wright & Nyberg\u306e\u6700\u7d42\u6bb5\u968e\u3002shareholder value\u3078\u518d\u6574\u5408\u3057\u6c17\u5019\u53d6\u7d44\u3092dilution\u3002'},
+{term:'Nozick', def:'entitlement theory\u3092\u63d0\u5531\u3002\u6b63\u5f53\u306a\u53d6\u5f97\u3068\u81ea\u767a\u7684\u4ea4\u63db\u306a\u3089\u4e0d\u5e73\u7b49\u3082\u6b63\u7fa9\u3068\u3059\u308blibertarian\u306e\u6b63\u7fa9\u8ad6\u3002'},
+{term:'Nudge', def:'\u30ca\u30c3\u30b8\u3002\u7d4c\u6e08\u7684\u30a4\u30f3\u30bb\u30f3\u30c6\u30a3\u30d6\u3092\u5927\u304d\u304f\u5909\u3048\u305a\u3001choice architecture\u3067\u884c\u52d5\u3092\u4e88\u6e2c\u53ef\u80fd\u306b\u5909\u3048\u308b\u3002'},
+{term:'OECD model treaty', def:'OECD\u30e2\u30c7\u30eb\u6761\u7d04\u3002\u591a\u304f\u306edouble tax treaty\u306e\u3072\u306a\u578b\u3002\u4e8c\u91cd\u8ab2\u7a0e\u9664\u53bb\u3068\u56de\u907f\u9632\u6b62\u304c\u76ee\u7684\u3002'},
+{term:'Order effects', def:'\u9806\u5e8f\u52b9\u679c\u3002CV\u3067\u8cea\u554f\u306e\u63d0\u793a\u9806\u3067WTP\u304c\u5909\u308f\u308b\u554f\u984c\uff08Diamond & Hausman\uff09\u3002'},
+{term:'Partial integration', def:'\u90e8\u5206\u7d71\u5408\u3002\u30c7\u30fc\u30bf\u30fb\u6a5f\u80fd\u30ec\u30d9\u30eb\u3067\u9023\u643a\u3057\u3064\u3064\u3001\u30e6\u30fc\u30b6\u30fc\u306b\u306f\u533a\u5225\u53ef\u80fd\uff08Facebook & WhatsApp\uff09\u3002'},
+{term:'Permanent establishment (PE)', def:'\u6052\u4e45\u7684\u65bd\u8a2d\u3002\u4e8b\u696d\u304c\u884c\u308f\u308c\u308b\u56fa\u5b9a\u7684\u306a\u4e8b\u696d\u306e\u5834\u6240\u3002\u30c7\u30b8\u30bf\u30eb\u4f01\u696d\u306b\u306f\u4e0d\u9069\u3067outdated\u3002'},
+{term:'Pipeline', def:'\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3\u3002\u4ed5\u5165\u2192\u88fd\u9020\u2192\u8ca9\u58f2\u306elinear value chain\u3092\u6700\u9069\u5316\u3057\u3066\u4fa1\u5024\u3092\u751f\u3080\u4e8b\u696d\u3002'},
+{term:'Planetary boundaries', def:'\u60d1\u661f\u9650\u754c\u3002\u4eba\u985e\u306e\u5b89\u5168\u306a\u6d3b\u52d5\u7a7a\u9593\u3092\u5b9a\u3081\u308b\u9650\u754c\u3002ozone\u306f\u570f\u5185\u3001climate/biodiversity/nitrogen\u306f\u8d85\u904e\u3002'},
+{term:'Platform', def:'\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3002\u5916\u90e8\u306e\u751f\u7523\u8005\u3068\u6d88\u8cbb\u8005\u306einteraction\u3092\u4ef2\u4ecb\u3057\u3066\u4fa1\u5024\u3092\u751f\u3080\u3002\u7269\u7406\u30a4\u30f3\u30d5\u30e9\u3092\u6240\u6709\u3057\u306a\u304f\u3066\u3088\u3044\u3002'},
+{term:'Positive statement', def:'\u5b9f\u8a3c\u7684\u8a00\u660e\u3002\u300c\u4f55\u3067\u3042\u308b\u304b\u300d\u3092\u8ff0\u3079\u3001\u539f\u7406\u4e0a\u691c\u8a3c\u53ef\u80fd\u306a\u4e8b\u5b9f\u3002normative\uff08\u3079\u304d\u8ad6\uff09\u3068\u533a\u5225\u3002'},
+{term:'Post-growth', def:'\u30dd\u30b9\u30c8\u30b0\u30ed\u30fc\u30b9\u3002\u7d99\u7d9a\u7684\u6210\u9577\u306e\u5b9f\u73fe\u53ef\u80fd\u6027\u30fb\u671b\u307e\u3057\u3055\u3092\u554f\u3046\uff08Kallis\uff09\u3002\u52b4\u50cd\u6642\u9593\u77ed\u7e2e\u30fbUBI\u306a\u3069\u3002'},
+{term:'Profit shifting', def:'\u5229\u76ca\u79fb\u8ee2\u3002\u4f4e\u7a0e\u7387\u56fd\u306b\u5229\u76ca\u3092\u8a08\u4e0a\u3057\u9ad8\u7a0e\u7387\u56fd\u306e\u7d0d\u7a0e\u3092\u6e1b\u3089\u3059\u3002intercompany transactions\u3092\u5229\u7528\u3002'},
+{term:'Public good', def:'\u516c\u5171\u8ca1\u3002non-excludable\u304b\u3064non-rival\u306a\u8ca1\u3002\u5e02\u5834\u304c\u904e\u5c11\u4f9b\u7d66\u3057\u304c\u3061\u3002'},
+{term:'Race to the bottom', def:'\u5e95\u8fba\u3078\u306e\u7af6\u4e89\u3002\u4f01\u696d\u3092\u547c\u3073\u8fbc\u3082\u3046\u3068\u5404\u56fd\u304c\u7a0e\u7387\u3092\u4e0b\u3052\u5408\u3046tax competition\u3002'},
+{term:'Rawls', def:'maximin / difference principle\u3092\u63d0\u5531\u3002veil of ignorance\u306e\u4e0b\u3067worst-off\u3092\u6700\u5927\u5316\u3059\u308b\u306e\u304c\u6b63\u7fa9\u3002'},
+{term:'Rebound effect', def:'\u30ea\u30d0\u30a6\u30f3\u30c9\u52b9\u679c\u3002\u52b9\u7387\u5316\u306b\u3088\u308b\u7bc0\u7d04\u304c\u6d88\u8cbb\u5897\u3067\u6253\u3061\u6d88\u3055\u308c\u308b\u3002Jevons\u306e\u30d1\u30e9\u30c9\u30c3\u30af\u30b9\u306e\u6838\u3002'},
+{term:'Relative decoupling', def:'\u76f8\u5bfe\u7684\u30c7\u30ab\u30c3\u30d7\u30ea\u30f3\u30b0\u3002\u74b0\u5883\u8ca0\u8377\u304cGDP\u3088\u308a\u9045\u304f\u5897\u3048\u308b\u3002green growth\u3068\u306f\u8a8d\u3081\u3089\u308c\u306a\u3044\u3002'},
+{term:'Relative scarcity', def:'\u76f8\u5bfe\u7684\u5e0c\u5c11\u6027\u3002\u4fa1\u683c\u4e0a\u6607\u3067\u4ee3\u66ff\u304c\u9032\u3080\u3068\u3059\u308b\u898b\u65b9\uff08Solow, environmental economics\uff09\u3002'},
+{term:'Residence jurisdiction', def:'\u5c45\u4f4f\u5730\u7ba1\u8f44\u3002A\u56fd\u306e\u5c45\u4f4f\u8005\u306e\u6d3b\u52d5\u306b\u8ab2\u7a0e\uff08\u4f8b\uff1aworldwide income\uff09\u3002ability-to-pay\u3067\u6b63\u5f53\u5316\u3002'},
+{term:'Resourcing', def:'\u30ea\u30bd\u30fc\u30b7\u30f3\u30b0\u3002platform\u306escope and diversity\u3092\u62e1\u5927\u3059\u308b\u904e\u7a0b\uff08Ghazawneh & Henfridsson\uff09\u3002'},
+{term:'Revealed preference', def:'\u9855\u793a\u9078\u597d\u3002\u5b9f\u969b\u306e\u884c\u52d5\u304b\u3089\u4fa1\u5024\u3092\u63a8\u5b9a\u3002travel cost method\u3068hedonic regression\u3002'},
+{term:'Rights of nature', def:'\u81ea\u7136\u306e\u6a29\u5229\u3002intrinsic value\u306b\u95a2\u308f\u308b\u3002\u4f8b\uff1aWhanganui River(NZ), Pachamama(Ecuador)\u3002'},
+{term:'Sci-claim evaluation', def:'\u79d1\u5b66\u7684\u4e3b\u5f35\u306e\u8a55\u4fa1\u3002statistical significance\u3001survivorship bias\u3001correlation\u2260causation\u3092\u898b\u629c\u304f\u30b9\u30ad\u30eb\u3002'},
+{term:'Securing', def:'\u30bb\u30ad\u30e5\u30a2\u30ea\u30f3\u30b0\u3002platform\u306e\u7d71\u5236(control)\u3092\u9ad8\u3081\u308b\u904e\u7a0b\u3002\u904e\u5270\u306freduced third-party participation\u3092\u62db\u304f\u3002'},
+{term:'Self-reinforcing', def:'\u81ea\u5df1\u5f37\u5316\u7684\u3002hub firm\u304cpositive feedback loops\u3067\u52a0\u901f\u7684\u306b\u6210\u9577\u3059\u308b\u6027\u8cea\u3002'},
+{term:'Sharing economy', def:'\u30b7\u30a7\u30a2\u30ea\u30f3\u30b0\u7d4c\u6e08\u3002\u500b\u4eba\u304c\u8cc7\u7523\u3092\u53ce\u76ca\u5316\u3002\u6240\u5f97\u304c\u672a\u7533\u544a\u306b\u306a\u308a\u3084\u3059\u304f\u3001platform reporting\u304c\u89e3\u6c7a\u7b56\uff08Beretta\uff09\u3002'},
+{term:'Sink limit', def:'\u30b7\u30f3\u30af\u9650\u754c\uff08\u518d\u751f\u80fd\u529b\u306e\u9650\u754c\uff09\u3002Double Resources\u30b7\u30ca\u30ea\u30aa\u3067\u5d29\u58ca\u3092\u99c6\u52d5\u3059\u308bpersistent pollution\u3002'},
+{term:'Solow', def:'relative scarcity\u3092\u4e3b\u5f35\u3002\u4fa1\u683c\u4e0a\u6607\u304csubstitution\u3092\u4fc3\u3057\u3001GDP\u5f53\u305f\u308a\u8cc7\u6e90\u4f7f\u7528\u3092\u6e1b\u3089\u3059\u3068\u3059\u308b\u3002'},
+{term:'Source jurisdiction', def:'\u6e90\u6cc9\u5730\u7ba1\u8f44\u3002\u975e\u5c45\u4f4f\u8005\u306eA\u56fd\u5185\u6d3b\u52d5\u306b\u8ab2\u7a0e\u3002benefit principle\u3067\u6b63\u5f53\u5316\u3002'},
+{term:'Spaceman economy', def:'\u5b87\u5b99\u8239\u7d4c\u6e08\u3002\u8cc7\u6e90\u304c\u9589\u3058\u305f\u6709\u9650\u306e\u5730\u7403\u3068\u3057\u3066\u632f\u308b\u821e\u3046\u898b\u65b9\uff08Boulding\uff09\u3002'},
+{term:'Stated preference', def:'\u8868\u660e\u9078\u597d\u3002\u4eba\u306b\u76f4\u63a5WTP\u3092\u5c0b\u306d\u308b\u3002contingent valuation (CV)\u304c\u4ee3\u8868\u3002'},
+{term:'Strong sustainability', def:'\u5f37\u3044\u6301\u7d9a\u53ef\u80fd\u6027\u3002\u81ea\u7136\u8cc7\u672c\u3068\u4eba\u5de5\u8cc7\u672c\u3092\u300c\u5225\u3005\u306b\u300d\u7dad\u6301\uff08\u4ee3\u66ff\u4e0d\u53ef\uff09\u3002ecological economics\u306e\u30ec\u30f3\u30ba\u3002'},
+{term:'Substitution', def:'\u4ee3\u66ff\u3002Solow\u306e\u8ad6\u3067\u3001\u9ad8\u4fa1\u306a\u8cc7\u6e90\u304b\u3089\u8c4a\u5bcc\u3067\u5b89\u3044\u8cc7\u6e90\u3078\u4e57\u308a\u63db\u3048\u308b\u3053\u3068\u3002'},
+{term:'Superapp', def:'\u30b9\u30fc\u30d1\u30fc\u30a2\u30d7\u30ea\u3002\u7570\u7a2eplatform\u3092full integration\u3057\u3066\u751f\u307e\u308c\u308b\u533a\u5225\u4e0d\u53ef\u80fd\u306a\u5358\u4e00\u30a2\u30d7\u30ea\uff08WeChat\uff09\u3002'},
+{term:'Survivorship bias', def:'\u751f\u5b58\u8005\u30d0\u30a4\u30a2\u30b9\u3002\u300c\u751f\u304d\u6b8b\u3063\u305f\u300d\u8005\u3060\u3051\u304b\u3089\u7d50\u8ad6\u3057\u3001\u5931\u6557\u3057\u305f\u591a\u6570\u3092\u7121\u8996\u3059\u308b\u8aa4\u308a\u3002'},
+{term:'Switching costs', def:'\u30b9\u30a4\u30c3\u30c1\u30f3\u30b0\u30b3\u30b9\u30c8\u3002\u4ed6\u30b5\u30fc\u30d3\u30b9\u3078\u4e57\u308a\u63db\u3048\u308b\u969b\u306e\u8cbb\u7528\u3002\u30e6\u30fc\u30b6\u30fc\u3092\u56f2\u3044\u8fbc\u307f\u65e2\u5b58\u4f01\u696d\u3092\u6709\u5229\u306b\u3059\u308b\u3002'},
+{term:'Synthetic control', def:'\u5408\u6210\u30b3\u30f3\u30c8\u30ed\u30fc\u30eb\u3002\u51e6\u7f6e\u524d\u306b\u7279\u6027\u304c\u4f3c\u305f\u5730\u57df\u304b\u3089matching\u3067counterfactual\u3092\u4f5c\u308b\u624b\u6cd5\uff08West\uff09\u3002'},
+{term:'Tax avoidance', def:'\u79df\u7a0e\u56de\u907f\u3002\u6cd5\u306e\u7bc4\u56f2\u5185\u3060\u304c\u653b\u6483\u7684(aggressive)\u306b\u306a\u308a\u3046\u308b\u3002letter\u306b\u5f93\u3044spirit\u3092\u56de\u907f\u3002'},
+{term:'Tax evasion', def:'\u8131\u7a0e\u3002\u9055\u6cd5\u306b\u7a0e\u8ca0\u62c5\u3092\u6e1b\u3089\u3059\u3053\u3068\u3002'},
+{term:'Taxation', def:'\u8ab2\u7a0e\u3002\u653f\u5e9c\u304c\u7d0d\u7a0e\u8005\u306b\u8ab2\u3059compulsory\u306a\u8ca0\u62c5\u3067\u3001public expenditures\u3092\u8c4a\u3046\u305f\u3081\u306e\u3082\u306e\u3002'},
+{term:'Telecoupling', def:'\u30c6\u30ec\u30ab\u30c3\u30d7\u30ea\u30f3\u30b0\u3002\u9060\u9694\u5730\u3078\u306e\u5f71\u97ff\u3002Friedman doctrine\u3078\u306e\u53cd\u8ad6\u306e\u3072\u3068\u3064\u3002'},
+{term:'Third-party developer', def:'\u7b2c\u4e09\u8005\u958b\u767a\u8005\u3002platform owner\u306e\u305f\u3081\u306b\u3001\u30a8\u30f3\u30c9\u30e6\u30fc\u30b6\u30fc\u5411\u3051\u30a2\u30d7\u30ea\u3092\u958b\u767a\u3059\u308b\u72ec\u7acb\u30a2\u30af\u30bf\u30fc\u3002'},
+{term:'Three transitions', def:'\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u5316\u306e3\u8ee2\u63db\uff08Van Alstyne\uff09\uff1aresource control\u2192orchestration\u3001internal\u2192external\u3001customer\u2192ecosystem value\u3002'},
+{term:'Transaction platform', def:'\u53d6\u5f15\u578b\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3002\u8cb7\u3044\u624b\u3068\u58f2\u308a\u624b\u3092\u30de\u30c3\u30c1\u30f3\u30b0\u3057\u53d6\u5f15\u3092\u4ef2\u4ecb\uff08Uber, Amazon\uff09\u3002'},
+{term:'Transfer pricing', def:'\u79fb\u8ee2\u4fa1\u683c\u3002intercompany transactions\u306e\u4fa1\u683c\u4ed8\u3051\u3002arm\u2019s length principle\u306b\u5f93\u3046\u5fc5\u8981\u3002'},
+{term:'Utilitarianism', def:'\u529f\u5229\u4e3b\u7fa9\u3002\u6700\u826f\u306e\u793e\u4f1a\u306f\u52b9\u7528\u306e\u7dcf\u548c\u3092\u6700\u5927\u5316\u3002\u6700\u5f31\u8005\u3092\u5b88\u308b\u3053\u3068\u81ea\u4f53\u304c\u76ee\u7684\u3067\u306f\u306a\u3044\u3002'},
+{term:'Value corruption', def:'\u4fa1\u5024\u306e\u8150\u6557\u3002\u5e02\u5834\u3092\u67d0\u9818\u57df\u306b\u9069\u7528\u3059\u308b\u3068\u672c\u8cea\u7684\u4fa1\u5024\u304c\u640d\u306a\u308f\u308c\u308b\u3068\u3044\u3046market\u3078\u306e\u53cd\u8ad6\u3002'},
+{term:'Value creation', def:'\u4fa1\u5024\u5275\u9020\u3002\u30c7\u30b8\u30bf\u30eb\u8ab2\u7a0e\u3067\u56fd\u969b\u5408\u610f\u3055\u308c\u305f\u304c\u66d6\u6627\u306a\u539f\u5247\u3002benefit principle\u3068\u6574\u5408\u3002'},
+{term:'Value of statistical life (VSL)', def:'\u7d71\u8a08\u7684\u751f\u547d\u4fa1\u5024\u3002\u300c\u547d\u3092\u6551\u3046\u4fbf\u76ca\u300d\u3092\u8868\u3059\u3002CBA\u3067\u4f7f\u7528\u3002income\u306b\u4f9d\u5b58\u3059\u308b\u306e\u304c\u6b20\u70b9\u3002'},
+{term:'Veil of ignorance', def:'\u7121\u77e5\u306e\u30f4\u30a7\u30fc\u30eb\uff08Rawls\uff09\u3002\u81ea\u5206\u306e\u7acb\u5834\u3092\u77e5\u3089\u306a\u3044\u72b6\u614b\u3067\u6b63\u7fa9\u306e\u539f\u5247\u3092\u9078\u3076\u601d\u8003\u5b9f\u9a13\u3002'},
+{term:'Weak sustainability', def:'\u5f31\u3044\u6301\u7d9a\u53ef\u80fd\u6027\u3002\u4eba\u5de5\u8cc7\u672c\uff0b\u81ea\u7136\u8cc7\u672c\u306e\u300c\u5408\u8a08\u300d\u3092\u7dad\u6301\uff08\u4ee3\u66ff\u53ef\uff09\u3002environmental economics\u306e\u30ec\u30f3\u30ba\u3002'},
+{term:'Willful ignorance', def:'\u610f\u56f3\u7684\u7121\u77e5\u3002\u81ea\u5df1\u5229\u76ca\u7684\u6c7a\u5b9a\u306enegative externalities\u306e\u60c5\u5831\u3092\u3042\u3048\u3066\u907f\u3051\u308b\u3053\u3068\u3002\u7d0440%\u304c\u56de\u907f\u3002'},
+{term:'Winner-takes-all', def:'\u52dd\u8005\u7dcf\u53d6\u308a\u3002network effects\u3068switching costs\u306b\u3088\u308a\u4e00\u793e\u304c\u5e02\u5834\u3092\u652f\u914d\u3057\u3084\u3059\u3044\u30c7\u30b8\u30bf\u30eb\u5e02\u5834\u306e\u6027\u8cea\u3002'},
+{term:'Withholding tax', def:'\u6e90\u6cc9\u5fb4\u53ce\u7a0e\u3002\u914d\u5f53\u30fb\u5229\u5b50\u30fb\u30ed\u30a4\u30e4\u30ea\u30c6\u30a3\u306b\u304b\u304b\u308b\u7a0e\u3002'},
+{term:'Worldwide income', def:'\u5168\u4e16\u754c\u6240\u5f97\u3002residence jurisdiction\u3067\u5c45\u4f4f\u8005\u306e\u56fd\u5185\u5916\u5168\u3066\u306e\u6240\u5f97\u306b\u8ab2\u7a0e\u3002CEN\u306e\u624b\u6bb5\u3002'},
+{term:'5 Cs', def:'Lange & Pfarrer\u306e\u8ad6\u6587\u69cb\u9020\uff1aCommon ground / Complication / Concern / Course of action / Contribution\u3002'},
+{term:'Six objections', def:'Cowen & Tabarrok\u306e6\u53cd\u8ad6\uff1aexploitation / meddlesome preferences / fair treatment / cultural goods-paternalism / poverty-inequality / who counts\u3002'},
+{term:'You get what you pay for', def:'\u6210\u679c\u9023\u52d5\u5831\u916c\u306e\u843d\u3068\u3057\u7a74\u3002\u6255\u3046\u5bfe\u8c61\u304c\u6b32\u3057\u3044\u3082\u306e\u3068\u4e00\u81f4\u305b\u305a\u3001\u6559\u5e2b\u306e\u6210\u7e3e\u9023\u52d5\u304ccheating\u3092\u8a98\u767a\u3057\u3046\u308b\uff08ch22\uff09\u3002'},
+{term:'Birkinshaw', def:'\u6280\u8853\u5909\u5316\u304c\u4f01\u696d\u3092\u5909\u3048\u308b\u3092size/scope\u30fbstructure\u30fbinstitutions\u306e3\u8ef8\u3067\u8ad6\u3058\u305f\u8005\u3002\u4e2d\u6838\u653f\u7b56\u8ab2\u984c\u306fvaluing data and intangibles\u3002'},
+{term:'Collection', def:'\u540c\u578bplatform\u3092\u90e8\u5206\u7d71\u5408\u3059\u308b\u6226\u7565\u3002\u5171\u6709\u30c7\u30fc\u30bf\u30fb\u6a5f\u80fd\u3067network effects\uff08Meta Group\uff09\u3002'},
+{term:'Symbiosis', def:'\u7570\u578bplatform\u3092\u90e8\u5206\u7d71\u5408\u3059\u308b\u6226\u7565\u3002\u30a4\u30f3\u30d5\u30e9\u5171\u6709\u3067\u30c7\u30fc\u30bf\u7bc4\u56f2\u3092\u62e1\u5927\uff08Google Photos, SAP\uff09\u3002'},
+{term:'Diamond & Hausman', def:'CV\u3092embedding/order effects\u3001WTP\u2260WTA\u3067\u6279\u5224\u3057\u3001\u653f\u7b56\u306f\u5c02\u9580\u5bb6\u306e\u610f\u898b\u306e\u65b9\u304c\u826f\u3044\u3068\u3057\u305f\u3002'},
+{term:'Hickel & Kallis', def:'\u4e16\u754c\u898f\u6a21\u3067absolute decoupling\u306e\u8a3c\u62e0\u306f\u306a\u3044\u3068\u4e3b\u5f35\u3002green growth\u6279\u5224\u306e\u4ee3\u8868\u3002'},
+{term:'WTP \u2260 WTA', def:'\u652f\u6255\u610f\u601d\u984d(willingness to pay)\u3068\u53d7\u5165\u610f\u601d\u984d(willingness to accept)\u304c\u4e00\u81f4\u3057\u306a\u3044\u3002endowment effect\u306b\u3088\u308b\u3002'},
+{term:'Eco-efficiency', def:'\u30a8\u30b3\u52b9\u7387\u3002\u74b0\u5883\u8ca0\u8377\u3042\u305f\u308a\u306e\u4fa1\u5024\u3092\u9ad8\u3081\u308b\u3053\u3068\u3002reducing unsustainability\u306b\u3068\u3069\u307e\u308a\u3001\u305d\u308c\u81ea\u4f53\u306fsustainability\u3092\u4f5c\u3089\u306a\u3044\uff08Ehrenfeld\uff09\u3002'},
+{term:'Consumerism', def:'\u6d88\u8cbb\u4e3b\u7fa9\u3002\u74b0\u5883\u4e0d\u6301\u7d9a\u6027\u306e\u6839\u672c\u539f\u56e0\u306e\u3072\u3068\u3064\u3002Busch\u306ebusiness case\u6279\u5224\u306e\u4e00\u3064\uff08Patagonia\u306e\u4f8b\uff09\u3002'},
+{term:'Levy system', def:'\u8ab2\u5fb4\u65b9\u5f0f\u3002\u7d0d\u7a0e\u8005\u304c\u7533\u544a(file return)\u3057\u3001assessment\u306b\u57fa\u3065\u3044\u3066\u7d0d\u4ed8\u3059\u308b\u4ed5\u7d44\u307f\u3002'}
+];
+
+/* EXAM_PROBLEMS — chapter-end comprehensive practice, one per track (DF/TAX/MLM/SUST).
+   Built from Canvas Mock Exam questions + lecture concepts. ch matches the track key. */
+window.TB_EXAM_PROBLEMS = [
+{
+  id:'ep_DF_1', ch:'DF', badge:'DF \u2014 Digital Firm Practice Exam',
+  title:'Platforms, Hubs & Regulation',
+  scenario:'A big-tech firm runs an app store (an innovation platform) and a marketplace (a transaction platform). It controls a key bottleneck connecting millions of developers and users, and the EU is considering how to regulate it. Apply the L1\u2013L2 concepts (Birkinshaw, Van Alstyne et al., Iansiti & Lakhani, Ghazawneh & Henfridsson, Schreieck et al., Tirole).',
+  transactions:[
+    'The firm provides SDKs, APIs and developer agreements to third parties.',
+    'It is designated a gatekeeper possessing Core Platform Services under the DMA.'
+  ],
+  questions:[
+    '(a) How do pipeline businesses primarily create value, and how does this differ from a platform?',
+    '(b) What is the main risk of focusing only on securing while neglecting resourcing?',
+    '(c) Which integration strategy yields the most complementarities and brings superapps?',
+    '(d) Is the DMA an ex-ante or ex-post instrument, and on whom does it impose obligations?'
+  ],
+  solHtml:
+    '<div class="exam-sol-label">(a) Pipeline vs platform</div>'+
+    '<p>A <b>pipeline</b> creates value by <b>optimizing a linear value chain</b> (sourcing \u2192 manufacturing \u2192 reselling \u2192 service). A <b>platform</b> creates value by <b>mediating interactions</b> between external producers and consumers in a multi-sided market, without needing to own physical infrastructure.</p>'+
+    '<div class="exam-sol-label">(b) Securing without resourcing</div>'+
+    '<p>The main risk is <b>reduced third-party participation</b>. Over-control makes the platform unattractive to developers; resourcing (SDKs, APIs) must balance securing (agreements, review).</p>'+
+    '<div class="exam-sol-label">(c) Integration strategy</div>'+
+    '<p><b>Assemblage</b> \u2014 full integration of <i>different</i> platform types \u2014 yields the most complementarities and brings superapps (vs Collection, Consolidation, Symbiosis).</p>'+
+    '<div class="exam-sol-label">(d) DMA</div>'+
+    '<p>The DMA is <b>ex-ante</b> (before-the-fact) regulation imposing 6 do\u2019s and 6 don\u2019ts on <b>gatekeepers</b> that possess <b>Core Platform Services (CPS)</b>, replacing slow ex-post case-by-case enforcement.</p>'
+},
+{
+  id:'ep_TAX_1', ch:'TAX', badge:'EoT \u2014 Taxation Practice Exam',
+  title:'Neutrality, PE & the Digital Economy',
+  scenario:'A multinational resident in country A invests and earns abroad, while a big-tech firm registered in A and B serves customers in C with no physical presence. Apply L3\u2013L4 concepts (Elliffe ch1\u20133, Beretta).',
+  transactions:[
+    'Assume, for (a), that all countries are source-only jurisdictions.',
+    'The big-tech firm earns advertising and data revenue from users in country C.'
+  ],
+  questions:[
+    '(a) If all countries are source-only jurisdictions, which neutrality is achieved?',
+    '(b) What cannot be achieved with the tax exemption method?',
+    '(c) Define a permanent establishment and explain why it is outdated for digital firms.',
+    '(d) Which principle justifies source taxation, and which justifies residence taxation?'
+  ],
+  solHtml:
+    '<div class="exam-sol-label">(a) Source-only world</div>'+
+    '<p><b>Capital import neutrality (CIN)</b> is achieved: every investor in a country faces that country\u2019s rate, so domestic and foreign investors are taxed equally on inbound investment.</p>'+
+    '<div class="exam-sol-label">(b) Exemption method</div>'+
+    '<p>It <b>cannot achieve capital export neutrality (CEN)</b>. The exemption method gives CIN, not CEN.</p>'+
+    '<div class="exam-sol-label">(c) Permanent establishment</div>'+
+    '<p>A <b>PE</b> is <b>a fixed place of business through which an enterprise carries on its business</b> (branch, office, factory). It is the threshold for source-taxing business income. Digital firms need no physical presence, so PE is <b>outdated</b> \u2014 a firm can serve country C with no PE there.</p>'+
+    '<div class="exam-sol-label">(d) Principles</div>'+
+    '<p><b>Benefit principle</b> \u2192 justifies <b>source taxation</b> (you pay where you benefit). <b>Ability-to-pay principle</b> \u2192 justifies <b>residence taxation</b> (you pay by income).</p>'
+},
+{
+  id:'ep_MLM_1', ch:'MLM', badge:'MLM \u2014 Moral Limits of Markets Practice Exam',
+  title:'Markets, Morality & Justice',
+  scenario:'Use the income table and the L5\u2013L6 readings (Falk & Szech, Awad et al., Cowen & Tabarrok) to reason about information, morality and distributive justice.',
+  transactions:[
+    'Society A (100/100/100), B (150/100/50), C (600/600/99), D (1096/102/101).',
+    'A used-car market where sellers know quality and buyers do not.'
+  ],
+  questions:[
+    '(a) By the maximin principle, which society is ranked lowest, and why?',
+    '(b) When traders know exactly what is being traded, what happens to adverse selection?',
+    '(c) Why can ratings and reviews fail to mitigate moral hazard?',
+    '(d) Distinguish a positive from a normative statement with an example.'
+  ],
+  solHtml:
+    '<div class="exam-sol-label">(a) Maximin ranking</div>'+
+    '<p>Compare the <b>worst-off</b> group in each society: A=100, B=50, C=99, D=101. The lowest worst-off is <b>Society B</b> (50), so B is ranked lowest. Maximin maximizes the worst-off, not the average.</p>'+
+    '<div class="exam-sol-label">(b) Full information</div>'+
+    '<p>When traders know exactly what is being traded, <b>adverse selection does not exist</b>, and <b>trades that occur will be mutually beneficial</b> (hidden information is what creates adverse selection before a trade).</p>'+
+    '<div class="exam-sol-label">(c) Ratings & moral hazard</div>'+
+    '<p>Ratings can fail if <b>not all products are reviewed</b>, or if <b>ratings are faked or exaggerated</b>. (Pre-2007\u201309, MBS were over-rated because the <b>sellers</b> of the securities paid for the ratings.)</p>'+
+    '<div class="exam-sol-label">(d) Positive vs normative</div>'+
+    '<p><b>Positive</b> describes what is and is testable: \u201cHigher education was under-funded for years.\u201d <b>Normative</b> prescribes what ought to be: \u201cHigher education should receive less funding.\u201d</p>'
+},
+{
+  id:'ep_SUST_1', ch:'SUST', badge:'Sustainability Practice Exam',
+  title:'Sustainability, Decoupling & Valuation',
+  scenario:'Apply the L7\u2013L8 readings (Ehrenfeld, Busch et al., Wright & Nyberg, West et al., Fanning & Raworth, Kallis et al., Hickel & Kallis, Costanza) to business and economics of sustainability.',
+  transactions:[
+    'A firm runs a carbon-offset program and markets its climate ambition.',
+    'Policymakers debate whether continued GDP growth can be green.'
+  ],
+  questions:[
+    '(a) How do economists define weak sustainability?',
+    '(b) Only which type of decoupling counts as green growth, and why is innovation-driven green growth complicated?',
+    '(c) In West et al. (2023), how is additionality related to the counterfactual, and what share of offsets delivered real reductions?',
+    '(d) Which values of nature are least suitable to express as monetary value, and which Earth system is within safe planetary boundaries?'
+  ],
+  solHtml:
+    '<div class="exam-sol-label">(a) Weak sustainability</div>'+
+    '<p>Developments that maintain a <b>non-decreasing sum of human-made and natural capital</b> (capital is substitutable) \u2014 the environmental-economics lens. Strong sustainability instead maintains them <b>separately</b>.</p>'+
+    '<div class="exam-sol-label">(b) Decoupling & green growth</div>'+
+    '<p>Only <b>absolute decoupling</b> (GDP up, impact down) counts as green growth. Achieving it through innovation is <b>complicated</b> by <b>Jevons-type rebound effects</b>; Hickel & Kallis find no global evidence of absolute decoupling.</p>'+
+    '<div class="exam-sol-label">(c) Additionality & counterfactual</div>'+
+    '<p>There is additionality when a project\u2019s <b>actual deforestation is lower than its counterfactual</b> derived from observable control areas (synthetic controls). West et al. found <b>only ~6%</b> of promised offsets delivered real emission reductions.</p>'+
+    '<div class="exam-sol-label">(d) Valuation & boundaries</div>'+
+    '<p><b>Intrinsic values</b> (rights of nature) are least suitable to express as monetary value. Among Earth systems, <b>ozone depletion</b> is within safe planetary boundaries, while climate change, biodiversity loss and the nitrogen cycle are exceeded.</p>'
+}
+];
+
+/* Textbook tab render functions (PEB2). Track-based (DF/TAX/MLM/SUST). Uses esc() from engine. */
+var CONCEPTS = [].concat(window.CONCEPTS_DF||[], window.CONCEPTS_TAX||[], window.CONCEPTS_MLM||[], window.CONCEPTS_SUST||[]);
+var TB_GLOSSARY = window.TB_GLOSSARY||[];
+var EXAM_PROBLEMS = window.TB_EXAM_PROBLEMS||[];
+var TRACKS = [
+  {key:'DF',   title:'Digital Firm & Markets', sub:'L1\u20132 \u00b7 Birkinshaw / Van Alstyne / Iansiti / Ghazawneh / Schreieck / Tirole'},
+  {key:'TAX',  title:'Economics of Taxation',  sub:'L3\u20134 \u00b7 Elliffe ch1\u20133 / Beretta'},
+  {key:'MLM',  title:'Moral Limits of Markets',sub:'L5\u20136 \u00b7 Falk & Szech / Awad / Cowen & Tabarrok'},
+  {key:'SUST', title:'Sustainability',         sub:'L7\u20138 \u00b7 Ehrenfeld / Busch / Wright & Nyberg / West / Fanning & Raworth / Kallis / Costanza'}
+];
+var currentTrack = 'DF';
+function escTB(s){return esc(s);}
+function mdInline(str){
+  if(!str) return '';
+  var s = escTB(str);
+  s = s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  return s;
+}
+/* renderMd: bold + line breaks + bullet lines */
+function renderMd(str){
+  if(!str) return '';
+  var s = escTB(str);
+  s = s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  s = s.replace(/(^|<br>)\s*[•\-]\s+/g,'$1<span class="def-bullet">\u2022 </span>');
+  s = s.replace(/\n/g,'<br>');
+  return s;
+}
+/* renderDefEN: bold + pipe tables + bullets + paragraph breaks (faithful, compact) */
+function renderDefEN(str){
+  if(!str) return '';
+  var tables=[];
+  var raw = str.replace(/(?:^|\n)((?:\|[^\n]*\|\s*\n?){2,})/g, function(m,body){
+    var rows = body.trim().split('\n').map(function(line){
+      return line.replace(/^\|/,'').replace(/\|\s*$/,'').split('|').map(function(c){return c.trim();});
+    });
+    rows = rows.filter(function(r){ return !r.every(function(c){return /^-+:?$|^:?-+$|^$/.test(c);}); });
+    var idx=tables.length; tables.push(rows); return '\n\x02T'+idx+'\x02';
+  });
+  function renderTable(rows){
+    if(!rows.length) return '';
+    var h='<div class="md-table-wrap"><table class="md-table"><thead><tr>';
+    rows[0].forEach(function(c){h+='<th>'+mdInline(c)+'</th>';});
+    h+='</tr></thead><tbody>';
+    for(var r=1;r<rows.length;r++){h+='<tr>';rows[r].forEach(function(c){h+='<td>'+mdInline(c)+'</td>';});h+='</tr>';}
+    h+='</tbody></table></div>'; return h;
+  }
+  var parts = raw.split(/\n\n+/);
+  var html='';
+  parts.forEach(function(p){
+    p=p.trim(); if(!p) return;
+    var t=p.match(/^\x02T(\d+)\x02$/);
+    if(t){ html+=renderTable(tables[+t[1]]); return; }
+    var s=escTB(p);
+    s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+    s=s.replace(/\x02T(\d+)\x02/g,function(_,i){return renderTable(tables[+i]);});
+    s=s.replace(/(^|\n)\s*[•\-]\s+/g,'$1<span class="def-bullet">\u2022 </span>');
+    s=s.replace(/\n/g,'<br>');
+    html+='<div class="def-entry def-plain">'+s+'</div>';
+  });
+  return html;
+}
+function renderCompareTable(compare){
+  if(!compare) return '';
+  var h='<div style="overflow-x:auto"><table class="compare-table">';
+  if(compare.headers && compare.rows){
+    h+='<thead><tr>'; compare.headers.forEach(function(c){h+='<th>'+escTB(c)+'</th>';}); h+='</tr></thead><tbody>';
+    compare.rows.forEach(function(row){h+='<tr>';row.forEach(function(c){h+='<td>'+escTB(c||'')+'</td>';});h+='</tr>';});
+    h+='</tbody></table></div>'; return h;
+  }
+  if(compare.table){
+    h+='<thead><tr><th>Dimension</th><th>'+escTB(compare.a)+'</th><th>'+escTB(compare.b)+'</th></tr></thead><tbody>';
+    compare.table.forEach(function(o){h+='<tr><td>'+escTB(o.dim)+'</td><td>'+mdInline(o.a)+'</td><td>'+mdInline(o.b||'')+'</td></tr>';});
+    h+='</tbody></table></div>'; return h;
+  }
+  return '';
+}
+function renderInlineGlossary(conceptName){
+  var nl = conceptName? conceptName.toLowerCase():'';
+  var matched=[];
+  for(var i=0;i<TB_GLOSSARY.length;i++){
+    var g=TB_GLOSSARY[i], tl=g.term.toLowerCase();
+    if(nl.indexOf(tl)>=0 || tl.split(' ').some(function(w){return w.length>4 && nl.indexOf(w)>=0;})) matched.push(g);
+  }
+  if(!matched.length) return '';
+  var h='<div class="glossary-chips">';
+  for(var j=0;j<matched.length && j<6;j++){ h+='<div class="glossary-chip" title="'+escTB(matched[j].def)+'">'+escTB(matched[j].term)+'</div>'; }
+  h+='</div>'; return h;
+}
+/* Mini-quiz: pick up to 3 questions from this track, sequential, deduped across the page */
+var _tbQuizUsed = {};
+function renderInlineQuiz(track, slot){
+  var pool = (window.QUESTIONS||[]).filter(function(q){return q.ch===track;});
+  if(!pool.length) return '';
+  var picks=[], used=_tbQuizUsed[track]||(_tbQuizUsed[track]={});
+  for(var i=0;i<pool.length && picks.length<3;i++){ if(!used[pool[i].id]){picks.push(pool[i]); used[pool[i].id]=1;} }
+  if(picks.length<3){ for(var k=0;k<pool.length && picks.length<3;k++){ if(picks.indexOf(pool[k])<0) picks.push(pool[k]); } }
+  if(!picks.length) return '';
+  var dom='iq-'+track+'-'+slot;
+  var h='<div class="inline-quiz"><div class="inline-quiz-title">\ud83d\udcdd '+track+' Mini Quiz</div>';
+  picks.forEach(function(qu,qi){
+    var qid=dom+'-q'+qi;
+    h+='<div style="margin-bottom:16px" id="'+qid+'-wrap">';
+    h+='<div class="iq-q">'+(qi+1)+'. '+escTB(qu.q)+'</div>';
+    for(var o=0;o<qu.opts.length;o++){
+      h+='<div class="iq-opt" id="'+qid+'-o'+o+'" data-q="'+qid+'" data-i="'+o+'" data-a="'+qu.ans+'">'+escTB(qu.opts[o])+'</div>';
+    }
+    h+='<div class="iq-exp" id="'+qid+'-exp" style="display:none">'+escTB(qu.exp)+'</div></div>';
+  });
+  h+='</div>'; return h;
+}
+function checkInlineAnswer(qid, sel, correct){
+  for(var i=0;i<6;i++){ var el=document.getElementById(qid+'-o'+i); if(!el) continue; el.onclick=null; el.style.pointerEvents='none';
+    if(i===correct) el.classList.add('correct'); else if(i===sel) el.classList.add('wrong'); }
+  var exp=document.getElementById(qid+'-exp'); if(exp) exp.style.display='block';
+}
+function renderTrackContent(track){
+  var info=null; TRACKS.forEach(function(t){if(t.key===track)info=t;});
+  var concepts = CONCEPTS.filter(function(c){return c.ch===track;});
+  var html='<div class="chapter-header"><div class="chapter-title">'+escTB(info.title)+'</div><div class="chapter-sub">'+escTB(info.sub)+'</div></div>';
+  concepts.forEach(function(c,idx){
+    html+='<div class="concept-card'+(c.star?' star-card':'')+'" id="concept-'+c.id+'">';
+    html+='<div class="concept-header"><div class="concept-num">'+(idx+1)+'</div><div class="concept-title">'+escTB(c.name)+'</div>'+(c.star?'<div class="star-badge">\u2605 \u8a66\u9a13\u91cd\u8981</div>':'')+'</div>';
+    html+=renderInlineGlossary(c.name);
+    html+='<div class="scene-block"><div class="section-label" style="color:#4aa3ff">\ud83c\udfac Scene</div><div>'+renderMd(c.scene)+'</div></div>';
+    if(c.compare) html+='<div style="margin:12px 0">'+renderCompareTable(c.compare)+'</div>';
+    html+='<div class="punch-block"><div class="section-label" style="color:#d29922">\u26a1 Punchline</div><div class="punch-text">'+renderMd(c.punchline)+'</div></div>';
+    html+='<div class="def-block"><div class="section-label">\ud83d\udcdd Definition (EN)</div><div>'+renderDefEN(c.defEN)+'</div></div>';
+    html+='<div class="def-block"><div class="section-label">\ud83d\udcdd \u5b9a\u7fa9 (JA)</div><div>'+renderMd(c.defJA)+'</div></div>';
+    html+='<div class="example-block"><div class="section-label" style="color:#3fb950">\ud83d\udca1 Example</div><div>'+renderMd(c.example)+'</div></div>';
+    html+='<div class="why-block"><div class="section-label" style="color:#a371f7">\ud83d\udd0d Why It Matters</div><div>'+renderMd(c.whyNeeded)+'</div></div>';
+    if(c.mistakes && c.mistakes.length){
+      html+='<div class="mistakes-block"><div class="section-label" style="color:#f85149">\u26a0\ufe0f Common Mistakes</div>';
+      c.mistakes.forEach(function(m){html+='<div class="def-bullet">\u2022 '+renderMd(m)+'</div>';});
+      html+='</div>';
+    }
+    if(c.memorize) html+='<div class="memorize-block"><div class="section-label">\ud83e\udde0 Memorize</div><div class="memorize-text">'+escTB(c.memorize)+'</div></div>';
+    html+='</div>';
+    if((idx+1)%2===0) html+=renderInlineQuiz(track, idx);
+  });
+  html+=renderExamProblems(track);
+  return html;
+}
+function renderExamProblems(track){
+  var probs=EXAM_PROBLEMS.filter(function(p){return p.ch===track;});
+  if(!probs.length) return '';
+  var html='<div class="exam-section"><div class="exam-section-title">\ud83d\udccb Comprehensive Exam Practice</div>';
+  probs.forEach(function(p){
+    html+='<div class="exam-card">';
+    html+='<div class="exam-badge">'+escTB(p.badge)+'</div>';
+    html+='<div style="font-size:1.15rem;font-weight:700;margin-bottom:10px">'+escTB(p.title)+'</div>';
+    html+='<div class="exam-scenario">'+escTB(p.scenario).replace(/\n/g,'<br>')+'</div>';
+    if(p.transactions && p.transactions.length){ html+='<ul class="doit-items">'; p.transactions.forEach(function(t){html+='<li>'+escTB(t)+'</li>';}); html+='</ul>'; }
+    if(p.questions && p.questions.length){ html+='<ol class="exam-qs" style="padding-left:22px">'; p.questions.forEach(function(q){html+='<li>'+escTB(q)+'</li>';}); html+='</ol>'; }
+    html+='<button class="exam-reveal">\ud83d\udc41 \u89e3\u7b54\u3092\u898b\u308b</button>';
+    html+='<div class="exam-solution"><div class="exam-sol-block">'+p.solHtml+'</div></div>';
+    html+='</div>';
+  });
+  html+='</div>'; return html;
+}
+function toggleExamSolution(btn){
+  var card=btn.parentNode, sol=card.querySelector('.exam-solution');
+  if(sol.classList.contains('visible')){sol.classList.remove('visible');btn.textContent='\ud83d\udc41 \u89e3\u7b54\u3092\u898b\u308b';}
+  else{sol.classList.add('visible');btn.textContent='\ud83d\ude48 \u89e3\u7b54\u3092\u96a0\u3059';}
+}
+function selectTrack(track){
+  currentTrack=track;
+  var pills=document.querySelectorAll('#tb-pills .ch-pill');
+  Array.prototype.forEach.call(pills,function(p){p.classList.toggle('active', p.getAttribute('data-track')===track);});
+  _tbQuizUsed={};
+  document.getElementById('textbook-content').innerHTML = renderTrackContent(track);
+  bindTextbookEvents();
+  window.scrollTo(0,0);
+}
+function bindTextbookEvents(){
+  var root=document.getElementById('textbook-content');
+  if(!root) return;
+  Array.prototype.forEach.call(root.querySelectorAll('.iq-opt'),function(el){
+    el.onclick=function(){ checkInlineAnswer(el.getAttribute('data-q'), +el.getAttribute('data-i'), +el.getAttribute('data-a')); };
+  });
+  Array.prototype.forEach.call(root.querySelectorAll('.exam-reveal'),function(b){ b.onclick=function(){toggleExamSolution(b);}; });
+}
+function renderTextbook(){
+  var panel=document.getElementById('p-textbook');
+  var pills='<div class="tb-intro note">本タブの全内容は UvA Canvas の教材（講義スライド L1\u2013L8・指定論文・Mock Exam）のみに基づきます。英語の用語を主キーに、日本語で解説。トラックを選んで学習してください。</div>';
+  pills+='<div class="ch-pills" id="tb-pills">';
+  TRACKS.forEach(function(t){ pills+='<div class="ch-pill'+(t.key===currentTrack?' active':'')+'" data-track="'+t.key+'">'+t.key+'</div>'; });
+  pills+='</div><div id="textbook-content"></div>';
+  panel.innerHTML=pills;
+  Array.prototype.forEach.call(panel.querySelectorAll('#tb-pills .ch-pill'),function(p){
+    p.onclick=function(){ selectTrack(p.getAttribute('data-track')); };
+  });
+  document.getElementById('textbook-content').innerHTML = renderTrackContent(currentTrack);
+  bindTextbookEvents();
 }
 
 </script>
